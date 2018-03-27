@@ -22,7 +22,7 @@ LICENSE :      GNU-GPLv3
 #ifdef POWEROFF
 #ifdef CRYPTSETUP
 
-#define ASK "Please enter your secret removable media to decrypt the firewall and access the mainframe. "
+#define ASK "Please enter your secret key to decrypt the firewall and access the mainframe. "
 
 
 PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, const char *argv[])
@@ -127,28 +127,28 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
   free(serious_arg);
 
 
-  // Check if serious device exist
+  // Check if panic key exist
   if(serious && access(serious_dev, F_OK) == -1){
     pam_syslog(pamh, LOG_ALERT, "ALERT for argument \"serious\": Device doesn't exist.\n");
     return (PAM_IGNORE);
   }
 
 
-  // Prompt for removable media
+  // Prompt for (auth|panic) key
   int8_t counter = 0;
   while(access(allowed, F_OK) == -1 && access(rejected, F_OK) == -1){
     pam_prompt(pamh, PAM_PROMPT_ECHO_OFF, &resp, ASK);
     if(++counter >= 3){
-      pam_syslog(pamh, LOG_NOTICE, "Couldn't identify removable media. 3 tries.");
+      pam_syslog(pamh, LOG_NOTICE, "Couldn't identify any keys. 3 tries.");
       return (PAM_MAXTRIES);
     }
   }
 
-  // Allowed removable media? OK!
+  // Auth key? OK!
   if(access(allowed, F_OK) != -1)
     return (PAM_SUCCESS);
 
-  // Rejected removable media? PANIC!!1
+  // Panic key? PANIC!!1
   if(access(rejected, F_OK) != -1){
 
     if(serious){

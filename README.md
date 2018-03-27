@@ -5,9 +5,9 @@
 The pam\_panic PAM module shall protect people who have value data on their computer. It provides a panic function.
 
 ## How it works
-There exist a good and a bad flash drive. 
-The good flash drive will let you pass to the password prompt. 
-The bad flash drive will execute a reboot, poweroff and/or erase the luksHeader which will make your luksContainer undecryptable to anyone.
+There are two removable media which work as keys: One is the auth key and one is the panic key. 
+The auth key will let you pass to the password prompt.
+The panic key will execute a reboot, poweroff and/or erase the luksHeader which will make your luksContainer undecryptable to anyone.
 
 ## Installation
 You need gcc or something similar.
