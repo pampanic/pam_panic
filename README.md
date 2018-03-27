@@ -62,6 +62,5 @@ See `man 8 pam_panic` for more.
 
 
 ## TODO
-Asking for man page translations.
-
-
+- Asking for man page translations.
+- Integrate panic password(?)
