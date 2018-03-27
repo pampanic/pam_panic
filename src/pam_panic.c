@@ -22,7 +22,7 @@ LICENSE :      GNU-GPLv3
 #ifdef POWEROFF
 #ifdef CRYPTSETUP
 
-#define ASK "Please enter your extremely secret flash drive to decrypt the firewall and access the mainframe. "
+#define ASK "Please enter your secret removable media to decrypt the firewall and access the mainframe. "
 
 
 PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, const char *argv[])
@@ -109,7 +109,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
       || regexec(&regex, rejected_temp, 0, NULL, 0) == REG_NOMATCH
       || (serious && serious_temp == NULL)
   ) {
-    pam_syslog(pamh, LOG_ERR, "Argument invalid. Note, that allow and reject must have a valid GPT UUID.");
+    pam_syslog(pamh, LOG_ERR, "Argument invalid. Note that allow and reject must have a valid GPT UUID.");
     return (PAM_IGNORE);
   } 
 
@@ -134,21 +134,21 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
   }
 
 
-  // Prompt for flash drive
+  // Prompt for removable media
   int8_t counter = 0;
   while(access(allowed, F_OK) == -1 && access(rejected, F_OK) == -1){
     pam_prompt(pamh, PAM_PROMPT_ECHO_OFF, &resp, ASK);
     if(++counter >= 3){
-      pam_syslog(pamh, LOG_NOTICE, "Couldn't identify flash drive. 3 tries.");
+      pam_syslog(pamh, LOG_NOTICE, "Couldn't identify removable media. 3 tries.");
       return (PAM_MAXTRIES);
     }
   }
 
-  // Allowed drive? OK!
+  // Allowed removable media? OK!
   if(access(allowed, F_OK) != -1)
     return (PAM_SUCCESS);
 
-  // Rejected drive? PANIC!!1
+  // Rejected removable media? PANIC!!1
   if(access(rejected, F_OK) != -1){
 
     if(serious){
