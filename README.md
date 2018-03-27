@@ -5,9 +5,9 @@
 The pam\_panic PAM module shall protect people who have value data on their computer. It provides a panic function.
 
 ## How it works
-There is a good and a bad flash drive. 
-The good flash drive will let you in to the password prompt. 
-The bad flash drive will execute a reboot, poweroff and/or erase the luksHeader which will make your luksContainer undecryptable.
+There exist a good and a bad flash drive. 
+The good flash drive will let you pass to the password prompt. 
+The bad flash drive will execute a reboot, poweroff and/or erase the luksHeader which will make your luksContainer undecryptable to anyone.
 
 ## Installation
 You need gcc or something similar.
@@ -20,7 +20,7 @@ sudo make install
 
 ### Compiling notes
 The Makefile passes the pathes of `reboot`, `poweroff` and `cryptsetup` using macros to be sure that it will run on different machines.
-You need libpam's development package. Some call them like `libpam0g-dev`.
+You need libpam's development package. Some call them `libpam0g-dev`.
 
 
 ## Preparation
@@ -46,7 +46,7 @@ Created a new partition 1 of type 'Linux filesystem' and of size 7.5 GiB.
 Command (m for help): w
 ```
 
-You'll find the UUID of your partition in `/dev/disk/by-partuuid/`. You can find out which device is which through a `ls -l /dev/disk/by-partuuid/`.
+You'll find the UUID of your partition in `/dev/disk/by-partuuid/`. You can find out which device is which typing `ls -l /dev/disk/by-partuuid/` in your favourite shell.
 
 
 ## Integration
