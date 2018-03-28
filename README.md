@@ -62,5 +62,5 @@ See `man 8 pam_panic` for more.
 
 
 ## TODO
-- Asking for man page translations.
-- Integrate panic password(?)
+- Asking for [man page translations](https://github.com/Bandie/pam_panic/issues?q=is%3Aissue+is%3Aopen+label%3Alocalization)
+- Integrate [panic password](https://github.com/Bandie/pam_panic/issues/7)
