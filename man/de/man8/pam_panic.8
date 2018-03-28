@@ -93,12 +93,9 @@ Die Ger\(:ate-UUID, bei dem der luksHeaders zerst\(:ort werden w\(:urde, sobald 
 .PP
 
 
-.SH "WIE WENDE ICH ES AN"
+.SH "ANWENDUNG"
 .PP
-Um das Modul anzuwenden, m\(:ussen eine oder mehrere Dateien in \fI/etc/pam.d/\fR\& ver\(:andert werden\&. 
-Dort sind verschiendene (Dienst-)Programme und andere Konfigurationsdateien ersichtlich, die das PAM modul verwenden\&.
-Falls Ubuntu verwendet wird, so k\(:onnte die Datei "\fIcommon-auth\fR" interessant sein. 
-Informationen zur Handhabung der pam.d-Konfigurationsdateien ist es anzuraten, das Wiki der jeweiligen Distribution zu konsultieren\&.
+Um das Modul zu aktivieren, muss PAM konfiguriert werden\&. Siehe dazu \fBpam\&.conf(5)\fR\&.
 .PP
 Man f\(:uge folgende beispielhafte Zeilen am Anfang einer Konfigurationsdatei hinzu:
 .PD 0
@@ -155,7 +152,7 @@ Fehlerberichte (m\(:oglichst auf Englisch) und Codeverbesserungen k\(:onnen hier
 .SH "SIEHE AUCH"
 .PP
 \fBcryptsetup\fR(8),
-\fBpam.d\fR(5),
+\fBpam\&.conf\fR(5),
 \fBpam\fR(8)\&.
 
 

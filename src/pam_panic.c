@@ -65,13 +65,13 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
   // Argument handling
   for(int i=0; i<argc; i++){
     if(strstr(argv[i], "allow") != NULL){
-      strcpy(allowed_arg, argv[i]);
+      strncpy(allowed_arg, argv[i], 128);
       allowed_temp = strtok(allowed_arg, "=");
       allowed_temp = strtok(NULL, "=");
     }
 
     if(strstr(argv[i], "reject") != NULL){
-      strcpy(rejected_arg, argv[i]);
+      strncpy(rejected_arg, argv[i], 128);
       rejected_temp = strtok(rejected_arg, "=");
       rejected_temp = strtok(NULL, "=");
     }
@@ -85,7 +85,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
     }
 
     if(strstr(argv[i], "serious") != NULL){
-      strcpy(serious_arg, argv[i]);
+      strncpy(serious_arg, argv[i], 128);
       serious_temp = strtok(serious_arg, "=");
       serious_temp = strtok(NULL, "=");
       serious = 1;

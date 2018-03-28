@@ -57,5 +57,5 @@ See `man 8 pam_panic` for more.
 
 
 ## TODO
-- Manpage translations
-- Integrate panic password(?)
+- [Manpage translations](https://github.com/Bandie/pam_panic/issues?q=is%3Aissue+is%3Aopen+label%3Alocalization)
+- Integrate [panic password](https://github.com/Bandie/pam_panic/issues/7)
