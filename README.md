@@ -2,29 +2,25 @@
 
 
 ## Purpose
-The pam\_panic PAM module shall protect people who have value data on their computer. It provides a panic function.
+pam\_panic is a PAM module that protects sensitive data and provices a panic function for emergency situations.
 
 ## How it works
-There are two removable media which work as keys: One is the auth key and one is the panic key. 
-The auth key will let you pass to the password prompt.
-The panic key will execute a reboot, poweroff and/or erase the luksHeader which will make your luksContainer undecryptable to anyone.
+There are two removable media which work as keys: the auth key and the panic key. The auth key will let you pass to the password prompt whereas the panic key, if provided, will securely erase the LUKS header, rendering the data unreadable.
 
 ## Installation
-You need gcc or something similar.
-To compile and install it you may want to do the following within this project directory:
+You will need GCC or similar, as well as the PAM headers. Some distributions package the PAM headers as `libpam0g-dev`.
+
+To compile and install it, do the following within the project's root directory:
 
 ```
 make
 sudo make install
 ```
 
-### Compiling notes
-The Makefile passes the pathes of `reboot`, `poweroff` and `cryptsetup` using macros to be sure that it will run on different machines.
-You need libpam's development package. Some call them `libpam0g-dev`.
-
+Note: the paths of the `reboot`, `poweroff`, and `cryptsetup` commands are passed to the module at compile-time.
 
 ## Preparation
-You need two GPT formatted removable devices. There must be at least one partition on it. Here is an example with `fdisk`:
+You'll need two GPT-formatted removable storage devices, and said devices must have at least one partition. Here's an example `fdisk` session, showing how this might be accomplished:
 
 ```
 $ sudo fdisk /dev/sdc
@@ -48,9 +44,8 @@ Command (m for help): w
 
 You'll find the UUID of your partition in `/dev/disk/by-partuuid/`. You can find out which device is which typing `ls -l /dev/disk/by-partuuid/` in your favourite shell.
 
-
-## Integration
-To let it integrate with your system, add the following at the top of of your pam.d config(s):
+## Configuration
+To configure the module, add the following to the appropriate PAM configuration file(s): (see pam.conf(5) for details on these files)
 
 
 ```
@@ -62,5 +57,5 @@ See `man 8 pam_panic` for more.
 
 
 ## TODO
-- Asking for [man page translations](https://github.com/Bandie/pam_panic/issues?q=is%3Aissue+is%3Aopen+label%3Alocalization)
+- [Manpage translations](https://github.com/Bandie/pam_panic/issues?q=is%3Aissue+is%3Aopen+label%3Alocalization)
 - Integrate [panic password](https://github.com/Bandie/pam_panic/issues/7)
