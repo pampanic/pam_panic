@@ -22,7 +22,7 @@
 
 
 .SH "NAME"
-pam_panic \- PAM module for access control using removable media. With panic function
+pam_panic \- PAM module for access control using removable media (with panic function)
 
 
 .SH "SYNOPSIS"
@@ -32,79 +32,72 @@ pam_panic \- PAM module for access control using removable media. With panic fun
 
 .SH "DESCRIPTION"
 .PP
-The pam_panic PAM module shall protect people who have value data on their computer\&. It provides a panic function\&.
+The pam_panic PAM module protects sensitive data and provides a panic function for emergency situations\&.
 .PP
-There are two removable media which work as keys: One is the auth key and one is the panic key\&.
-The auth key will let you pass to the password prompt\&.            
-The panic key will call the panic function which, if configured, executes "\fBcryptsetup luksErase [UUID]\fR"\&. This will destroy the luksHeader safely\&.
-It means that your data will not be readable to anyone anymore\&.
+There are two removable media which work as keys: the auth key and the panic key\&. The auth key will let you pass to the password prompt whereas the panic key, if provided, will securely erase the LUKS header, rendering the data unreadable\&.
 
 .SH "OPTIONS"
 .PP
 \fBallow=\fR\fB\fIUUID(GPT)\fR\fR (required)
 .RS 4
-This device UUID is used for authentication (auth key)\&.
+The UUID of the device to be used for authentication (the auth key)\&.
 .PD 0
 .PP
 .PD 1
-It is required to have a GPT formated device with at least one partition on it\&.
-The UUID of a GPT formated device looks like "12345678-9ABC-DEF0-1234-56789ABCDEF0"\&. 
+The device must have a GPT-formatted device with at least one partition on it\&.
+The UUID of a GPT-formatted device looks like "12345678-9ABC-DEF0-1234-56789ABCDEF0"\&. 
 .PP
-See more in the section \fBHOW TO DETERMINE MY UUIDS\fR\&.
+See \fBHOW TO DETERMINE MY UUIDS\fR for details\&.
 .RE
 .PP
 
 \fBreject=\fR\fB\fIUUID(GPT)\fR\fR (required)
 .RS 4
-This device UUID will cause calling \fBreboot\fR, \fBpoweroff\fR and/or the panic function \fBserious\fR if stated before (panic key)\&.
+The UUID of the device to be used in emergencies. The presence of this device will trigger \fBreboot\fR, \fBpoweroff\fR and/or the panic function, depending on whether \fBreboot\fB, \fBpoweroff\fB, and/or \fBserious\fB are specified.
 .PD 0
 .PP
 .PD 1
-It is required to have a GPT formated device with at least one partition on it\&.
-The UUID of a GPT formated device looks like "12345678-9ABC-DEF0-1234-56789ABCDEF0"\&. 
+The device must have a GPT-formatted device with at least one partition on it\&.
+The UUID of a GPT-formatted device looks like "12345678-9ABC-DEF0-1234-56789ABCDEF0"\&. 
 .PP
-See more in the section \fBHOW TO DETERMINE MY UUIDS\fR\&.
+See \fBHOW TO DETERMINE MY UUIDS\fR for details\&.
 .RE
 .PP
 
 \fBreboot\fR (recommended)
 .RS 4
-Stating this argument will cause a reboot after the device stated in \fBreject=UUID(GPT)\fR has been inserted\&.
-You might want that option\&.
+Indicates that the system should reboot upon encountering the device specified with \fBreject\fR\&.
 .PP
-If \fBpoweroff\fR is also stated the argument \fBreboot\fR will be ignored\&.
+If \fBpoweroff\fR is also specified, \fBreboot\fR will be ignored\&.
 .RE
 .PP
 
 \fBpoweroff\fR
 .RS 4
-Stating this argument will cause a shutdown after the device stated in \fBreject=UUID(GPT)\fR has been inserted\&.
-For security reasons you should abstrain from this option\&.
+Indicates that the system should shut down upon encountering the device specified with \fBreject\fR\&.
+This option is discouraged for security reasons\&.
 .RE
 .PP
 
 \fBserious=\fR\fB\fIUUID\fR\fR
 .RS 4
-The device UUID of which the luksHeaders will be erased if the device stated in \fBreject=UUID(GPT)\fR has been inserted\&.
+The UUID of the device containing the LUKS header to erase upon encountering the device specified with \fBreject\fR\&.
 .PP
-(You should make a luksHeader backup before using this function\&.)
+NOTE: You should make a backup of the LUKS header before using this function\&.
 .RE
 .PP
 
 
-.SH "HOW DO I USE IT"
+.SH "USAGE"
 .PP
-To activate the module you have to change some file(s) in \fI/etc/pam.d/\fR\&.
-There you'll see different services, programs and other config files which use the PAM modules\&.
-Speaking of the general authentication configs, if you use Ubuntu "\fIcommon-auth\fR" might be interesting for you\&.
-For other distributions you might want to look into the distribution's wiki\&.
+To activate the module you have to configure PAM\&. See \fBpam\&.conf(5)\fR for details\&.
 .PP
-Put the following lines on top of the config file:
+In general, you will want to add the following to the top of a PAM configuration file:
 .PD 0
 .RS 4
-auth       requisite    pam_panic.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
+auth       requisite    pam_panic\&.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
 .PP
-account    requisite    pam_panic.so
+account    requisite    pam_panic\&.so
 .RE
 .PD 1
 
@@ -124,12 +117,12 @@ Access was granted\&.
 .PP
 PAM_IGNORE
 .RS 4
-An error has occured\&. This module will been ignored.\&.
+An error has occured\&. The module will be ignored.\&.
 .RE
 .PP
 PAM_MAXTRIES
 .RS 4
-The removable media has not been detected\&.
+The removable media was not detected\&.
 .RE
 
 
@@ -137,30 +130,23 @@ The removable media has not been detected\&.
 .PP
 /lib/*/security/pam_panic\&.so
 .RS 4
-Shared object file which does all the work\&.
-.RE
-.PP
-/usr/share/man/*/man8/pam_panic\&.8\&.gz
-.RS 4
-The man pages\&.
+This PAM module\&.
 .RE
 
 
 .SH "BUGS"
 .PP
-Please report bugs or do merge requests at https://github.com/Bandie/pam_panic 
+Please report bugs and send pull requests to <https://github\&.com/Bandie/pam_panic>\&.
 
 
 .SH "SEE ALSO"
 .PP
-\fBcryptsetup\fR(8),
-\fBpam.d\fR(5),
-\fBpam\fR(8)\&.
+\fBcryptsetup\fR(8), \fBpam\fR(8), \fBpam\&.conf\fR(5)
 
 
 .SH "AUTHORS"
 .PD 0
 .PP
-This pam_panic PAM module was developed by Bandie <bandie@chaospott\&.de>\&.
+pam_panic was written by Bandie <bandie@chaospott\&.de>\&.
 .PP
-This man page has been revised by 
+This man page has been revised by Jordy Dickinson <jordy\&.dickinson@icloud\&.com>
