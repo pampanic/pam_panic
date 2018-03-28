@@ -19,9 +19,6 @@ clean:
 detect_pamdir: 
 	@for d in $(POSSIBLE_PAMDIRS); do if [ ! -d $${d} ]; then continue; else printf "$${d}\n"; fi; done
 
-install_docs:
-	for f in `find . -name pam_panic.8 | sed 's/\/pam_panic.8//'`; do gzip -9 -c $${f}/pam_panic.8 > $(MANDIR)/$${f}/pam_panic.8.gz; done
-
 uninstall:
 	PAMDIR=$(PAMDIR); rm $${PAMDIR}/pam_panic.so
 	rm /usr/share/man/*/pam_panic.8.gz
