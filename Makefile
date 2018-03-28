@@ -1,5 +1,6 @@
 POSSIBLE_PAMDIRS = /lib/x86_64-linux-gnu/security /lib/security
 PAMDIR = $(shell make detect_pamdir)
+MANDIR = /usr/share/man
 
 all:
 	@which reboot >/dev/null
@@ -18,9 +19,6 @@ clean:
 detect_pamdir: 
 	@for d in $(POSSIBLE_PAMDIRS); do if [ ! -d $${d} ]; then continue; else printf "$${d}\n"; fi; done
 
-install_docs:
-	cd man && for f in `find . -name pam_panic.8 | sed 's/\/pam_panic.8//'`; do gzip -9 -c $${f}/pam_panic.8 > /usr/share/man/$${f}/pam_panic.8.gz; done
-
 uninstall:
 	PAMDIR=$(PAMDIR); rm $${PAMDIR}/pam_panic.so
 	rm /usr/share/man/*/pam_panic.8.gz
@@ -28,5 +26,5 @@ uninstall:
 
 install:
 	PAMDIR=$(PAMDIR); if [ -z $${PAMDIR} ]; then printf "Error: PAM's shared object directory was not detected. If you know where it is, please add to POSSIBLE_PAMDIRS and make a pull request.\n"&& exit 1; else cp build/pam_panic.so $${PAMDIR}/pam_panic.so; fi
-	if [ ! -d /usr/share/man ]; then printf "Error: Where is the manpage directory?\n" && exit 1; else make install_docs; fi
+	if [ ! -d $(MANDIR) ]; then printf "Error: Where is the manpage directory?\n" && exit 1; else make install -C man -e "MANDIR = $(MANDIR)"; fi
 	@printf "Done!\n"
