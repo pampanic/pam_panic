@@ -1,0 +1,166 @@
+'\" t
+.\"     Title: pam_panic
+.\"    Author: [see the "AUTHORS" section]
+.\"      Date: 2018-03-26
+.\"    Manual: Linux-PAM Panic Manual
+.\"    Source: Linux-PAM Panic Manual
+.\"  Language: English
+.\"
+.TH "PAM_PANIC" "8" "2018-03-26" "PAM Panic Manual" "PAM Panic Manual"
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+
+
+.SH "NAME"
+pam_panic \- PAM module for access control using removable media. With panic function
+
+
+.SH "SYNOPSIS"
+.HP \w'\fBpam_panic\&.so\fR\ 'u
+\fBpam_panic\&.so\fR [allow=\fIUUID(GPT)\fR] [reject=\fIUUID(GPT)\fR] [reboot] [poweroff] [serious=\fIUUID\fR]
+
+
+.SH "DESCRIPTION"
+.PP
+The pam_panic PAM module shall protect people who have value data on their computer\&. It provides a panic function\&.
+.PP
+There are two removable media which work as keys: One is the auth key and one is the panic key\&.
+The auth key will let you pass to the password prompt\&.            
+The panic key will call the panic function which, if configured, executes "\fBcryptsetup luksErase [UUID]\fR"\&. This will destroy the luksHeader safely\&.
+It means that your data will not be readable to anyone anymore\&.
+
+.SH "OPTIONS"
+.PP
+\fBallow=\fR\fB\fIUUID(GPT)\fR\fR (required)
+.RS 4
+This device UUID is used for authentication (auth key)\&.
+.PD 0
+.PP
+.PD 1
+It is required to have a GPT formated device with at least one partition on it\&.
+The UUID of a GPT formated device looks like "12345678-9ABC-DEF0-1234-56789ABCDEF0"\&. 
+.PP
+See more in the section \fBHOW TO DETERMINE MY UUIDS\fR\&.
+.RE
+.PP
+
+\fBreject=\fR\fB\fIUUID(GPT)\fR\fR (required)
+.RS 4
+This device UUID will cause calling \fBreboot\fR, \fBpoweroff\fR and/or the panic function \fBserious\fR if stated before (panic key)\&.
+.PD 0
+.PP
+.PD 1
+It is required to have a GPT formated device with at least one partition on it\&.
+The UUID of a GPT formated device looks like "12345678-9ABC-DEF0-1234-56789ABCDEF0"\&. 
+.PP
+See more in the section \fBHOW TO DETERMINE MY UUIDS\fR\&.
+.RE
+.PP
+
+\fBreboot\fR (recommended)
+.RS 4
+Stating this argument will cause a reboot after the device stated in \fBreject=UUID(GPT)\fR has been inserted\&.
+You might want that option\&.
+.PP
+If \fBpoweroff\fR is also stated the argument \fBreboot\fR will be ignored\&.
+.RE
+.PP
+
+\fBpoweroff\fR
+.RS 4
+Stating this argument will cause a shutdown after the device stated in \fBreject=UUID(GPT)\fR has been inserted\&.
+For security reasons you should abstrain from this option\&.
+.RE
+.PP
+
+\fBserious=\fR\fB\fIUUID\fR\fR
+.RS 4
+The device UUID of which the luksHeaders will be erased if the device stated in \fBreject=UUID(GPT)\fR has been inserted\&.
+.PP
+(You should make a luksHeader backup before using this function\&.)
+.RE
+.PP
+
+
+.SH "HOW DO I USE IT"
+.PP
+To activate the module you have to change some file(s) in \fI/etc/pam.d/\fR\&.
+There you'll see different services, programs and other config files which use the PAM modules\&.
+Speaking of the general authentication configs, if you use Ubuntu "\fIcommon-auth\fR" might be interesting for you\&.
+For other distributions you might want to look into the distribution's wiki\&.
+.PP
+Put the following lines on top of the config file:
+.PD 0
+.RS 4
+auth       requisite    pam_panic.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
+.PP
+account    requisite    pam_panic.so
+.RE
+.PD 1
+
+
+.SH "HOW TO DETERMINE MY UUIDS"
+.PP
+You will find your UUIDs in \fI/dev/disk/by-partuuid\fR\&.
+You might want to execute "\fBls -l /dev/disk/by-partuuid/\fR" in your favourite shell to find out which UUID is which device\&.
+
+
+.SH "RETURN VALUES"
+.PP
+PAM_SUCCESS
+.RS 4
+Access was granted\&.
+.RE
+.PP
+PAM_IGNORE
+.RS 4
+An error has occured\&. This module will been ignored.\&.
+.RE
+.PP
+PAM_MAXTRIES
+.RS 4
+The removable media has not been detected\&.
+.RE
+
+
+.SH "FILES"
+.PP
+/lib/*/security/pam_panic\&.so
+.RS 4
+Shared object file which does all the work\&.
+.RE
+.PP
+/usr/share/man/*/man8/pam_panic\&.8\&.gz
+.RS 4
+The man pages\&.
+.RE
+
+
+.SH "BUGS"
+.PP
+Please report bugs or do merge requests at https://github.com/Bandie/pam_panic 
+
+
+.SH "SEE ALSO"
+.PP
+\fBcryptsetup\fR(8),
+\fBpam.d\fR(5),
+\fBpam\fR(8)\&.
+
+
+.SH "AUTHORS"
+.PD 0
+.PP
+This pam_panic PAM module was developed by Bandie <bandie@chaospott\&.de>\&.
+.PP
+This man page has been revised by 
