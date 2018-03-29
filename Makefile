@@ -7,7 +7,7 @@ all:
 	@which poweroff >/dev/null
 	@which cryptsetup >/dev/null
 	mkdir -p build obj
-	gcc -fPIC -DPOWEROFF=\"`which poweroff`\" -DREBOOT=\"`which reboot`\" -DCRYPTSETUP=\"`which cryptsetup`\" -c src/pam_panic.c -o obj/pam_panic.o
+	gcc -fPIC --std=c99 -DPOWEROFF=\"`which poweroff`\" -DREBOOT=\"`which reboot`\" -DCRYPTSETUP=\"`which cryptsetup`\" -c src/pam_panic.c -o obj/pam_panic.o
 	ld -x --shared -o build/pam_panic.so obj/pam_panic.o
 	@printf "Done!\n"
 clean:
