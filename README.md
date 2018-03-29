@@ -1,6 +1,4 @@
-# pam\_panic
-
-[![Build Status](https://travis-ci.org/Bandie/pam_panic.svg?branch=master)](https://travis-ci.org/Bandie/pam_panic)
+# pam\_panic [![Build Status](https://travis-ci.org/Bandie/pam_panic.svg?branch=master)](https://travis-ci.org/Bandie/pam_panic)
 
 
 ## Purpose
