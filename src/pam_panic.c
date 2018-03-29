@@ -27,6 +27,7 @@ LICENSE :      GNU-GPLv3
 
 PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, const char *argv[])
 {
+  char *resp;
 
   char *allowed_arg = malloc(128 * sizeof(char));
   char *rejected_arg = malloc(128 * sizeof(char));
@@ -43,7 +44,6 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
 
 
   // Regex for checking arguments
-  char *resp;
   char *pattern = "^[A-Fa-f0-9]\\{8\\}\\-[A-Fa-f0-9]\\{4\\}\\-[A-Fa-f0-9]\\{4\\}\\-[A-Fa-f0-9]\\{4\\}\\-[A-Fa-f0-9]\\{12\\}$";
   regex_t regex;
 
