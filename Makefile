@@ -28,3 +28,6 @@ install:
 	PAMDIR=$(PAMDIR); if [ -z $${PAMDIR} ]; then printf "Error: PAM's shared object directory was not detected. If you know where it is, please add to POSSIBLE_PAMDIRS and make a pull request.\n"&& exit 1; else cp build/pam_panic.so $${PAMDIR}/pam_panic.so; fi
 	if [ ! -d $(MANDIR) ]; then printf "Error: Where is the manpage directory?\n" && exit 1; else make install -C man -e "MANDIR = $(MANDIR)"; fi
 	@printf "Done!\n"
+
+test:
+	@printf "We only can test it in production.\n"
