@@ -1,0 +1,89 @@
+'\" t
+.\"     Title: pam_panic_pw
+.\"    Author: [see the "AUTHORS" section]
+.\"      Date: 2018-03-31
+.\"    Manual: PAM Panic Manual
+.\"    Source: PAM Panic Manual
+.\"  Language: German
+.\"
+.TH "PAM_PANIC_PW" "8" "2018-03-31" "PAM Panic Handbuch" "PAM Panic Handbuch"
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+
+.SH "NAME"
+pam_panic_pw \- Setzen der Passw\(:orter f\(:ur das \fBpam_panic\fR(8) PAM Modul\&.
+
+
+.SH "\(:UBERSICHT"
+.HP \w'\fBpam_panic_pw\fR\ 'u
+\fBpam_panic_pw\fR
+
+
+.SH "BESCHREIBUNG"
+.PP
+Es setzt die Passw\(:orter f\(:ur das \fBpam_panic\fR(8) PAM Modul\&.
+.PP
+Dabei gibt es das "Key password" und das "Panic password"\&.
+Das "Key password" dient zur normalen Authentifizierung
+w\(:ahrend das "Panic password" die Panikfunktion ausf\(:uhrt\&.
+
+
+.SH "R\(:UCKGABEWERTE"
+.PP
+0
+.RS 4
+Passw\(:orter erfolgreich gesetzt\&.
+.RE
+.PP
+1
+.RS 4
+Keine Berechtigung\&.
+.RE
+.PP
+2
+.RS 4
+Die Passwortdatei konnte nicht ge\(:offnet werden\&.
+.RE
+
+
+.SH "DATEIEN"
+.PP
+/usr/local/bin/pam_panic_pw
+.RS 4
+Programm zum Setzen und Ver\(:andern der Passw\(:orter\&.
+.RE
+.PP
+/var/lib/pam_panic/auth
+.RS 4
+Die Passwortdatei\&.
+.RE
+
+
+.SH "BUGS"
+.PP
+Fehlerberichte (m\(:oglichst auf Englisch) und Codeverbesserungen k\(:onnen hier eingereicht werden: https://github.com/Bandie/pam_panic
+
+
+.SH "SIEHE AUCH"
+.PP
+\fBpam_panic\fR(8),
+\fBcryptsetup\fR(8),
+\fBpam\&.conf\fR(5),
+\fBpam\fR(8)\&.
+
+
+.SH "AUTOREN"
+
+.PD 0
+.PP
+Dieses pam_panic PAM Modul wurde durch Bandie <bandie@chaospott\&.de> entwickelt\&.

@@ -1,0 +1,92 @@
+'\" t
+.\"     Title: pam_panic_pw
+.\"    Author: [see the "AUTHORS" section]
+.\"      Date: 2018-03-31
+.\"    Manual: PAM Panic Manual
+.\"    Source: PAM Panic Manual
+.\"  Language: English
+.\"
+.TH "PAM_PANIC_PW" "8" "2018-03-31" "PAM Panic Manual" "PAM Panic Manual"
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+
+.SH "NAME"
+pam_panic_pw \- Set and change the passwords for the \fBpam_panic\fR(8) PAM module\&.
+
+
+.SH "SYNOPSIS"
+.HP \w'\fBpam_panic_pw\fR\ 'u
+\fBpam_panic_pw\fR
+
+
+.SH "DESCRIPTION"
+.PP
+It sets the passwords for the \fBpam_panic\fR(8) PAM module\&.
+.PP
+There are two passwords: The "Key password" and the "Panic password"\&.
+The "Key password" is used for the normal authentication
+whereas the "Panic password" will execute the panic function\&.
+
+
+.SH "RETURN VALUES"
+.PP
+0
+.RS 4
+Passwords set successfully\&.
+.RE
+.PP
+1
+.RS 4
+Access denied\&.
+.RE
+.PP
+2
+.RS 4
+Could not open the password file\&.
+.RE
+
+
+.SH "FILES"
+.PP
+/usr/local/bin/pam_panic_pw
+.RS 4
+Program to set and change the passwords\&.
+.RE
+.PP
+/var/lib/pam_panic/auth
+.RS 4
+The password file\&.
+.RE
+
+
+.SH "BUGS"
+.PP
+Fehlerberichte (m\(:oglichst auf Englisch) und Codeverbesserungen k\(:onnen hier eingereicht werden: https://github.com/Bandie/pam_panic
+
+
+.SH "SEE ALSO"
+.PP
+\fBpam_panic\fR(8),
+\fBcryptsetup\fR(8),
+\fBpam\&.conf\fR(5),
+\fBpam\fR(8)\&.
+
+
+.SH "AUTHORS"
+
+.PD 0
+.PP
+pam_panic was written by Bandie <bandie@chaospott\&.de>\&.
+.PP
+This man page has been revised by Jordy Dickinson <jordy\&.dickinson@icloud\&.com>
+
