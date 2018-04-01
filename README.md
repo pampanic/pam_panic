@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/001445f05a4e47bcad151c2f6a05a29c)](https://app.codacy.com/app/pampanic/pam_panic?utm_source=github.com&utm_medium=referral&utm_content=pampanic/pam_panic&utm_campaign=badger)
 # pam\_panic [![Build Status](https://travis-ci.org/pampanic/pam_panic.svg?branch=master)](https://travis-ci.org/pampanic/pam_panic)
 
 
