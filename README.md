@@ -4,8 +4,17 @@
 ## Purpose
 pam\_panic is a PAM module that protects sensitive data and provices a panic function for emergency situations.
 
+
 ## How it works
+You can choose one of two options:
+
+### Using two removable media
 There are two removable media which work as keys: the auth key and the panic key. The auth key will let you pass to the password prompt whereas the panic key, if provided, will securely erase the LUKS header, rendering the data unreadable.
+
+### Using two passwords previous your own password
+There are two passwords you are able to set: the key password and the panic password. The key password will let you pass to the original password prompt whereas the panic password, if provided, will securely erase the LUKS header, rendering the data unreadable.
+
+
 
 ## Installation
 You will need GCC or similar, as well as the PAM headers. Some distributions package the PAM headers as `libpam0g-dev`.
@@ -20,6 +29,7 @@ sudo make install
 Note: the paths of the `reboot`, `poweroff`, and `cryptsetup` commands are passed to the module at compile-time.
 
 ## Preparation
+In that case you want to use removable media:
 You'll need two GPT-formatted removable storage devices, and said devices must have at least one partition. Here's an example `fdisk` session, showing how this might be accomplished:
 
 ```
@@ -45,17 +55,24 @@ Command (m for help): w
 You'll find the UUID of your partition in `/dev/disk/by-partuuid/`. You can find out which device is which typing `ls -l /dev/disk/by-partuuid/` in your favourite shell.
 
 ## Configuration
-To configure the module, add the following to the appropriate PAM configuration file(s): (see pam.conf(5) for details on these files)
+To configure the module, add the following to the appropriate PAM configuration file(s): (see pam.conf(5) for details on these files).
 
-
+### Using the removable media:
 ```
 auth       requisite    pam_panic.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
 account    requisite    pam_panic.so
 ```
+
+### Using the two passwords:
+```
+auth       requisite    pam_panic.so password reboot serious=<UUID>
+account    requisite    pam_panic.so
+```
+
+
 
 See `man 8 pam_panic` for more.
 
 
 ## TODO
 - [Manpage translations](https://github.com/Bandie/pam_panic/issues?q=is%3Aissue+is%3Aopen+label%3Alocalization)
-- Integrate [panic password](https://github.com/Bandie/pam_panic/issues/7)

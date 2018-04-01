@@ -22,23 +22,53 @@
 
 
 .SH "NAME"
-pam_panic \- PAM module for access control using removable media (with panic function)
+pam_panic \- PAM module with panic function to protect sensitive data in emergency situations
 
 
 .SH "SYNOPSIS"
 .HP \w'\fBpam_panic\&.so\fR\ 'u
-\fBpam_panic\&.so\fR [allow=\fIUUID(GPT)\fR] [reject=\fIUUID(GPT)\fR] [reboot] [poweroff] [serious=\fIUUID\fR]
+\fBpam_panic\&.so\fR [password] [allow=\fIUUID(GPT)\fR] [reject=\fIUUID(GPT)\fR] [reboot] [poweroff] [serious=\fIUUID\fR]
 
 
 .SH "DESCRIPTION"
 .PP
 The pam_panic PAM module protects sensitive data and provides a panic function for emergency situations\&.
 .PP
-There are two removable media which work as keys: the auth key and the panic key\&. The auth key will let you pass to the password prompt whereas the panic key, if provided, will securely erase the LUKS header, rendering the data unreadable\&.
+There are two possible options in how to use this PAM module:
+.PD 0
+.PP
+First possible option:
+.RS 2
+There are two removable media which work as keys: the auth key and the panic key\&. 
+The auth key will let you pass to the password prompt whereas the panic key will execute the panic function\&.
+.RE
+Second possible option:
+.RS 2
+There are two passwords: the key password and the panic password\&. The key password will let you pass to the original password prompt whereas the panic password will execute the panic function\&.
+.RE
+
+.PD 1
+.PP
+The panic function:
+.RS 2
+Its behaviour is defined through the arguments \fBreboot\fR, \fBpoweroff\fR and/or \fBserious\fR\&.
+.RE
+
 
 .SH "OPTIONS"
 .PP
-\fBallow=\fR\fB\fIUUID(GPT)\fR\fR (required)
+\fBpassword\fR
+.RS 4
+Activates the password function having a panic and key password\&.
+If the options \fBallow\fR and \fBreject\fR are provided this option will be ignored\&.
+.PD 0
+.PP
+To set the passwords the program \fBpam_panic_pw\fR(1) is provided\&.
+.RE
+.PD 1
+.PP
+
+\fBallow=\fR\fB\fIUUID(GPT)\fR\fR
 .RS 4
 The UUID of the device to be used for authentication (the auth key)\&.
 .PD 0
@@ -51,7 +81,7 @@ See \fBHOW TO DETERMINE MY UUIDS\fR for details\&.
 .RE
 .PP
 
-\fBreject=\fR\fB\fIUUID(GPT)\fR\fR (required)
+\fBreject=\fR\fB\fIUUID(GPT)\fR\fR
 .RS 4
 The UUID of the device to be used in emergencies. The presence of this device will trigger \fBreboot\fR, \fBpoweroff\fR and/or the panic function, depending on whether \fBreboot\fR, \fBpoweroff\fR, and/or \fBserious\fR are specified.
 .PD 0
@@ -82,6 +112,7 @@ This option is discouraged for security reasons\&.
 \fBserious=\fR\fB\fIUUID\fR\fR
 .RS 4
 The UUID of the device containing the LUKS header to erase upon encountering the device specified with \fBreject\fR\&.
+Erasing the LUKS header will render the data unreadable\&.
 .PP
 NOTE: You should make a backup of the LUKS header before using this function\&.
 .RE
@@ -98,6 +129,12 @@ In general, you will want to add the following to the top of a PAM configuration
 auth       requisite    pam_panic\&.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
 .PP
 account    requisite    pam_panic\&.so
+.RE
+Or: 
+.RS 4
+auth       requisite    pam_panic.so password reboot serious=<UUID>
+.PP
+account    requisite    pam_panic.so
 .RE
 .PD 1
 
@@ -132,6 +169,11 @@ The removable media was not detected\&.
 .RS 4
 This PAM module\&.
 .RE
+.PP
+/usr/local/bin/pam_panic_pw
+.RS 4
+Program to set and change the passwords\&.
+.RE
 
 
 .SH "BUGS"
@@ -141,7 +183,10 @@ Please report bugs and send pull requests to <https://github\&.com/Bandie/pam_pa
 
 .SH "SEE ALSO"
 .PP
-\fBcryptsetup\fR(8), \fBpam\fR(8), \fBpam\&.conf\fR(5)
+\fBpam_panic_pw\fR(1),
+\fBcryptsetup\fR(8),
+\fBpam\fR(8),
+\fBpam\&.conf\fR(5)
 
 
 .SH "AUTHORS"
