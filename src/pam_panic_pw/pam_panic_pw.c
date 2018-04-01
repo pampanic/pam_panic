@@ -73,11 +73,10 @@ int main(void){
   
     strcpy(pw[j], password[j]);
 
-    int ok;
     for(int k=0; k<3; k++){
       pwvrf[j] = crypt(getpass(prompt[j+2]), pw[j]);
       strcpy(pwv[j], pwvrf[j]);
-      ok = strcmp(pw[j], pwv[j]) == 0;
+      int ok = strcmp(pw[j], pwv[j]) == 0;
       if(!ok){
         if(k==2){
           printf("Didn't work. Bye.\n");
