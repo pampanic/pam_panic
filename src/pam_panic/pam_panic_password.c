@@ -1,3 +1,11 @@
+/*
+FILENAME :     pam_panic_password.c
+DESCRIPTION :  Reads password from PPASSFILE
+AUTHOR :       Bandie
+DATE :         2018-03-27T02:34:08+02:00
+LICENSE :      GNU-GPLv3
+*/
+
 
 
 int readPassword(pam_handle_t *pamh, char pw[2][99]){
