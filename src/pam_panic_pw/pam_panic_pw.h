@@ -6,4 +6,3 @@ LICENSE :      GNU-GPLv3
 */
 
 int writePassword(char pw[][99]);
-int main();
