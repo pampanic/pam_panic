@@ -1,8 +1,8 @@
-# pam\_panic [![Build Status](https://travis-ci.org/Bandie/pam_panic.svg?branch=master)](https://travis-ci.org/Bandie/pam_panic)
+# pam\_panic [![Build Status](https://travis-ci.org/Bandie/pam_panic.svg?branch=master)](https://travis-ci.org/Bandie/pam_panic) [![CodeFactor](https://www.codefactor.io/repository/github/bandie/pam_panic/badge/master)](https://www.codefactor.io/repository/github/bandie/pam_panic/overview/master)
 
 
 ## Purpose
-pam\_panic is a PAM module that protects sensitive data and provices a panic function for emergency situations.
+pam\_panic is a PAM module that protects sensitive data and provides a panic function for emergency situations.
 
 
 ## How it works
