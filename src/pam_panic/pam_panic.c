@@ -141,11 +141,12 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
 
 //////////////////////// AUTH PROMPT ////////////////////////////////
 
-
-  // Prompt for (auth|panic) key
+  // Prompt for removable media
   if(allowed != NULL && rejected != NULL){
     return authDevice(pamh, allowed, rejected, serious_dev, bSerious, bReboot, bPoweroff);
-  }else if(bPassword){
+  }
+  // Prompt for password
+  else if(bPassword){
     return authPassword(pamh, serious_dev, bSerious, bReboot, bPoweroff); 
   }
   
