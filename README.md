@@ -2,7 +2,7 @@
 
 
 ## Purpose
-pam\_panic is a PAM module that protects sensitive data and provices a panic function for emergency situations.
+pam\_panic is a PAM module that protects sensitive data and provides a panic function for emergency situations.
 
 
 ## How it works
