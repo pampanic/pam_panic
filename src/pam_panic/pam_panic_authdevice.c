@@ -6,6 +6,14 @@ DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */
 
+#include <stdint.h>
+#include <unistd.h>
+#include <security/pam_modules.h>
+#include <security/pam_ext.h>
+#include <syslog.h>
+#include "pam_panic_reject.h"
+
+#include "pam_panic_authdevice.h"
 
 int authDevice(pam_handle_t *pamh, char *allowed, char *rejected, char *serious_dev, int8_t bSerious, int8_t bReboot, int8_t bPoweroff){
 
@@ -22,5 +30,7 @@ int authDevice(pam_handle_t *pamh, char *allowed, char *rejected, char *serious_
     return (PAM_SUCCESS);
   if(access(rejected, F_OK) != -1)
     return reject(serious_dev, bSerious, bReboot, bPoweroff);
+
+  return (PAM_MAXTRIES);
 
 }

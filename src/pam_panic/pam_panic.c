@@ -6,7 +6,6 @@ DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -21,9 +20,22 @@ LICENSE :      GNU-GPLv3
 #include "pam_panic_authdevice.h"
 #include "pam_panic_password.h"
 
+
 #ifdef REBOOT
 #ifdef POWEROFF
 #ifdef CRYPTSETUP
+
+int makeRegex(pam_handle_t *pamh, regex_t *regex){
+  char *pattern = "^[A-Fa-f0-9]\\{8\\}\\-[A-Fa-f0-9]\\{4\\}\\-[A-Fa-f0-9]\\{4\\}\\-[A-Fa-f0-9]\\{4\\}\\-[A-Fa-f0-9]\\{12\\}$";
+
+  if(regcomp(regex, pattern, 0)){
+    pam_syslog(pamh, LOG_CRIT, "ERROR: Problem with regcomp.");
+    return 1;
+  }
+  
+  return 0;
+
+}
 
 void argSplit(char **some_arg, char **some_temp, const char *arg){
   strncpy(*some_arg, arg, 128);
@@ -56,13 +68,9 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
 
 
   // Regex for checking arguments
-  char *pattern = "^[A-Fa-f0-9]\\{8\\}\\-[A-Fa-f0-9]\\{4\\}\\-[A-Fa-f0-9]\\{4\\}\\-[A-Fa-f0-9]\\{4\\}\\-[A-Fa-f0-9]\\{12\\}$";
   regex_t regex;
-
-  if(regcomp(&regex, pattern, 0)){
-    pam_syslog(pamh, LOG_CRIT, "ERROR: Problem with regcomp.");
+  if(makeRegex(pamh, &regex))
     return (PAM_IGNORE);
-  }
 
 
   // Argument handling

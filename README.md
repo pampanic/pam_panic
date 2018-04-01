@@ -1,4 +1,4 @@
-# pam\_panic [![Build Status](https://travis-ci.org/pampanic/pam_panic.svg?branch=master)](https://travis-ci.org/pampanic/pam_panic) [![CodeFactor](https://www.codefactor.io/repository/github/pampanic/pam_panic/badge)](https://www.codefactor.io/repository/github/pampanic/pam_panic)
+# pam\_panic [![Build Status](https://travis-ci.org/pampanic/pam_panic.svg?branch=master)](https://travis-ci.org/pampanic/pam_panic)
 
 
 ## Purpose

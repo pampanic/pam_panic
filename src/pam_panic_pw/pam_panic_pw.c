@@ -1,7 +1,7 @@
 /*
 FILENAME :     pam_panic_pw.c
 DESCRIPTION :  Generates and saves password for pam_panic
-AUTHOR :       Bandie
+AUTHOR :       Bandie, some Author of the glibc manpage
 DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */

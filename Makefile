@@ -11,14 +11,15 @@ all:
 	@which reboot >/dev/null
 	@which poweroff >/dev/null
 	@which cryptsetup >/dev/null
-	mkdir -p build obj
+	mkdir -p build
 	make -C src -e "PPASSFILE = $(PPASSFILE)"
 	@printf "Done!\n"
+
 clean:
 	rm build/pam_panic.so
 	rm build/pam_panic_pw
-	rm obj/pam_panic.o
-	rmdir build obj
+	make -C src/pam_panic clean
+	rmdir build
 	@printf "Done!\n"
 
 detect_pamdir: 
