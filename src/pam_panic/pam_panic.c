@@ -6,7 +6,6 @@ DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -20,6 +19,7 @@ LICENSE :      GNU-GPLv3
 #include "pam_panic_reject.h"
 #include "pam_panic_authdevice.h"
 #include "pam_panic_password.h"
+
 
 #ifdef REBOOT
 #ifdef POWEROFF
