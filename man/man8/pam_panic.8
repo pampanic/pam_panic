@@ -40,18 +40,18 @@ There are two possible options in how to use this PAM module:
 First possible option:
 .RS 2
 There are two removable media which work as keys: the auth key and the panic key\&. 
-The auth key will let you pass to the password prompt whereas the panic key will execute the panic function\&.
+The auth key will let you pass to the password prompt whereas the panic key will call the panic function\&.
 .RE
 Second possible option:
 .RS 2
-There are two passwords: the key password and the panic password\&. The key password will let you pass to the original password prompt whereas the panic password will execute the panic function\&.
+There are two passwords: the key password and the panic password\&. The key password will let you pass to the original password prompt whereas the panic password will call the panic function\&.
 .RE
 
 .PD 1
 .PP
 The panic function:
 .RS 2
-Its behaviour is defined through the arguments \fBreboot\fR, \fBpoweroff\fR and/or \fBserious\fR\&.
+The behaviour of this function is defined through the arguments \fBreboot\fR, \fBpoweroff\fR and/or \fBserious\fR\&. See the \fBOPTIONS\R section for details\&.
 .RE
 
 
@@ -63,7 +63,7 @@ Activates the password function having a panic and key password\&.
 If the options \fBallow\fR and \fBreject\fR are provided this option will be ignored\&.
 .PD 0
 .PP
-To set the passwords the program \fBpam_panic_pw\fR(1) is provided\&.
+These passwords can be set with the \fBpam_panic_pw\fR(1) command\&.
 .RE
 .PD 1
 .PP
