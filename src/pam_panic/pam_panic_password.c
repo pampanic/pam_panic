@@ -6,6 +6,17 @@ DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <security/pam_modules.h>
+#include <security/pam_ext.h>
+#include <syslog.h>
+#include <crypt.h>
+#include "pam_panic_password.h"
+#include "pam_panic_reject.h"
 
 
 int readPassword(pam_handle_t *pamh, char pw[2][99]){
@@ -24,7 +35,6 @@ int readPassword(pam_handle_t *pamh, char pw[2][99]){
   // Get file contents
   size_t nread;
   char filecontent[198];
-  char chr;
 
   nread = fread(filecontent, sizeof(char), 198, f);
   fclose(f);

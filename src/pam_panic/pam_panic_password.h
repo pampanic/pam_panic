@@ -5,8 +5,6 @@ DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */
 
-#include <crypt.h>
-
 #ifndef PPASSFILE
   #error PPASSFILE must be declared!
 #endif

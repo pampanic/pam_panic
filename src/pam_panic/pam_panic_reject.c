@@ -6,6 +6,11 @@ DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */
 
+#include <stdint.h>
+#include <unistd.h>
+#include <security/pam_ext.h>
+#include <sys/wait.h>
+#include "pam_panic_reject.h"
 
 int reject(char *serious_dev, int8_t bSerious, int8_t bReboot, int8_t bPoweroff){
   if(bSerious){
