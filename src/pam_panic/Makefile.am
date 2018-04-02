@@ -10,4 +10,4 @@ pam_panic_la_SOURCES = \
 	pam_panic_password.c \
 	pam_panic_reject.c
 pam_panic_la_LDFLAGS = -module -no-undefined -avoid-version
-pam_panic_la_LIBADD = -lpam -lcrypto
+pam_panic_la_LIBADD = -lpam -lcrypt
