@@ -11,3 +11,6 @@ pam_panic_la_SOURCES = \
 	pam_panic_reject.c
 pam_panic_la_LDFLAGS = -module -no-undefined -avoid-version
 pam_panic_la_LIBADD = -lpam -lcrypt
+
+install-exec-hook:
+	rm -f $(securelibdir)/pam_panic.la
