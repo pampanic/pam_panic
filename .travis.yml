@@ -1,2 +1,3 @@
 language: C
 sudo: enabled
+script: autoreconf -i && ./configure && make
