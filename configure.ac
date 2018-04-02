@@ -10,8 +10,13 @@ AC_SUBST(PACKAGE)
 AC_SUBST(VERSION)
 
 AC_USE_SYSTEM_EXTENSIONS
+
 AC_PROG_CC
+AX_CHECK_COMPILE_FLAG([-std=gnu11], [CFLAGS+=" -std=gnu11"],
+    [C compiler does not support C11 with GNU extensions])
+
 AM_PROG_AR
+
 
 AC_PATH_PROG([REBOOT], [reboot])
 AC_DEFINE_UNQUOTED([REBOOT], "$REBOOT",
