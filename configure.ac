@@ -12,8 +12,7 @@ AC_SUBST(VERSION)
 AC_USE_SYSTEM_EXTENSIONS
 
 AC_PROG_CC
-AX_CHECK_COMPILE_FLAG([-std=gnu11], [CFLAGS+=" -std=gnu11"],
-    [C compiler does not support C11 with GNU extensions])
+CFLAGS+=" -std=gnu11"
 
 AM_PROG_AR
 
