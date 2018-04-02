@@ -1,12 +1,14 @@
 *.la
 *.lo
 *.o
+*~
 .deps
 .libs
 aclocal.m4
 autom4te.cache/
 build-aux/
 config.h
+config.h.in
 config.log
 config.status
 configure
@@ -14,3 +16,4 @@ libtool
 Makefile
 Makefile.in
 src/pam_panic_pw/pam_panic_pw
+stamp-h1
