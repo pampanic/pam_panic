@@ -1,0 +1,9 @@
+#ifndef PAM_PANIC_CONFIG_H
+#define PAM_PANIC_CONFIG_H
+
+#define REBOOT "@REBOOT@"
+#define POWEROFF "@POWEROFF@"
+#define CRYPTSETUP "@CRYPTSETUP@"
+#define PPASSFILE "@PPASSFILE@"
+
+#endif

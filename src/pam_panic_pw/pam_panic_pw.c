@@ -16,6 +16,7 @@ LICENSE :      GNU-GPLv3
 #include <unistd.h>
 #include <sys/stat.h>
 #include <crypt.h>
+#include "config.h"
 
 
 int writePasswords(char pw[][99]){

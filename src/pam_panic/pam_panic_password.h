@@ -5,6 +5,8 @@ DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */
 
+#include "config.h"
+
 #ifndef PPASSFILE
   #error PPASSFILE must be declared!
 #endif

@@ -1,0 +1,6 @@
+#ifndef PAM_PANIC_PW_CONFIG_H
+#define PAM_PANIC_PW_CONFIG_H
+
+#define PPASSFILE "@PPASSFILE@"
+
+#endif

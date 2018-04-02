@@ -10,6 +10,7 @@ LICENSE :      GNU-GPLv3
 #include <unistd.h>
 #include <security/pam_ext.h>
 #include <sys/wait.h>
+#include "config.h"
 #include "pam_panic_reject.h"
 
 int reject(char *serious_dev, int8_t bSerious, int8_t bReboot, int8_t bPoweroff){
