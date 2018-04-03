@@ -1,0 +1,154 @@
+'\" t
+.\"     Title: pam_panic
+.\"    Author: [see the "AUTEURS" section]
+.\"      Date: 2018-03-28
+.\"    Manual: Linux-PAM Panic Manual
+.\"    Source: Linux-PAM Panic Manual
+.\"  Language: French
+.\"
+.TH "PAM_PANIC" "8" "2018-03-26" "Manuel de PAM Panic" "Manuel de PAM Panic"
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+
+
+.SH "NOM"
+pam_panic \- Module PAM pour un contrôle d'accès via l'utilisation d'un périphérique amovible (avec une fonction panique)
+
+
+.SH "SYNOPSIS"
+.HP \w'\fBpam_panic\&.so\fR\ 'u
+\fBpam_panic\&.so\fR [allow=\fIUUID(GPT)\fR] [reject=\fIUUID(GPT)\fR] [reboot] [poweroff] [serious=\fIUUID\fR]
+
+
+.SH "DESCRIPTION"
+.PP
+Le module PAM pam_panic protège les données sensibles et fournit une fonction de panique pour les situation d'urgence\&.
+.PP
+Il y à deux périphériques amovibles qui fonctionnent comme clé : la clé d'authentification et la clé de panique\&. La clé d'authentification permet de passer à la demande de mot de passe alors que la clé de panique, si fournie, écrasera avec sécuritée l'entête LUKS, rendant les données illisibles\&.
+
+.SH "OPTIONS"
+.PP
+\fBallow=\fR\fB\fIUUID(GPT)\fR\fR (requis)
+.RS 4
+L'UUID du péripherique à utiliser pour l'authentification (la clé d'authentification)\&.
+.PD 0
+.PP
+.PD 1
+Le périphérique doit être formatté en GPT avec au moins une partition\&.
+L'UUID du périphérique formatté en GPT ressemble à "12345678-9ABC-DEF0-1234-56789ABCDEF0"\&. 
+.PP
+Lisez \fBCOMMENT DÉTERMINER MES UUIDS\fR pour plus de détails\&.
+.RE
+.PP
+
+\fBreject=\fR\fB\fIUUID(GPT)\fR\fR (requis)
+.RS 4
+L'UUID du périphérique à utiliser en cas d'urgence. La présence de ce périphérique entrainera un \fBreboot\fR, \fBpoweroff\fR et/ou la fonction de panique, selon si \fBreboot\fR, \fBpoweroff\fR, et/ou \fBserious\fR sont spécifiés.
+.PD 0
+.PP
+.PD 1
+Le périphérique doit être formatté en GPT avec au moins une partition\&.
+L'UUID du périphérique formatté en GPT ressemble à "12345678-9ABC-DEF0-1234-56789ABCDEF0"\&. 
+.PP
+Lisez \fBCOMMENT DÉTERMINER MES UUIDS\fR pour plus de détails\&.
+.RE
+.PP
+
+\fBreboot\fR (recommendé)
+.RS 4
+Indique que le système doit redémarrer lorsqu'il détecte le périphérique spécifié avec \fBreject\fR\&.
+.PP
+Si \fBpoweroff\fR est aussi spécifié, \fBreboot\fR sera ignoré\&.
+.RE
+.PP
+
+\fBpoweroff\fR
+.RS 4
+Indique que le système doit s'éteindre lorsqu'il détecte le périphérique spécifié avec \fBreject\fR\&.
+Cette option est déconseillée pour des raisons de sécurité\&.
+.RE
+.PP
+
+\fBserious=\fR\fB\fIUUID\fR\fR
+.RS 4
+L'UUID du périphérique contenant l'entête LUKS à éffacer lors de la détéction du périphérique spécifié avec \fBreject\fR\&.
+.PP
+NOTE: Vous devriez faire une sauvegarde de l'entête LUKS avant d'utiliser cette fonction\&.
+.RE
+.PP
+
+
+.SH "UTILISATION"
+.PP
+Pour activer ce module vous devez configurer PAM\&. Lisez \fBpam\&.conf(5)\fR pour plus de détails\&.
+.PP
+En général, vous voudrez ajouter ce qui suit au début du fichier de configuration PAM:
+.PD 0
+.RS 4
+auth       requisite    /usr/local/lib/security/pam_panic\&.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
+.PP
+account    requisite    /usr/local/lib/security/pam_panic\&.so
+.RE
+.PD 1
+
+
+.SH "COMMENT DÉTERMINER MES UUIDS"
+.PP
+Vous trouverz vos UUIDs dans \fI/dev/disk/by-partuuid\fR\&.
+Vous voudriez peut-être executer "\fBls -l /dev/disk/by-partuuid/\fR" dans votre shell favoris pour trouver quel UUID correspond à quel périphérique\&.
+
+
+.SH "VALEURS DE RETOUR"
+.PP
+PAM_SUCCESS
+.RS 4
+Accès autorisé\&.
+.RE
+.PP
+PAM_IGNORE
+.RS 4
+Une erreur est survenue\&. Le module sera ignoré\&.
+.RE
+.PP
+PAM_MAXTRIES
+.RS 4
+Le péripherique amovible n'a pas été détécté\&.
+.RE
+
+
+.SH "FICHIERS"
+.PP
+/usr/local/lib/security/pam_panic\&.so
+.RS 4
+Ce module PAM\&.
+.RE
+
+
+.SH "BUGS"
+.PP
+Veuillez reporter les bugs ou envoyer une demande de correction à <https://github\&.com/pampanic/pam_panic>\&.
+
+
+.SH "VOIR AUSSI"
+.PP
+\fBcryptsetup\fR(8), \fBpam\fR(8), \fBpam\&.conf\fR(5)
+
+
+.SH "AUTEURS"
+.PD 0
+.PP
+pam_panic à été écris par Bandie <bandie@chaospott\&.de>\&.
+.PP
+La page de manuel Anglaise à été révisée par Jordy Dickinson <jordy\&.dickinson@icloud\&.com>\&.
+.PP
+La version Française à été traduite par Dashie <dashie@otter\&.sh>\&.
