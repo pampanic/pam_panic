@@ -1,4 +1,5 @@
 cant_believe_its_not_mandir = $(mandir)
+securelibdir = $(SECUREDIR)
 nobase_dist_cant_believe_its_not_man_DATA = \
 	man8/pam_panic.8.gz \
 	de/man8/pam_panic.8.gz \
@@ -6,4 +7,9 @@ nobase_dist_cant_believe_its_not_man_DATA = \
 	fr/man8/pam_panic.8.gz
 
 %.gz: %
-	gzip -c $< >$@
+	{ sldr=$$(echo "$(securelibdir)" | $(SED) 's/\//\\\//g') ; bdr=$$(echo "$(bindir)" | $(SED) 's/\//\\\//g') ; $(SED) "s/__PAMPANICSO__/$$sldr\/pam_panic\\\\\&.so/; s/__PAMPANICPW__/$$bdr\/pam_panic\\\\\&.so/" $< >$<.tmp ; }
+	gzip -c $<.tmp >$@
+
+
+clean-local:
+	rm ./*/*.tmp ./*/*.gz ./*/*/*.tmp ./*/*/*.gz

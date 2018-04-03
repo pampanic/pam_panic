@@ -35,10 +35,11 @@ AC_SUBST(SECUREDIR)
 
 AC_ARG_ENABLE(ppassfile,
     AS_HELP_STRING([--enable-ppassfile=FILE],
-        [path to file to be used for storing passwords @<:@default=/etc/pam_panic/auth@:>@]),
+        [path to file to be used for storing passwords @<:@default=/var/lib/pam_panic/auth@:>@]),
     PPASSFILE=$enableval, PPASSFILE=/var/lib/pam_panic/auth)
 AC_DEFINE_UNQUOTED([PPASSFILE], "$PPASSFILE",
     [path to file to be used for storing passwords])
+AC_SUBST(PPASSFILE)
 
 LT_INIT([disable-static])
 AC_ENABLE_STATIC([no])
