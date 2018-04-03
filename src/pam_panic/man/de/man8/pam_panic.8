@@ -139,15 +139,15 @@ Um das Modul zu aktivieren, muss PAM konfiguriert werden\&. Siehe dazu \fBpam\&.
 Man f\(:uge folgende beispielhafte Zeilen am Anfang einer Konfigurationsdatei hinzu:
 .PD 0
 .RS 4
-auth       requisite    pam_panic.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
+auth       requisite    /usr/local/lib/security/pam_panic\&.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
 .PP
-account    requisite    pam_panic.so
+account    requisite    /usr/local/lib/security/pam_panic\&.so
 .RE
 Oder auch:
 .RS 4
-auth       requisite    pam_panic.so password reboot serious=<UUID>
+auth       requisite    /usr/local/lib/security/pam_panic\&.so password reboot serious=<UUID>
 .PP
-account    requisite    pam_panic.so
+account    requisite    /usr/local/lib/security/pam_panic\&.so
 .RE
 .PD 1
 
@@ -178,7 +178,7 @@ Der Wecheldatentr\(:ager wurde nicht erkannt\&.
 
 .SH "DATEIEN"
 .PP
-/lib/*/security/pam_panic\&.so
+/usr/local/lib/security/pam_panic\&.so
 .RS 4
 Shared object-Datei, die f\(:ur alles zust\(:andig ist\&.
 .RE
