@@ -95,9 +95,9 @@ Para activar el m\('odulo se tiene que configurar PAM\&. Vea \fBpam\&.conf(5)\fR
 En general, se necesita agregar lo siguiente al comienzo de un archivo de configuraci\('on PAM:
 .PD 0
 .RS 4
-auth       requisite    pam_panic\&.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
+auth       requisite    /usr/local/lib/security/pam_panic\&.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
 .PP
-account    requisite    pam_panic\&.so
+account    requisite    /usr/local/lib/security/pam_panic\&.so
 .RE
 .PD 1
 
@@ -125,7 +125,7 @@ El media removible no fue detectados\&.
 
 .SH "ARCHIVOS"
 .PP
-/lib/*/security/pam_panic\&.so
+/usr/local/lib/security/pam_panic\&.so
 .RS 4
 Este m\('odulo\&.
 .RE
