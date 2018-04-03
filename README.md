@@ -32,6 +32,7 @@ $ sudo make install
 Note: the paths of the `reboot`, `poweroff`, and `cryptsetup` commands are passed to the module at compile-time.
 
 ## Preparation
+
 If you want to use removable media you'll need two GPT-formatted removable storage devices, and said devices must have at least one partition. Here's an example `fdisk` session, showing how this might be accomplished:
 
 ```console
@@ -56,8 +57,10 @@ Command (m for help): w
 
 You'll find the UUID of your partition in `/dev/disk/by-partuuid/`. You can find out which device is which typing `ls -l /dev/disk/by-partuuid/` in your favourite shell.
 
+
+
 ## Configuration
-To configure the module, add the following to the appropriate PAM configuration file(s): (see pam.conf(5) for details on these files)
+To configure the module, add the following to the appropriate PAM configuration file(s): (see `pam.conf(5)` for details on these files)
 
 ### Using the removable media:
 ```
@@ -70,9 +73,11 @@ account    requisite    /usr/local/lib/security/pam_panic.so
 auth       requisite    /usr/local/lib/security/pam_panic.so password reboot serious=<UUID>
 account    requisite    /usr/local/lib/security/pam_panic.so
 ```
+To set your passwords run `pam_panic_pw` as root in your prefered shell.
+
 
 ## More information
-See `man 8 pam_panic` for more information.
+See `man 8 pam_panic` and `man 1 pam_panic_pw` for more information.
 
 ## TODO
 - [Manpage translations](https://github.com/Bandie/pam_panic/issues?q=is%3Aissue+is%3Aopen+label%3Alocalization)
