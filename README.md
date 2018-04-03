@@ -61,14 +61,14 @@ To configure the module, add the following to the appropriate PAM configuration 
 
 ### Using the removable media:
 ```
-auth       requisite    pam_panic.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
-account    requisite    pam_panic.so
+auth       requisite    /usr/local/lib/security/pam_panic.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
+account    requisite    /usr/local/lib/security/pam_panic.so
 ```
 
 ### Using the two passwords:
 ```
-auth       requisite    pam_panic.so password reboot serious=<UUID>
-account    requisite    pam_panic.so
+auth       requisite    /usr/local/lib/security/pam_panic.so password reboot serious=<UUID>
+account    requisite    /usr/local/lib/security/pam_panic.so
 ```
 
 ## More information

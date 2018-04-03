@@ -126,15 +126,15 @@ To activate the module you have to configure PAM\&. See \fBpam\&.conf(5)\fR for 
 In general, you will want to add the following to the top of a PAM configuration file:
 .PD 0
 .RS 4
-auth       requisite    pam_panic\&.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
+auth       requisite    /usr/local/lib/security/pam_panic\&.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
 .PP
-account    requisite    pam_panic\&.so
+account    requisite    /usr/local/lib/security/pam_panic\&.so
 .RE
 Or: 
 .RS 4
-auth       requisite    pam_panic.so password reboot serious=<UUID>
+auth       requisite    /usr/local/lib/security/pam_panic\&.so password reboot serious=<UUID>
 .PP
-account    requisite    pam_panic.so
+account    requisite    /usr/local/lib/security/pam_panic\&.so
 .RE
 .PD 1
 
@@ -165,7 +165,7 @@ The removable media was not detected\&.
 
 .SH "FILES"
 .PP
-/lib/*/security/pam_panic\&.so
+/usr/local/lib/security/pam_panic\&.so
 .RS 4
 This PAM module\&.
 .RE
