@@ -95,9 +95,9 @@ Pour activer ce module vous devez configurer PAM\&. Lisez \fBpam\&.conf(5)\fR po
 En général, vous voudrez ajouter ce qui suit au début du fichier de configuration PAM:
 .PD 0
 .RS 4
-auth       requisite    /usr/local/lib/security/pam_panic\&.so auth=<UUID> reject=<UUID> reboot serious=<UUID>
+auth       requisite    __PAMPANICSO__ auth=<UUID> reject=<UUID> reboot serious=<UUID>
 .PP
-account    requisite    /usr/local/lib/security/pam_panic\&.so
+account    requisite    __PAMPANICSO__
 .RE
 .PD 1
 
@@ -128,9 +128,14 @@ Le péripherique amovible n'a pas été détécté\&.
 
 .SH "FICHIERS"
 .PP
-/usr/local/lib/security/pam_panic\&.so
+__PAMPANICSO__
 .RS 4
 Ce module PAM\&.
+.RE
+.PP
+__PAMPANICPW__
+.RS 4
+Password changer
 .RE
 
 
