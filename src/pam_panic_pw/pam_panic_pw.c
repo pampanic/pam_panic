@@ -31,7 +31,7 @@ int writePasswords(char pw[][99]){
 
   fclose(f);
 
-  chmod(PPASSFILE, 0600);
+  chmod(PPASSFILE, 0644);
 
   return 0;
 }
