@@ -8,7 +8,7 @@ pam\_panic is a PAM module that protects sensitive data and provides a panic fun
 
 
 ## How it works
-You can choose one of two options:
+You can choose from one of two options:
 
 ### Using two removable media
 There are two removable media which work as keys: the auth key and the panic key. The auth key will let you pass to the password prompt whereas the panic key, if provided, will securely erase the LUKS header, rendering the data unreadable.
@@ -17,26 +17,25 @@ There are two removable media which work as keys: the auth key and the panic key
 There are two passwords you are able to set: the key password and the panic password. The key password will let you pass to the original password prompt whereas the panic password, if provided, will securely erase the LUKS header, rendering the data unreadable.
 
 
-
 ## Installation
 You will need GCC or similar, as well as the PAM headers. Some distributions package the PAM headers as `libpam0g-dev`.
 
 To compile and install it, do the following within the project's root directory:
 
-```
-autoreconf -i
-./configure
-make
-sudo make install
+```console
+$ [ ! -e ./configure ] && autoreconf -i
+$ ./configure
+$ make
+$ sudo make install
 ```
 
 Note: the paths of the `reboot`, `poweroff`, and `cryptsetup` commands are passed to the module at compile-time.
 
 ## Preparation
-In that case you want to use removable media:
-You'll need two GPT-formatted removable storage devices, and said devices must have at least one partition. Here's an example `fdisk` session, showing how this might be accomplished:
 
-```
+If you want to use removable media you'll need two GPT-formatted removable storage devices, and said devices must have at least one partition. Here's an example `fdisk` session, showing how this might be accomplished:
+
+```console
 $ sudo fdisk /dev/sdc
 
 Welcome to fdisk (util-linux 2.31.1).
@@ -58,8 +57,10 @@ Command (m for help): w
 
 You'll find the UUID of your partition in `/dev/disk/by-partuuid/`. You can find out which device is which typing `ls -l /dev/disk/by-partuuid/` in your favourite shell.
 
+
+
 ## Configuration
-To configure the module, add the following to the appropriate PAM configuration file(s): (see pam.conf(5) for details on these files).
+To configure the module, add the following to the appropriate PAM configuration file(s): (see `pam.conf(5)` for details on these files)
 
 ### Using the removable media:
 ```
@@ -72,9 +73,11 @@ account    requisite    /usr/local/lib/security/pam_panic.so
 auth       requisite    /usr/local/lib/security/pam_panic.so password reboot serious=<UUID>
 account    requisite    /usr/local/lib/security/pam_panic.so
 ```
+To set your passwords run `pam_panic_pw` as root in your prefered shell.
 
 
-See `man 8 pam_panic` for more.
+## More information
+See `man 8 pam_panic` and `man 1 pam_panic_pw` for more information.
 
 
 ## TODO

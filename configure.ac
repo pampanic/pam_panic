@@ -1,4 +1,8 @@
-AC_INIT([pam_panic], [0.1.0], [], [pam_panic])
+AC_INIT(
+    [pam_panic],
+    [0.1.0],
+    [https://github.com/pampanic/pam_panic/issues],
+    [pam_panic])
 AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE([-Wall])
 AC_PREREQ([2.69])
