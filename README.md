@@ -86,7 +86,7 @@ See `man 8 pam_panic` and `man 1 pam_panic_pw` for more information.
 
 # Addendum
 
-## Poisoning memory when having a reboot or shutdown
+## Poisoning memory when issuing a reboot or shutdown
 
 If you want to be sure to have your memory clear of all information when issuing a reboot/shutdown 
 you might want to add the option `page_poison=on` and `slub_debug=P` to your kernel command line at boot.
