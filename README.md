@@ -79,5 +79,18 @@ To set your passwords run `pam_panic_pw` as root in your prefered shell.
 ## More information
 See `man 8 pam_panic` and `man 1 pam_panic_pw` for more information.
 
+
 ## TODO
 - [Manpage translations](https://github.com/Bandie/pam_panic/issues?q=is%3Aissue+is%3Aopen+label%3Alocalization)
+
+
+# Addendum
+
+## Poisoning memory when issuing a reboot or shutdown
+
+If you want to be sure to have your memory clear of all information when issuing a reboot/shutdown 
+you might want to add the option `page_poison=on` and `slub_debug=P` to your kernel command line at boot.
+For GRUB2 you just append it on your `GRUB_CMDLINE_LINUX` entry in `/etc/default/grub` and then issue a rebuild
+of the GRUB2 config: `grub-mkconfig -o /boot/grub/grub.cfg`
+
+
