@@ -1,2 +1,2 @@
-src/pam_panic/man/* linguist-documentation=true
-src/pam_panic_pw/man/* linugist-documentation=true
+src/pam_panic/man/*.8 linguist-documentation=true
+src/pam_panic_pw/man/*.1 linugist-documentation=true
