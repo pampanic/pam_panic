@@ -1,0 +1,2 @@
+src/pam_panic/man/* linguist-documentation=true
+src/pam_panic_pw/man/* linguist-documentation=true
