@@ -76,11 +76,16 @@ int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t 
   // Read passwords from file
   char pw[2][99];
   if(readPassword(pamh, pw))
-    return(PAM_IGNORE);
+    return(PAM_ABORT);
 
 
 
-  pam_prompt(pamh, PAM_PROMPT_ECHO_OFF, &response, "Password:: ");
+  pam_prompt(pamh, PAM_PROMPT_ECHO_OFF, &response, PWPROMPT);
+
+  // Is response null?
+  if(!response)
+    return(PAM_ABORT);
+
   strcpy(resp, response);
  
 
