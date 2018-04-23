@@ -71,7 +71,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
   // Regex for checking arguments
   regex_t regex;
   if(makeRegex(pamh, &regex))
-    return (PAM_IGNORE);
+    return (PAM_ABORT);
 
 
   // Argument handling
@@ -108,7 +108,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
       || (bSerious && serious_temp == NULL)
     ) {
     pam_syslog(pamh, LOG_ERR, "Arguments invalid. Note that allow and reject must have a valid GPT UUID.");
-    return (PAM_IGNORE);
+    return (PAM_ABORT);
   } 
 
   // Poweroff wins.
@@ -144,7 +144,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
   // Check if panic key exist
   if(bSerious && access(serious_dev, F_OK) == -1){
     pam_syslog(pamh, LOG_ALERT, "ALERT for argument \"serious\": Device doesn't exist.");
-    return (PAM_IGNORE);
+    return (PAM_ABORT);
   }
 
 
@@ -159,7 +159,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
     return authPassword(pamh, serious_dev, bSerious, bReboot, bPoweroff); 
   }
   
-  return (PAM_IGNORE);  
+  return (PAM_ABORT);  
 
 }
 
