@@ -80,6 +80,10 @@ To set your passwords run `pam_panic_pw` as root in your prefered shell.
 See `man 8 pam_panic` and `man 1 pam_panic_pw` for more information.
 
 
+## Contact
+Idle with us on IRC at [#pam_panic on irc.freenode.net](irc://irc.freenode.net/#pam_panic)
+
+
 ## TODO
 - [Manpage translations](https://github.com/Bandie/pam_panic/issues?q=is%3Aissue+is%3Aopen+label%3Alocalization)
 
