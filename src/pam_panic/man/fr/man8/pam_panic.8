@@ -27,16 +27,46 @@ pam_panic \- Module PAM pour un contrôle d'accès via l'utilisation d'un périp
 
 .SH "SYNOPSIS"
 .HP \w'\fBpam_panic\&.so\fR\ 'u
-\fBpam_panic\&.so\fR [allow=\fIUUID(GPT)\fR] [reject=\fIUUID(GPT)\fR] [reboot] [poweroff] [serious=\fIUUID\fR]
+\fBpam_panic\&.so\fR [password] [allow=\fIUUID(GPT)\fR] [reject=\fIUUID(GPT)\fR] [reboot] [poweroff] [serious=\fIUUID\fR]
 
 
 .SH "DESCRIPTION"
 .PP
-Le module PAM pam_panic protège les données sensibles et fournit une fonction de panique pour les situation d'urgence\&.
+Le module PAM pam_panic protège les données sensibles et fournit une fonction de panique pour les situations d'urgence\&.
 .PP
-Il y à deux périphériques amovibles qui fonctionnent comme clé : la clé d'authentification et la clé de panique\&. La clé d'authentification permet de passer à la demande de mot de passe alors que la clé de panique, si fournie, écrasera avec sécuritée l'entête LUKS, rendant les données illisibles\&.
+Il-y-à deux options possibles pour utiliser ce module PAM:
+.PD 0
+.PP
+Première option possible:
+.RS 2
+Il y à deux périphériques amovibles qui fonctionnent comme clé : la clé d'authentification et la clé de panique\&.
+La clé d'authentification permet de passer à la demande de mot de passe alors que la clé de panique appellera la fonction de panique\&.
+.RE
+Seconde option possible:
+.RS 2
+Il-y-à deux mots de passe: le mot de pass de clé et celui de panique\&. Le mot de passe de clé permet de passer a la demande de mot de passe alors que celui de panique appellera la fonction de panique\&.
+.RE
+
+.PD 1
+.PP
+La fonction de panique:
+.RS 2
+Le comportement de cette fonction est défini via les arguments \fBreboot\fR, \fBpoweroff\fR et/ou \fBserious\fR\&. Voir la section \fBOPTIONS\fR pour plus de détails\&.
+.RE
 
 .SH "OPTIONS"
+.PP
+\fBpassword\fR
+.RS 4
+Active la fonction de mot de passe avec un mot de passe de clé et de panique.\&
+Si les options options \fBallow\fR et \fBreject\fR sont fournies, cette option sera ignorée\&.
+.PD 0
+.PP
+Ces mots de passe peuvent être définis via le programme \fBpam_panic_pw\fR(1)\&.
+.RE
+.PD 1
+.PP
+
 .PP
 \fBallow=\fR\fB\fIUUID(GPT)\fR\fR (requis)
 .RS 4
@@ -99,6 +129,12 @@ auth       requisite    __PAMPANICSO__ auth=<UUID> reject=<UUID> reboot serious=
 .PP
 account    requisite    __PAMPANICSO__
 .RE
+Ou: 
+.RS 4
+auth       requisite    __PAMPANICSO__ password reboot serious=<UUID>
+.PP
+account    requisite    __PAMPANICSO__
+.RE
 .PD 1
 
 
@@ -135,7 +171,7 @@ Ce module PAM\&.
 .PP
 __PAMPANICPW__
 .RS 4
-Password changer
+Programme pour configurer les mots de passe\&.
 .RE
 
 
@@ -146,7 +182,10 @@ Veuillez reporter les bugs ou envoyer une demande de correction à <https://gith
 
 .SH "VOIR AUSSI"
 .PP
-\fBcryptsetup\fR(8), \fBpam\fR(8), \fBpam\&.conf\fR(5)
+\fBpam_panic_pw\fR(1),
+\fBcryptsetup\fR(8),
+\fBpam\fR(8),
+\fBpam\&.conf\fR(5)
 
 
 .SH "AUTEURS"
