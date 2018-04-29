@@ -81,7 +81,8 @@ See `man 8 pam_panic` and `man 1 pam_panic_pw` for more information.
 
 
 ## Contact
-Idle with us on IRC at **#pampanic** on irc.**freenode**.net
+Support on IRC at **#pampanic** on chat.**freenode**.net - Feel free to idle. :)
+Developer channel at **#pampanic-dev** on chat.**freenode**.net
 
 
 ## TODO
