@@ -4,7 +4,7 @@
 #include "../src/pam_panic/pam_panic_authdevice.h"
 #include "../src/pam_panic/pam_panic_reject.h"
 #include <CUnit/Basic.h>
-
+#include <CUnit/TestRun.h>
 
 #define STATE_GOOD 0
 #define STATE_BAD 99
@@ -36,6 +36,7 @@ void test_authDeviceGood(void) {
   fclose(f);
 
   int ret = authDevice(NULL, gU, bU, NULL, 0, 0, 0);
+  printf("%d\n", ret);
   CU_ASSERT_EQUAL(ret, STATE_GOOD);
   unlink(gU);
 }
@@ -81,7 +82,7 @@ void test_rejectNA(void) {
 int main(void) {
 
   // no stdout buffering
-  setbuf(stdout, NULL);
+  //setbuf(stdout, NULL);
   
   // init CUnit test registry
   CU_pSuite pSuiteDevice = NULL;
@@ -112,6 +113,17 @@ int main(void) {
     return CU_get_error();
   }
 
-  return 0;
+  /* Run all tests */
+  CU_basic_set_mode(CU_BRM_VERBOSE);
+  CU_basic_run_tests();
+  
+  int fail = CU_get_number_of_failures();
+
+  CU_cleanup_registry();
+
+  if(fail)
+    return 1;
+
+  return CU_get_error();
 }
 

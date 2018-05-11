@@ -8,10 +8,8 @@ LICENSE :      GNU-GPLv3
 
 #include <stdint.h>
 #include <unistd.h>
-#ifndef TEST
-  #include <security/pam_modules.h>
-  #include <security/pam_ext.h>
-#endif
+#include <security/pam_modules.h>
+#include <security/pam_ext.h>
 #include <syslog.h>
 #include "pam_panic_reject.h"
 
