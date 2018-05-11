@@ -1,10 +1,18 @@
+/*
+FILENAME :     test.c
+DESCRIPTION :  Test suites with CUnit for pam_panic
+AUTHOR :       Bandie
+DATE :         2018-05-11T04:13:51+02:00
+LICENSE :      GNU-GPLv3
+*/
+
+
 #include <stdint.h>
 #include <unistd.h>
 #include <security/pam_modules.h>
 #include "../src/pam_panic/pam_panic_authdevice.h"
 #include "../src/pam_panic/pam_panic_reject.h"
 #include <CUnit/Basic.h>
-#include <CUnit/TestRun.h>
 
 #define STATE_GOOD 0
 #define STATE_BAD 99
@@ -36,7 +44,6 @@ void test_authDeviceGood(void) {
   fclose(f);
 
   int ret = authDevice(NULL, gU, bU, NULL, 0, 0, 0);
-  printf("%d\n", ret);
   CU_ASSERT_EQUAL(ret, STATE_GOOD);
   unlink(gU);
 }
