@@ -18,7 +18,12 @@ There are two passwords you are able to set: the key password and the panic pass
 
 
 ## Installation
+### Arch Linux
+There is [pam_panic-git](https://aur.archlinux.org/packages/pam_panic-git/) in the AUR now.
+
+### From sources
 You will need GCC or similar, as well as the PAM headers. Some distributions package the PAM headers as `libpam0g-dev`.
+Also you need `autoconf`.
 
 To compile and install it, do the following within the project's root directory:
 
