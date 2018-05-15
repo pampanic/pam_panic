@@ -10,7 +10,7 @@ pam\_panic is a PAM module that protects sensitive data and provides a panic fun
 ## How it works
 You can choose from one of two options:
 
-### Using two removable media
+### Using two removable media previous your own password
 There are two removable media which work as keys: the auth key and the panic key. The auth key will let you pass to the password prompt whereas the panic key, if provided, will securely erase the LUKS header, rendering the data unreadable.
 
 ### Using two passwords previous your own password
