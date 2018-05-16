@@ -4,7 +4,7 @@ AC_INIT(
     [https://github.com/pampanic/pam_panic/issues],
     [pam_panic])
 AC_CONFIG_AUX_DIR([build-aux])
-AM_INIT_AUTOMAKE([-Wall])
+AM_INIT_AUTOMAKE([-Wall subdir-objects])
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_HEADER([src/config.h])
@@ -55,6 +55,7 @@ AC_CONFIG_FILES([
     src/pam_panic/man/Makefile
     src/pam_panic_pw/Makefile
     src/pam_panic_pw/man/Makefile
+    test/Makefile
 ])
 
 AC_OUTPUT

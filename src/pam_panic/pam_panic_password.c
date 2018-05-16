@@ -18,17 +18,21 @@ LICENSE :      GNU-GPLv3
 #include "pam_panic_password.h"
 #include "pam_panic_reject.h"
 
+#define MSG_NOFILE "ALERT for password option: No password file detected."
+#define MSG_ERROPEN "ERROR: Couldn't open password file."
+#define MSG_CORRUPT "CRITICAL: Password file is corrupt!"
+
 
 int readPassword(pam_handle_t *pamh, char pw[2][99]){
 
   // Open file
   if(access(PPASSFILE, F_OK) == -1){
-    pam_syslog(pamh, LOG_ALERT, "ALERT for password option: No password file detected.");
+    pam_syslog(pamh, LOG_ALERT, MSG_NOFILE);
     return 2;
   }
   FILE *f = fopen(PPASSFILE, "r");
   if(f == NULL){
-    pam_syslog(pamh, LOG_ALERT, "ERROR: Couldn't open file.");
+    pam_syslog(pamh, LOG_ALERT, MSG_ERROPEN);
     return 1;
   }
 
@@ -40,7 +44,7 @@ int readPassword(pam_handle_t *pamh, char pw[2][99]){
   fclose(f);
 
   if(nread != 198){
-    pam_syslog(pamh, LOG_CRIT, "CRITICAL: Password file is corrupt!");
+    pam_syslog(pamh, LOG_CRIT, MSG_CORRUPT);
     return 3;
   }
 
@@ -103,5 +107,6 @@ int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t 
   if(!strcmp(pwpanic, pw[1])){
     return reject(serious_dev, bSerious, bReboot, bPoweroff);
   } 
+
   return (PAM_AUTH_ERR);
 }
