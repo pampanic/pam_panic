@@ -21,6 +21,15 @@ There are two passwords you are able to set: the key password and the panic pass
 ### Arch Linux
 There is [pam_panic-git](https://aur.archlinux.org/packages/pam_panic-git/) in the AUR now.
 
+### Ubuntu
+There's a [PPA](https://launchpad.net/~bandie/+archive/ubuntu/pampanic).
+To install the package using the PPA:
+```
+sudo add-apt-repository ppa:bandie/pampanic
+sudo apt-get update
+sudo apt-get install pampanic
+```
+
 ### From sources
 You will need GCC or similar, as well as the PAM headers. Some distributions package the PAM headers as `libpam0g-dev`.
 Also you need `autoconf`.
