@@ -21,16 +21,16 @@
 .\" -----------------------------------------------------------------
 
 
-.SH "NAME"
+.SH "名前"
 pam_panic \- 緊急時に機密データを保護するPAMモジュール
 
 
-.SH "SYNOPSIS"
+.SH "概要"
 .HP \w'\fBpam_panic\&.so\fR\ 'u
 \fBpam_panic\&.so\fR [password] [allow=\fIUUID(GPT)\fR] [reject=\fIUUID(GPT)\fR] [reboot] [poweroff] [serious=\fIUUID\fR]
 
 
-.SH "DESCRIPTION"
+.SH "説明"
 .PP
 pam_panic PAMモジュールは、緊急時にデータを保護するためのパニック機能を実装します。
 .PP
@@ -55,7 +55,7 @@ pam_panic PAMモジュールは、緊急時にデータを保護するための�
 .RE
 
 
-.SH "OPTIONS"
+.SH "オプション"
 .PP
 \fBpassword\fR
 .RS 4
@@ -121,9 +121,9 @@ LUKSヘッダーを消去した場合、データは復元できなくなりま�
 
 .SH "USAGE"
 .PP
-To activate the module you have to configure PAM\&. See \fBpam\&.conf(5)\fR for details\&.
+モジュールを使用するためには、PAMを設定する必要があります。詳細については、 \fBpam\&.conf(5)\fR を参照してください。
 .PP
-In general, you will want to add the following to the top of a PAM configuration file:
+多くの場合、PAM設定ファイルの先頭に次の内容を設定すればよいでしょう。
 .PD 0
 .RS 4
 auth       requisite    __PAMPANICSO__ auth=<UUID> reject=<UUID> reboot serious=<UUID>
@@ -139,49 +139,48 @@ account    requisite    __PAMPANICSO__
 .PD 1
 
 
-.SH "HOW TO DETERMINE MY UUIDS"
+.SH "UUIDを調べる方法"
 .PP
-You will find your UUIDs in \fI/dev/disk/by-partuuid\fR\&.
-You might want to execute "\fBls -l /dev/disk/by-partuuid/\fR" in your favourite shell to find out which UUID is which device\&.
+\fI/dev/disk/by-partuuid\fR でUUIDを調べることができます。
+"\fBls -l /dev/disk/by-partuuid/\fR" を任意のシェルで実行して、どのデバイスがどのUUIDかを調べる必要があるかもしれません。
 
-
-.SH "RETURN VALUES"
+.SH "返り値"
 .PP
 PAM_SUCCESS
 .RS 4
-Access was granted\&.
+アクセスは許可されました。
 .RE
 .PP
 PAM_IGNORE
 .RS 4
-An error has occured\&. The module will be ignored.\&.
+エラーが発生しました。モジュールは無視されます。
 .RE
 .PP
 PAM_MAXTRIES
 .RS 4
-The removable media was not detected\&.
+リムーバブルメディアが検知されませんでした。
 .RE
 
 
-.SH "FILES"
+.SH "ファイル"
 .PP
 __PAMPANICSO__
 .RS 4
-This PAM module\&.
+このPAMモジュールです。
 .RE
 .PP
 __PAMPANICPW__
 .RS 4
-Program to set and change the passwords\&.
+パスワードの設定および変更を行うためのプログラムです。
 .RE
 
 
-.SH "BUGS"
+.SH "バグ報告"
 .PP
-Please report bugs and send pull requests to <https://github\&.com/pampanic/pam_panic>\&.
+<https://github\&.com/pampanic/pam_panic> で、バグの報告やプルリクエストを行ってください。
 
 
-.SH "SEE ALSO"
+.SH "関連項目"
 .PP
 \fBpam_panic_pw\fR(1),
 \fBcryptsetup\fR(8),
@@ -189,9 +188,9 @@ Please report bugs and send pull requests to <https://github\&.com/pampanic/pam_
 \fBpam\&.conf\fR(5)
 
 
-.SH "AUTHORS"
+.SH "著者"
 .PD 0
 .PP
-pam_panic was written by Bandie <bandie@chaospott\&.de>\&.
+pam_panic は Bandie <bandie@chaospott\&.de> によって作成されました。
 .PP
-This man page has been revised by Jordy Dickinson <jordy\&.dickinson@icloud\&.com>
+この翻訳は Chromium Neptune <chromium@neplanet\&.com> によって作成されています。
