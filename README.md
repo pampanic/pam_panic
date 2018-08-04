@@ -87,7 +87,7 @@ account    requisite    /usr/local/lib/security/pam_panic.so
 auth       requisite    /usr/local/lib/security/pam_panic.so password reboot serious=<UUID>
 account    requisite    /usr/local/lib/security/pam_panic.so
 ```
-To set your passwords run `pam_panic_pw` as root in your prefered shell.
+To set your passwords run `pam_panic_pw` as root in your preferred shell.
 
 
 ## More information
