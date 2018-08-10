@@ -1,0 +1,91 @@
+'\" t
+.\"     Title: pam_panic_pw
+.\"    Author: [see the "AUTHORS" section]
+.\"      Date: 2018-03-31
+.\"    Manual: PAM Panic Manual
+.\"    Source: PAM Panic Manual
+.\"  Language: Spanish
+.\"
+.TH "PAM_PANIC_PW" "8" "2018-03-31" "Manual de PAM Panic" "Manual de PAM Panic"
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+
+.SH "NOMBRE"
+pam_panic_pw \- Establecer y cambiar las contraseñas para el módulo PAM de \fBpam_panic\fR(8)\&.
+
+
+.SH "SINOPSIS"
+.HP \w'\fBpam_panic_pw\fR\ 'u
+\fBpam_panic_pw\fR
+
+
+.SH "DESCRIPCIÓN"
+.PP
+\fBpam_panic_pw\fR establece las contraseñas para el módulo PAM de \fBpam_panic\fR(8)\&.
+.PP
+Hay dos contraseñas: La "contraseña clave" y la "contraseña de pánico"\&.
+La "contraseña clave" se usa para autenticación normal
+mientras la "contraseña de pánico" ejecutará la función de pánico\&.
+
+
+.SH "VALORES DEVUELTOS"
+.PP
+0
+.RS 4
+Contraseñas establecidas con éxito\&.
+.RE
+.PP
+1
+.RS 4
+Acceso denegado\&.
+.RE
+.PP
+2
+.RS 4
+No se pudo abrir el archivo de contraseña\&.
+.RE
+
+
+.SH "ARCHIVOS"
+.PP
+__PAMPANICPW__
+.RS 4
+Programa para establecer y cambiar las contraseñas\&.
+.RE
+.PP
+__PPASSFILE__
+.RS 4
+El archivo de contraseña\&.
+.RE
+
+
+.SH "PROBLEMAS"
+.PP
+Informe problemas y envíe pull requests a <https://github\&.com/pampanic/pam_panic>\&.
+
+
+.SH "VER TAMBIÉN"
+.PP
+\fBpam_panic\fR(8),
+\fBcryptsetup\fR(8),
+\fBpam\&.conf\fR(5),
+\fBpam\fR(8)\&.
+
+
+.SH "AUTORES"
+
+.PD 0
+.PP
+pam_panic fue escrito por Bandie <bandie@chaospott\&.de>\&.
+.PP
+Esta página de man ha sido revisada por Jordy Dickinson <jordy\&.dickinson@icloud\&.com>
