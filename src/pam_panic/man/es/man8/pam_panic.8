@@ -34,10 +34,38 @@ pam_panic \- un m\('odulo de PAM para controlar acceso usando media removible (c
 .PP
 El m\('odulo pam_panic protege los datos delicados y proporci\('ona una funci\('on p\('anica para emergencias\&.
 .PP
-Hay dos medias removibles que estan usado como claves. La primera es para autenticaci\('on, y la segunda es para emergencias. La clave para autenticaci\('on se permite ingresar su contrase\(~na mientras la clave para p\('anica, si se proporciona, borrar\('a el encabezamiento de LUKS de forma segura, que hace que los datos sean ilegibles.
+Hay dos opciones posibles para utilizar este modulo de PAM:
+.PD 0
+.PP
+Primera opci\('on posible:
+.RS 2
+Hay dos medias removibles que est\('an usando como claves: La clave de autenticaci\('on y la clave de p\('anico\&.
+La clave para autenticaci\('on se permite ingresar su contrase\(~na mientras la clave para p\('anico va a llamar la funci\('on de p\('anico.
+.RE
+Segunda opci\('on posible:
+.RS 2
+Hay dos contrase\(~nas: La contrase\(~na para autenticaci\('on y la contrase\(~na de p\('anico. La contrasen\(~na clave le permitir\('a pasar al mensaje de contrasen\(~na original, mientras que la contrasen\(~na de p\('anico llamar\('a a la funci\('on de p\('anico.
+.RE
 
+.PD 1
+.PP
+La funci\('on de p\('anico:
+.RS 2
+El comportamiento de esta función se define a través de los argumentos \fBreboot\fR, \fBpoweroff\fR o \fBserious\fR\&. Vea la secci\('on de \fBOPCI\('ONES\fR para m\('as detalles\&.
+.RE
 .SH "OPCI\('ONES"
 .PP
+\fBpassword\fR
+.RS 4
+Activa la funci\('on de contrase\(~a con p\('anico y contrase\(~na clave\&.
+Si las opciones \fBpermitir\fR y \fBrechazar\fR son provistas esta opci\('on ser\('a ignorada\&.
+.PD 0
+.PP
+Estas contraseñas se pueden configurar con el comando \fBpam_panic_pw\fR(1)\&.
+.RE
+.PD 1
+.PP
+
 \fBallow=\fR\fB\fIUUID(GPT)\fR\fR (necesario)
 .RS 4
 Es el UUID del dispositivo para autenticaci\('on.
@@ -99,6 +127,12 @@ auth       requisite    __PAMPANICSO__ auth=<UUID> reject=<UUID> reboot serious=
 .PP
 account    requisite    __PAMPANICSO__
 .RE
+Or: 
+.RS 4
+auth       requisite    __PAMPANICSO__ password reboot serious=<UUID>
+.PP
+account    requisite    __PAMPANICSO__
+.RE
 .PD 1
 
 .SH "C\('OMO DETERMINAR MIS UUIDS"
@@ -127,17 +161,17 @@ El media removible no fue detectados\&.
 .PP
 __PAMPANICSO__
 .RS 4
-Este m\('odulo\&.
+Este m\('odulo PAM\&.
 .RE
 .PP
 __PAMPANICPW__
 .RS 4
-Password changer
+Cambiador de contraseña
 .RE
 
 .SH "ERRORES"
 .PP
-Por favor repuerta errores y enviar pull requests a <https://github\&.com/pampanic/pam_panic>\&.
+Por favor reportar errores y enviar pull requests a <https://github\&.com/pampanic/pam_panic>\&.
 
 
 .SH "VER TAMBI\('EN"
@@ -150,4 +184,4 @@ Por favor repuerta errores y enviar pull requests a <https://github\&.com/pampan
 .PP
 pam_panic fue escrito por Bandie <bandie@chaospott\&.de>\&.
 .PP
-Este p\('agina man fue traducido al espa\(~nol por Jordy Dickinson <jordy\&.dickinson@icloud\&.com>\&.
+Este p\('agina man fue traducido al espa\(~nol por Jordy Dickinson <jordy\&.dickinson@icloud\&.com> y dangered wolf <d@ngeredwolf\&.me>\&.

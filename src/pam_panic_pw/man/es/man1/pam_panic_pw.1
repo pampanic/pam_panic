@@ -1,0 +1,93 @@
+'\" t
+.\"     Title: pam_panic_pw
+.\"    Author: [see the "AUTHORS" section]
+.\"      Date: 2018-03-31
+.\"    Manual: PAM Panic Manual
+.\"    Source: PAM Panic Manual
+.\"  Language: Spanish
+.\"
+.TH "PAM_PANIC_PW" "8" "2018-03-31" "Manual de PAM Panic" "Manual de PAM Panic"
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+
+.SH "NOMBRE"
+pam_panic_pw \- Establecer y cambiar las contrase\(~nas para el m\('odulo PAM de \fBpam_panic\fR(8)\&.
+
+
+.SH "SINOPSIS"
+.HP \w'\fBpam_panic_pw\fR\ 'u
+\fBpam_panic_pw\fR
+
+
+.SH "DESCRIPCI\('ON"
+.PP
+\fBpam_panic_pw\fR establece las contrase\(~nas para el m\('odulo PAM de \fBpam_panic\fR(8)\&.
+.PP
+Hay dos contrase\(~nas: La "contrase\(~na clave" y la "contraseña de p\('anico"\&.
+La "contrase\(~na clave" se usa para autenticaci\('on normal
+mientras la "contrase\(~na de p\('anico" ejecutar\('a la funci\('on de p\('anico\&.
+
+
+.SH "VALORES DEVUELTOS"
+.PP
+0
+.RS 4
+Contrase\(~nas establecidas con \('exito\&.
+.RE
+.PP
+1
+.RS 4
+Acceso denegado\&.
+.RE
+.PP
+2
+.RS 4
+No se pudo abrir el archivo de contrase\(~na\&.
+.RE
+
+
+.SH "ARCHIVOS"
+.PP
+__PAMPANICPW__
+.RS 4
+Programa para establecer y cambiar las contrase\(~nas\&.
+.RE
+.PP
+__PPASSFILE__
+.RS 4
+El archivo de contrase\(~na\&.
+.RE
+
+
+.SH "PROBLEMAS"
+.PP
+Por favor repuerta errores y enviar pull requests a <https://github\&.com/pampanic/pam_panic>\&.
+
+
+.SH "VER TAMBI\('EN"
+.PP
+\fBpam_panic\fR(8),
+\fBcryptsetup\fR(8),
+\fBpam\&.conf\fR(5),
+\fBpam\fR(8)\&.
+
+
+.SH "AUTORES"
+
+.PD 0
+.PP
+pam_panic fue escrito por Bandie <bandie@chaospott\&.de>\&.
+.PP
+Esta p\('agina de man ha sido revisada por Jordy Dickinson <jordy\&.dickinson@icloud\&.com>
+.PP
+Este p\('agina man fue traducido al español por dangered wolf <d@ngeredwolf\&.me>
