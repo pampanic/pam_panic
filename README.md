@@ -19,7 +19,7 @@ There are two passwords you are able to set: the key password and the panic pass
 
 ## Installation
 ### Arch Linux
-There is [pam_panic-git](https://aur.archlinux.org/packages/pam_panic-git/) in the AUR now.
+There is [pam_panic](https://aur.archlinux.org/packages/pam_panic) and [pam_panic-git](https://aur.archlinux.org/packages/pam_panic-git/) in the AUR. Install it with your favourite AUR helper.
 
 ### Ubuntu
 There's a [PPA](https://launchpad.net/~bandie/+archive/ubuntu/pampanic).
