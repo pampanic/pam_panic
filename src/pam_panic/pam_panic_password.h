@@ -10,7 +10,6 @@ LICENSE :      GNU-GPLv3
 #ifndef PPASSFILE
   #error PPASSFILE must be declared!
 #endif
-#define PWPROMPT "Password::"
 
 int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t bReboot, int8_t bPoweroff);
 
