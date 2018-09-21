@@ -1,6 +1,6 @@
 AC_INIT(
     [pam_panic],
-    [0.1.0],
+    [0.2.0],
     [https://github.com/pampanic/pam_panic/issues],
     [pam_panic])
 AC_CONFIG_AUX_DIR([build-aux])
@@ -20,6 +20,8 @@ CFLAGS+=" -std=gnu11"
 
 AM_PROG_AR
 
+AM_GNU_GETTEXT_VERSION(0.19.8)
+AM_GNU_GETTEXT([external])
 
 AC_PATH_PROG([REBOOT], [reboot])
 AC_DEFINE_UNQUOTED([REBOOT], "$REBOOT",
@@ -51,6 +53,7 @@ AC_ENABLE_SHARED([yes])
 
 AC_CONFIG_FILES([
     Makefile
+    po/Makefile.in
     src/pam_panic/Makefile
     src/pam_panic/man/Makefile
     src/pam_panic_pw/Makefile
