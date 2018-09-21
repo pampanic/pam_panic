@@ -15,8 +15,17 @@ config.log
 config.status
 configure
 libtool
+m4/
 Makefile
 Makefile.in
+Makefile.in.in
+po/Makevars.template
+po/POTFILES
+po/Rules-quot
+po/*.header
+po/*.sed
+po/*.sin
+po/*.gmo
 src/pam_panic_pw/pam_panic_pw
 stamp-h1
 test/test
