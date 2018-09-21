@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Bandie <bandie@chaospott.de>
+# This file is distributed under the same license as the pam_panic package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pam_panic 0.2.0\n"
+"Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
+"POT-Creation-Date: 2018-09-21 22:55+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/pam_panic/pam_panic.c:39
+msgid "CRITICAL: Problem with regcomp."
+msgstr ""
+
+#: src/pam_panic/pam_panic.c:116
+msgid ""
+"ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a "
+"valid GPT UUID."
+msgstr ""
+
+#: src/pam_panic/pam_panic.c:152
+msgid "ALERT for argument \"serious\": Device doesn't exist."
+msgstr ""
+
+#: src/pam_panic/pam_panic_authdevice.c:37
+msgid "Key? "
+msgstr ""
+
+#: src/pam_panic/pam_panic_authdevice.c:39
+msgid "Couldn't identify any key after 3 tries."
+msgstr ""
+
+#: src/pam_panic/pam_panic_password.c:31
+msgid "ALERT for passwort option: No password file detected."
+msgstr ""
+
+#: src/pam_panic/pam_panic_password.c:36
+msgid "ERROR: Couldn't open password file."
+msgstr ""
+
+#: src/pam_panic/pam_panic_password.c:48
+msgid "CRITICAL: Password file is corrupt!"
+msgstr ""
+
+#: src/pam_panic/pam_panic_password.c:93
+msgid "Password: "
+msgstr ""
+
+#: src/pam_panic_pw/pam_panic_pw.c:28
+#, c-format
+msgid "ERROR opening file!\n"
+msgstr ""
+
+#: src/pam_panic_pw/pam_panic_pw.c:64
+msgid "Key password: "
+msgstr ""
+
+#: src/pam_panic_pw/pam_panic_pw.c:65
+msgid "Panic password: "
+msgstr ""
+
+#: src/pam_panic_pw/pam_panic_pw.c:66
+msgid "Retype key password: "
+msgstr ""
+
+#: src/pam_panic_pw/pam_panic_pw.c:67
+msgid "Retype panic password: "
+msgstr ""
+
+#: src/pam_panic_pw/pam_panic_pw.c:73
+#, c-format
+msgid "Please run this program under root. Write access to %s is mandatory.\n"
+msgstr ""
+
+#: src/pam_panic_pw/pam_panic_pw.c:96
+#, c-format
+msgid "Didn't work. Bye.\n"
+msgstr ""
+
+#: src/pam_panic_pw/pam_panic_pw.c:99
+#, c-format
+msgid "Password didn't match. Try again.\n"
+msgstr ""

@@ -22,6 +22,7 @@ Makefile.in.in
 po/Makevars.template
 po/POTFILES
 po/Rules-quot
+po/stamp-po
 po/*.header
 po/*.sed
 po/*.sin
