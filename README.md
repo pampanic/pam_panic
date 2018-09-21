@@ -18,11 +18,14 @@ There are two passwords you are able to set: the key password and the panic pass
 
 
 ## Installation
-### Arch Linux
-There is [pam_panic-git](https://aur.archlinux.org/packages/pam_panic-git/) in the AUR now.
+### Arch Linux AUR
+There is
+- [pam_panic](https://aur.archlinux.org/packages/pam_panic/) - Actual [releases](https://github.com/pampanic/pam_panic/releases) and
+- [pam_panic-git](https://aur.archlinux.org/packages/pam_panic-git/) for this actual git repository.
 
 ### Ubuntu
-There's a [PPA](https://launchpad.net/~bandie/+archive/ubuntu/pampanic).
+There's a [PPA](https://launchpad.net/~bandie/+archive/ubuntu/pampanic) updating for new [releases](https://github.com/pampanic/pam_panic/releases).
+
 To install the package using the PPA:
 ```
 sudo add-apt-repository ppa:bandie/pampanic
