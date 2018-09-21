@@ -17,6 +17,8 @@ LICENSE :      GNU-GPLv3
 #include <security/pam_modules.h>
 #include <security/pam_ext.h>
 #include <syslog.h>
+#include "../../lib/gettext.h"
+
 #include "pam_panic_reject.h"
 #include "pam_panic_authdevice.h"
 #include "pam_panic_password.h"
