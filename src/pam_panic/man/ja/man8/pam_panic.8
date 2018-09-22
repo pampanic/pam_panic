@@ -26,8 +26,8 @@ pam_panic \- 緊急時に機密データを保護するPAMモジュール
 
 
 .SH "概要"
-.HP \w'\fBpam_panic\&.so\fR\ 'u
-\fBpam_panic\&.so\fR [password] [allow=\fIUUID(GPT)\fR] [reject=\fIUUID(GPT)\fR] [reboot] [poweroff] [serious=\fIUUID\fR]
+.HP \w'\fBpam_panic.so\fR\ 'u
+\fBpam_panic.so\fR [password] [allow=\fIUUID(GPT)\fR] [reject=\fIUUID(GPT)\fR] [reboot] [poweroff] [serious=\fIUUID\fR]
 
 
 .SH "説明"
@@ -121,7 +121,7 @@ LUKSヘッダーを消去した場合、データは復元できなくなりま�
 
 .SH "USAGE"
 .PP
-モジュールを使用するためには、PAMを設定する必要があります。詳細については、 \fBpam\&.conf(5)\fR を参照してください。
+モジュールを使用するためには、PAMを設定する必要があります。詳細については、 \fBpam.conf(5)\fR を参照してください。
 .PP
 多くの場合、PAM設定ファイルの先頭に次の内容を設定すればよいでしょう。
 .PD 0
@@ -177,7 +177,7 @@ __PAMPANICPW__
 
 .SH "バグ報告"
 .PP
-<https://github\&.com/pampanic/pam_panic> で、バグの報告やプルリクエストを行ってください。
+<https://github.com/pampanic/pam_panic> で、バグの報告やプルリクエストを行ってください。
 
 
 .SH "関連項目"
@@ -185,12 +185,12 @@ __PAMPANICPW__
 \fBpam_panic_pw\fR(1),
 \fBcryptsetup\fR(8),
 \fBpam\fR(8),
-\fBpam\&.conf\fR(5)
+\fBpam.conf\fR(5)
 
 
 .SH "著者"
 .PD 0
 .PP
-pam_panic は Bandie <bandie@chaospott\&.de> によって作成されました。
+pam_panic は Bandie <bandie@chaospott.de> によって作成されました。
 .PP
-この翻訳は Chromium Neptune <chromium@neplanet\&.com> によって作成されています。
+この翻訳は Chromium Neptune <chromium@neplanet.com> によって作成されています。

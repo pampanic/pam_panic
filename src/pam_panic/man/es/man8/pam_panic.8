@@ -26,20 +26,20 @@ pam_panic \- un m\('odulo de PAM para controlar acceso usando media removible (c
 
 
 .SH "SINOPSIS"
-.HP \w'\fBpam_panic\&.so\fR\ 'u
-\fBpam_panic\&.so\fR [allow=\fIUUID(GPT)\fR] [reject=\fIUUID(GPT)\fR] [reboot] [poweroff] [serious=\fIUUID\fR]
+.HP \w'\fBpam_panic.so\fR\ 'u
+\fBpam_panic.so\fR [allow=\fIUUID(GPT)\fR] [reject=\fIUUID(GPT)\fR] [reboot] [poweroff] [serious=\fIUUID\fR]
 
 
 .SH "DESCRIPCI\('ON"
 .PP
-El m\('odulo pam_panic protege los datos delicados y proporci\('ona una funci\('on p\('anica para emergencias\&.
+El m\('odulo pam_panic protege los datos delicados y proporci\('ona una funci\('on p\('anica para emergencias.
 .PP
 Hay dos opciones posibles para utilizar este modulo de PAM:
 .PD 0
 .PP
 Primera opci\('on posible:
 .RS 2
-Hay dos medias removibles que est\('an usando como claves: La clave de autenticaci\('on y la clave de p\('anico\&.
+Hay dos medias removibles que est\('an usando como claves: La clave de autenticaci\('on y la clave de p\('anico.
 La clave para autenticaci\('on se permite ingresar su contrase\(~na mientras la clave para p\('anico va a llamar la funci\('on de p\('anico.
 .RE
 Segunda opci\('on posible:
@@ -51,17 +51,17 @@ Hay dos contrase\(~nas: La contrase\(~na para autenticaci\('on y la contrase\(~n
 .PP
 La funci\('on de p\('anico:
 .RS 2
-El comportamiento de esta función se define a través de los argumentos \fBreboot\fR, \fBpoweroff\fR o \fBserious\fR\&. Vea la secci\('on de \fBOPCI\('ONES\fR para m\('as detalles\&.
+El comportamiento de esta función se define a través de los argumentos \fBreboot\fR, \fBpoweroff\fR o \fBserious\fR. Vea la secci\('on de \fBOPCI\('ONES\fR para m\('as detalles.
 .RE
 .SH "OPCI\('ONES"
 .PP
 \fBpassword\fR
 .RS 4
-Activa la funci\('on de contrase\(~a con p\('anico y contrase\(~na clave\&.
-Si las opciones \fBpermitir\fR y \fBrechazar\fR son provistas esta opci\('on ser\('a ignorada\&.
+Activa la funci\('on de contrase\(~a con p\('anico y contrase\(~na clave.
+Si las opciones \fBpermitir\fR y \fBrechazar\fR son provistas esta opci\('on ser\('a ignorada.
 .PD 0
 .PP
-Estas contraseñas se pueden configurar con el comando \fBpam_panic_pw\fR(1)\&.
+Estas contraseñas se pueden configurar con el comando \fBpam_panic_pw\fR(1).
 .RE
 .PD 1
 .PP
@@ -72,10 +72,10 @@ Es el UUID del dispositivo para autenticaci\('on.
 .PD 0
 .PP
 .PD 1
-El dispositivo debe estar formateado por GPT y contener al menos una partici\('on\&.
-El UUID de un dispositivo se ve como \[Fo]12345678-9ABC-DEF0-1234-56789ABCDEF0\[Fc]\&.
+El dispositivo debe estar formateado por GPT y contener al menos una partici\('on.
+El UUID de un dispositivo se ve como \[Fo]12345678-9ABC-DEF0-1234-56789ABCDEF0\[Fc].
 .PP
-Vea \fBC\('OMO DETERMINAR MIS UUIDS\fR para detalles\&.
+Vea \fBC\('OMO DETERMINAR MIS UUIDS\fR para detalles.
 .RE
 .PP
 
@@ -85,31 +85,31 @@ Es el UUID del dispositivo para emergencias. Cuando este dispositivo est\('a pre
 .PD 0
 .PP
 .PD 1
-El dispositivo debe estar formateado por GPT y contener al menos una partici\('on\&.
-El UUID de un dispositivo se ve como \[Fo]12345678-9ABC-DEF0-1234-56789ABCDEF0\[Fc]\&.
+El dispositivo debe estar formateado por GPT y contener al menos una partici\('on.
+El UUID de un dispositivo se ve como \[Fo]12345678-9ABC-DEF0-1234-56789ABCDEF0\[Fc].
 .PP
-Vea \fBC\('OMO DETERMINAR MIS UUIDS\fR para detalles\&.
+Vea \fBC\('OMO DETERMINAR MIS UUIDS\fR para detalles.
 .RE
 .PP
 
 \fBreboot\fR (recomendado)
 .RS 4
-Indica que la sistema debe reiniciarse cuando se encontra el dispositivo especificado por \fBreject\fR\&.
+Indica que la sistema debe reiniciarse cuando se encontra el dispositivo especificado por \fBreject\fR.
 .PP
-Si \fBpoweroff\fR est\('a especificado tambi\('en, \fBreboot\fR estar\('a ignorado\&.
+Si \fBpoweroff\fR est\('a especificado tambi\('en, \fBreboot\fR estar\('a ignorado.
 .RE
 .PP
 
 \fBpoweroff\fR
 .RS 4
-Indica que la sistema debe apagarse cuando se encontra el dispositivo especificado por \fBreject\fR\&.
-Esta opci\('on no se recomienda por razones de seguridad\&.
+Indica que la sistema debe apagarse cuando se encontra el dispositivo especificado por \fBreject\fR.
+Esta opci\('on no se recomienda por razones de seguridad.
 .RE
 .PP
 
 \fBserious=\fR\fB\fIUUID\fR\fR
 .RS 4
-Es el UUID del dispositivo que contene el encabezamiento de LUKS que estar\('a borrado cuando encuentra el dispositivo especificado por \fBreject\fR\&.
+Es el UUID del dispositivo que contene el encabezamiento de LUKS que estar\('a borrado cuando encuentra el dispositivo especificado por \fBreject\fR.
 .PP
 NOTA: Se deberi\('a hacer una copia del encabezamiento de LUKS antes de usar esta funci\('on.
 .RE
@@ -118,7 +118,7 @@ NOTA: Se deberi\('a hacer una copia del encabezamiento de LUKS antes de usar est
 
 .SH "USAR"
 .PP
-Para activar el m\('odulo se tiene que configurar PAM\&. Vea \fBpam\&.conf(5)\fR para detalles\&.
+Para activar el m\('odulo se tiene que configurar PAM. Vea \fBpam.conf(5)\fR para detalles.
 .PP
 En general, se necesita agregar lo siguiente al comienzo de un archivo de configuraci\('on PAM:
 .PD 0
@@ -137,31 +137,31 @@ account    requisite    __PAMPANICSO__
 
 .SH "C\('OMO DETERMINAR MIS UUIDS"
 .PP
-Se puede encontrar sus UUIDs en \fI/dev/disk/by-partuuid\fR\&.
-Es posible que desee ejecutar \[Fo]\fBls -l /dev/disk/by-partuuid\fR\[Fc] en su shell favorito para encontrar cu\('al UUID es su dispositivo\&.
+Se puede encontrar sus UUIDs en \fI/dev/disk/by-partuuid\fR.
+Es posible que desee ejecutar \[Fo]\fBls -l /dev/disk/by-partuuid\fR\[Fc] en su shell favorito para encontrar cu\('al UUID es su dispositivo.
 
 .SH "VALORES DE RETORNO"
 .PP
 PAM_SUCCESS
 .RS 4
-Indica que acceso fue permitido\&.
+Indica que acceso fue permitido.
 .RE
 .PP
 PAM_IGNORE
 .RS 4
-Indica que se ha producido un error\&. El m\('odulo estar\('a ignorado.
+Indica que se ha producido un error. El m\('odulo estar\('a ignorado.
 .RE
 .PP
 PAM_MAXTRIES
 .RS 4
-El media removible no fue detectados\&.
+El media removible no fue detectados.
 .RE
 
 .SH "ARCHIVOS"
 .PP
 __PAMPANICSO__
 .RS 4
-Este m\('odulo PAM\&.
+Este m\('odulo PAM.
 .RE
 .PP
 __PAMPANICPW__
@@ -171,17 +171,17 @@ Cambiador de contraseña
 
 .SH "ERRORES"
 .PP
-Por favor reportar errores y enviar pull requests a <https://github\&.com/pampanic/pam_panic>\&.
+Por favor reportar errores y enviar pull requests a <https://github.com/pampanic/pam_panic>.
 
 
 .SH "VER TAMBI\('EN"
 .PP
-\fBcryptsetup\fR(8), \fBpam\fR(8), \fBpam\&.conf\fR(5)
+\fBcryptsetup\fR(8), \fBpam\fR(8), \fBpam.conf\fR(5)
 
 
 .SH "AUTORES"
 .PD 0
 .PP
-pam_panic fue escrito por Bandie <bandie@chaospott\&.de>\&.
+pam_panic fue escrito por Bandie <bandie@chaospott.de>.
 .PP
-Este p\('agina man fue traducido al espa\(~nol por Jordy Dickinson <jordy\&.dickinson@icloud\&.com> y dangered wolf <d@ngeredwolf\&.me>\&.
+Este p\('agina man fue traducido al espa\(~nol por Jordy Dickinson <jordy.dickinson@icloud.com> y dangered wolf <d@ngeredwolf.me>.
