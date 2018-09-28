@@ -103,7 +103,7 @@ See \fBHOW TO DETERMINE MY UUIDS\fR for details.
 
 \fBreboot\fR (recommended)
 .RS 4
-Indicates that the system should reboot upon encountering the device specified with \fBreject=UUID(GPT)\fR.
+Indicates that the system should reboot when the \fIpanic function\fR is triggered.
 .PD 0
 .PP
 This option is recommended.
@@ -115,14 +115,14 @@ If \fBpoweroff\fR is also specified, \fBreboot\fR will be ignored.
 
 \fBpoweroff\fR
 .RS 4
-Indicates that the system should shut down upon encountering the device specified with \fBreject=UUID(GPT)\fR.
+Indicates that the system should shut down when the \fIpanic function\fR is triggered.
 This option is discouraged for security reasons.
 .RE
 .PP
 
 \fBserious=\fR\fB\fIUUID\fR\fR
 .RS 4
-The UUID of the device containing the LUKS header to erase upon encountering the device specified with \fBreject\fR or with the panic password you've set. Erasing the LUKS header will render the data unreadable.
+The UUID of the device containing the LUKS header to erase when the \fIpanic function\fR is triggered. Erasing the LUKS header will render the data unreadable.
 .PD 0
 .PP
 The internal command which will be executed is "\fBcryptsetup luksErase [UUID]\fR".
@@ -168,7 +168,7 @@ Access was granted.
 .PP
 PAM_IGNORE
 .RS 4
-An error has occured. The module will be ignored..
+An error has occured. The module will be ignored.
 .RE
 .PP
 PAM_MAXTRIES
