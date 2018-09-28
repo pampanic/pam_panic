@@ -6,11 +6,9 @@ DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */
 
+#include "pam_panic_authdevice.h"
 
-#include <stdint.h>
 #include <unistd.h>
-
-#include "../config.h"
 
 #include "../../lib/gettext.h"
 #include <security/pam_modules.h>

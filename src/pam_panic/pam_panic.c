@@ -6,6 +6,8 @@ DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */
 
+#include "pam_panic.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

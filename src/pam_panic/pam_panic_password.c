@@ -6,20 +6,18 @@ DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */
 
+#include "pam_panic_password.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
 
-#include "../config.h"
 #include "../../lib/gettext.h"
 
-#include <security/pam_modules.h>
-#include <security/pam_ext.h>
 #include <syslog.h>
 #include <crypt.h>
-#include "pam_panic_password.h"
 #include "pam_panic_reject.h"
 
 #define _(String) gettext(String)

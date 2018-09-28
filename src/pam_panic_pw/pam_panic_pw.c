@@ -7,7 +7,7 @@ LICENSE :      GNU-GPLv3
 */
 
 
-
+#include "pam_panic_pw.h"
 
 #include <stdio.h>
 #include <stdlib.h>
