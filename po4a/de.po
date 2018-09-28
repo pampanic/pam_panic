@@ -1,0 +1,564 @@
+# German translations for po package
+# German translation for po
+# Copyright (C) 2018 Free Software Foundation, Inc.
+# This file is distributed under the same license as the po package.
+#  <bandie@chaospott.de>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: po 4a\n"
+"POT-Creation-Date: 2018-09-28 22:37+0200\n"
+"PO-Revision-Date: 2018-09-22 22:57+0200\n"
+"Last-Translator:  <bandie@chaospott.de>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: TH
+#: ../src/pam_panic/man/man8/pam_panic.8:9
+#, no-wrap
+msgid "PAM_PANIC"
+msgstr "PAM_PANIC"
+
+#. type: TH
+#: ../src/pam_panic/man/man8/pam_panic.8:9
+#, no-wrap
+msgid "2018-03-26"
+msgstr "2018-09-28"
+
+#. type: TH
+#: ../src/pam_panic/man/man8/pam_panic.8:9
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:9
+#, no-wrap
+msgid "PAM Panic Manual"
+msgstr "PAM Panic Handbuch"
+
+#.  -----------------------------------------------------------------
+#.  * MAIN CONTENT STARTS HERE *
+#.  -----------------------------------------------------------------
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:24
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:23
+#, no-wrap
+msgid "NAME"
+msgstr "NAME"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:26
+msgid ""
+"pam_panic - PAM module with panic function to protect sensitive data in "
+"emergency situations"
+msgstr ""
+"pam_panic - PAM-Module mit Panik-Funktion zum Schützen von wichtigen Daten "
+"in Notsituationen."
+
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:28
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:27
+#, no-wrap
+msgid "SYNOPSIS"
+msgstr "ÜBERSICHT"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:31
+msgid ""
+"B<pam_panic.so> [password] [allow=I<UUID(GPT)>] [reject=I<UUID(GPT)>] "
+"[reboot] [poweroff] [serious=I<UUID>]"
+msgstr ""
+"B<pam_panic.so> [password] [allow=I<UUID(GPT)>] [reject=I<UUID(GPT)>] "
+"[reboot] [poweroff] [serious=I<UUID>]"
+
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:33
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:32
+#, no-wrap
+msgid "DESCRIPTION"
+msgstr "BESCHREIBUNG"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:36
+msgid ""
+"The pam_panic PAM module protects sensitive data and provides a panic "
+"function for emergency situations."
+msgstr ""
+"Das pam_panic PAM-Modul schützt wichtige Daten durch das Anbieten einer "
+"Panik-Funktion"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:38
+msgid "There are two possible options in how to use this PAM module:"
+msgstr "Es gibt zwei Möglichkeiten der Verwendung:"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:41
+msgid "First possible option:"
+msgstr "Erste Möglichkeit:"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:44
+msgid ""
+"There are two removable media which work as keys: the auth key and the panic "
+"key.  The auth key will let you pass to the password prompt whereas the "
+"panic key will call the I<panic function>."
+msgstr ""
+"Man verwendet zwei Wecheldatenträger, die als Schlüssel dienen. Hierbei "
+"funktioniert eines als Authentifizierungsschlüssel und eines als "
+"Panikschlüssel. Der Panikschlüssel führt die I<Panikfunktion> aus."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:47
+msgid "See options B<allow> and B<reject>."
+msgstr "Sie dazu die Optionen B<allow> und B<reject>."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:50
+msgid "Second possible option:"
+msgstr "Zweite Möglichkeit:"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:52
+msgid ""
+"There are two passwords: the key password and the panic password. The key "
+"password will let you pass to the original password prompt whereas the panic "
+"password will call the I<panic function>."
+msgstr ""
+"Man verwendet zwei Passwörter, die als Schlüssel dienen. Dabei wird ein "
+"Schlüsselpasswort (Key password) und ein Panikpasswort (Panic password) "
+"festgelegt.Das Panikpasswort wird hierbei die I<Panikfunktion> aufrufen."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:55
+msgid "See option B<password>."
+msgstr "Siehe dazu die Option B<password>."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:60
+msgid "The panic function:"
+msgstr "Die Panikfunktion:"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:62
+msgid ""
+"The behaviour of this function is defined through the arguments B<reboot>, "
+"B<poweroff> and/or B<serious>. See the B<OPTIONS> section for details."
+msgstr ""
+"Das Verhalten der Panikfunktion wird durch die Argumente B<reboot>, "
+"B<poweroff> und/oder B<serious> definiert. Siehe dazu den Abschnitt "
+"B<OPTIONEN>."
+
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:65
+#, no-wrap
+msgid "OPTIONS"
+msgstr "OPTIONEN"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:68
+msgid "B<password>"
+msgstr "B<password>"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:71
+msgid ""
+"Activates the password function having a panic and key password.  If the "
+"options B<allow> and B<reject> are provided this option will be ignored."
+msgstr ""
+"Aktiviert die Passwortfunktion mit einem Panik- und Schlüsselpasswort. Wenn "
+"B<allow> und B<reject> gesetzt sind, wird diese Option ignoriert."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:74
+msgid "These passwords can be set with the B<pam_panic_pw>(1) command."
+msgstr ""
+"Diese Passwörter können mit dem B<pam_panic_pw>(1) Programm gesetzt werden."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:79
+msgid "B<allow=>I<UUID(GPT)>"
+msgstr "B<allow=>I<UUID(GPT)>"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:81
+msgid "The UUID of the device to be used for authentication (the auth key)."
+msgstr ""
+"Diese Geräte-UUID wird zur Authentifizierung benutzt "
+"(Authentifierungsschlüssel)."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:86
+#: ../src/pam_panic/man/man8/pam_panic.8:99
+msgid ""
+"The device must be GPT-formatted and contain at least one partition.  The "
+"UUID of a GPT-formatted device looks like \"12345678-9ABC-"
+"DEF0-1234-56789ABCDEF0\"."
+msgstr ""
+"Der Wechseldatenträger muss GPT-formatiert sein und mindestens eine "
+"Partition enthalten.Die UUID eines GPT-formatierten Gerätes sieht "
+"beispielsweise so aus: \"12345678-9ABC-DEF0-1234-56789ABCDEF0\"."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:88
+#: ../src/pam_panic/man/man8/pam_panic.8:101
+msgid "See B<HOW TO DETERMINE MY UUIDS> for details."
+msgstr "Weitere Informationen im Abschnitt B<WIE BESTIMME ICH MEINE UUIDS>."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:92
+msgid "B<reject=>I<UUID(GPT)>"
+msgstr "B<reject=>I<UUID(GPT)>"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:94
+msgid ""
+"The UUID of the device to be used in emergencies. The presence of this "
+"device will trigger B<reboot>, B<poweroff> and/or the panic function, "
+"depending on whether B<reboot>, B<poweroff>, and/or B<serious> are specified."
+msgstr ""
+"Diese Geräte-UUID, welches in Notfällen benutzt wird. Die Verwendung des "
+"Gerätes wird B<reboot>, B<poweroff> und/oder die Panikfunktion auslösen, "
+"sofern B<reboot> B<poweroff> und/oder B<serious> angegeben wurden."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:105
+msgid "B<reboot> (recommended)"
+msgstr "B<reboot> (empfohlen)"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:107
+msgid ""
+"Indicates that the system should reboot when the I<panic function> is "
+"triggered."
+msgstr ""
+"Sorgt für ein Neustart des Systems, sobald die I<Panikfunktion> ausgelöst "
+"wird."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:110
+msgid "This option is recommended."
+msgstr "Diese Option ist empfohlen."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:113
+msgid "If B<poweroff> is also specified, B<reboot> will be ignored."
+msgstr ""
+"Wenn B<poweroff> ebenfalls angegeben worden ist, wird B<reboot> ignoriert."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:117
+msgid "B<poweroff>"
+msgstr "B<poweroff>"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:120
+msgid ""
+"Indicates that the system should shut down when the I<panic function> is "
+"triggered.  This option is discouraged for security reasons."
+msgstr ""
+"Sorgt für ein Herunterfahren des Systems, sobald die I<Panikfunktion> "
+"ausgeführt wird. Diese Option ist aus Sicherheitsgründen nicht "
+"empfehlenswert."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:124
+msgid "B<serious=>I<UUID>"
+msgstr "B<serious=>I<UUID>"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:126
+msgid ""
+"The UUID of the device containing the LUKS header to erase when the I<panic "
+"function> is triggered. Erasing the LUKS header will render the data "
+"unreadable."
+msgstr ""
+"Die Geräte-UUID, dessen LUKS-Header zerstört werden soll, sobald die "
+"I<Panikfunktion> ausgelöst wurde. Das Zerstören der LUKS-Header hat zu "
+"Folge, dass die Daten nicht mehr lesbar sein werden."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:129
+msgid ""
+"The internal command which will be executed is \"B<cryptsetup luksErase "
+"[UUID]>\"."
+msgstr ""
+"Der interne Befehl, der ausgeführt werden wird ist \"B<cryptsetup luksErase "
+"[UUID]>\"."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:132
+msgid ""
+"NOTE: You should make a backup of the LUKS header before using this function."
+msgstr ""
+"HINWEIS: Ein Backup des LUKS-Headers wäre vor Verwendung dieser Funktion "
+"sinnvoll."
+
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:136
+#, no-wrap
+msgid "USAGE"
+msgstr "ANWENDUNG"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:139
+msgid ""
+"To activate the module you have to configure PAM. See B<pam.conf(5)> for "
+"details."
+msgstr ""
+"Um dieses Modul zu aktivieren, musst du PAM konfigurieren. Siehe B<pam."
+"conf(5)>."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:141
+msgid ""
+"In general, you will want to add the following to the top of a PAM "
+"configuration file:"
+msgstr ""
+"In allgemeinen Worten gefasst möchte man folgende Zeilen am Anfang einer PAM-"
+"Konfigurationsdatei hinzufügen:"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:144
+msgid ""
+"auth requisite __PAMPANICSO__ auth=E<lt>UUIDE<gt> reject=E<lt>UUIDE<gt> "
+"reboot serious=E<lt>UUIDE<gt>"
+msgstr ""
+"auth requisite __PAMPANICSO__ auth=E<lt>UUIDE<gt> reject=E<lt>UUIDE<gt> "
+"reboot serious=E<lt>UUIDE<gt>"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:146
+#: ../src/pam_panic/man/man8/pam_panic.8:152
+msgid "account requisite __PAMPANICSO__"
+msgstr "account requisite __PAMPANICSO__"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:148
+msgid "Or:"
+msgstr "Oder auch:"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:150
+msgid "auth requisite __PAMPANICSO__ password reboot serious=E<lt>UUIDE<gt>"
+msgstr ""
+
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:156
+#, no-wrap
+msgid "HOW TO DETERMINE MY UUIDS"
+msgstr "WIE BESTIMME ICH MEINE UUIDS"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:160
+msgid ""
+"You will find your UUIDs in I</dev/disk/by-partuuid>.  You might want to "
+"execute \"B<ls -l /dev/disk/by-partuuid/>\" in your favourite shell to find "
+"out which UUID is which device."
+msgstr ""
+"Die UUIDs können unter I</dev/disk/by-partuuid> gefunden werden. Um "
+"nachvollziehen zu können, welcher Wecheldatenträger welches ist, ist es "
+"ratsam \"B<ls -l /dev/disk/by-partuuid/>\" in der Lieblingsshell auszuführen."
+
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:162
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:41
+#, no-wrap
+msgid "RETURN VALUES"
+msgstr "RÜCKGABEWERTE"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:165
+msgid "PAM_SUCCESS"
+msgstr "PAM_SUCCESS"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:167
+msgid "Access was granted."
+msgstr "Zugriff wurde gewährt."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:170
+msgid "PAM_IGNORE"
+msgstr "PAM_IGNORE"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:172
+msgid "An error has occured. The module will be ignored."
+msgstr "Ein Fehler ist aufgetreten. Dieses Modul wird ignoriert."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:175
+msgid "PAM_MAXTRIES"
+msgstr "PAM_MAXTRIES"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:177
+msgid "The removable media was not detected."
+msgstr "Der Wechseldatenträger wurde nicht erkannt."
+
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:180
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:59
+#, no-wrap
+msgid "FILES"
+msgstr "DATEIEN"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:183
+msgid "__PAMPANICSO__"
+msgstr "__PAMPANICSO__"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:185
+msgid "This PAM module, which does everything of this above."
+msgstr "Dieses PAM-Modul, welches für alles zuständig ist."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:188
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:62
+msgid "__PAMPANICPW__"
+msgstr "__PAMPANICPW__"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:190
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:64
+msgid "Program to set and change the passwords."
+msgstr "Programm zum Setzen und Verändern der Passwörter."
+
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:193
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:72
+#, no-wrap
+msgid "BUGS"
+msgstr "BUGS"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:196
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:75
+msgid ""
+"Please report bugs and send pull requests to E<lt>https://github.com/"
+"pampanic/pam_panicE<gt>."
+msgstr ""
+"Fehlerberichte (möglichst auf Englisch) und Codeverbesserungen können "
+"hier eingereicht werden: E<lt>https://github.com/pampanic/pam_panicE<gt>."
+
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:198
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:77
+#, no-wrap
+msgid "SEE ALSO"
+msgstr "SIEHE AUCH"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:204
+msgid "B<pam_panic_pw>(1), B<cryptsetup>(8), B<pam>(8), B<pam.conf>(5)"
+msgstr "B<pam_panic_pw>(1), B<cryptsetup>(8), B<pam>(8), B<pam.conf>(5)"
+
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:206
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:85
+#, no-wrap
+msgid "AUTHORS"
+msgstr "AUTOREN"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:210
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:90
+msgid "pam_panic was written by Bandie E<lt>bandie@chaospott.deE<gt>."
+msgstr "pam_panic wurde von Bandie E<lt>bandie@chaospott.deE<gt> entwickelt."
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:211
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:92
+msgid ""
+"This man page has been revised by Jordy Dickinson E<lt>jordy."
+"dickinson@icloud.comE<gt>"
+msgstr ""
+"Diese man page wurde von Bandie E<lt>bandie@chaospott.deE<gt> "
+"ins Deutsche übersetzt."
+
+#. type: TH
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:9
+#, no-wrap
+msgid "PAM_PANIC_PW"
+msgstr "PAM_PANIC_PW"
+
+#. type: TH
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:9
+#, no-wrap
+msgid "2018-03-31"
+msgstr "2018-09-28"
+
+#. type: Plain text
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:25
+msgid ""
+"pam_panic_pw - Set and change the passwords for the B<pam_panic>(8) PAM "
+"module."
+msgstr "pam_panic_pw - Setzen der Passwörter für das B<pam_panic>(8) PAM-Modul."
+
+#. type: Plain text
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:30
+msgid "B<pam_panic_pw>"
+msgstr "B<pam_panic_pw>"
+
+#. type: Plain text
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:35
+msgid "B<pam_panic_pw> sets the passwords for the B<pam_panic>(8) PAM module."
+msgstr "B<pam_panic_pw> setzt die Passwörter für das B<pam_panic>(8) PAM-Modul."
+
+#. type: Plain text
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:39
+msgid ""
+"There are two passwords: the \"key password\" and the \"panic password\".  "
+"The \"key password\" is used for the normal authentication whereas the "
+"\"panic password\" will execute the panic function."
+msgstr ""
+"Man verwendet zwei Passwörter, die als Schlüssel dienen. Dabei wird ein "
+"\"Schlüsselpasswort\" und ein \"Panikpasswort\" festgelegt. "
+"Das Panikpasswort wird hierbei die I<Panikfunktion> aufrufen."
+
+#. type: Plain text
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:44
+msgid "0"
+msgstr "0"
+
+#. type: Plain text
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:46
+msgid "Passwords set successfully."
+msgstr "Passwörter erfolgreich gesetzt."
+
+#. type: Plain text
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:49
+msgid "1"
+msgstr "1"
+
+#. type: Plain text
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:51
+msgid "Access denied."
+msgstr "Keine Berechtigungen."
+
+#. type: Plain text
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:54
+msgid "2"
+msgstr "2"
+
+#. type: Plain text
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:56
+msgid "Could not open the password file."
+msgstr "Konnte Passwortdatei nicht öffnen."
+
+#. type: Plain text
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:67
+msgid "__PPASSFILE__"
+msgstr "__PPASSFILE__"
+
+#. type: Plain text
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:69
+msgid "The password file."
+msgstr "Die Passwortdatei."
+
+#. type: Plain text
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:83
+msgid "B<pam_panic>(8), B<cryptsetup>(8), B<pam.conf>(5), B<pam>(8)."
+msgstr "B<pam_panic>(8), B<cryptsetup>(8), B<pam.conf>(5), B<pam>(8)."
