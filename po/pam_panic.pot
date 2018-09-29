@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-09-29 18:17+0200\n"
+"POT-Creation-Date: 2018-09-30 00:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,13 +21,13 @@ msgstr ""
 msgid "CRITICAL: Problem with regcomp."
 msgstr ""
 
-#: src/pam_panic/pam_panic.c:118
+#: src/pam_panic/pam_panic.c:122
 msgid ""
 "ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a "
 "valid GPT UUID."
 msgstr ""
 
-#: src/pam_panic/pam_panic.c:154
+#: src/pam_panic/pam_panic.c:158
 msgid "ALERT for argument \"serious\": Device doesn't exist."
 msgstr ""
 
@@ -60,33 +60,33 @@ msgstr ""
 msgid "ERROR opening file!\n"
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:64
+#: src/pam_panic_pw/pam_panic_pw.c:66
 msgid "Key password: "
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:65
+#: src/pam_panic_pw/pam_panic_pw.c:67
 msgid "Panic password: "
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:66
+#: src/pam_panic_pw/pam_panic_pw.c:68
 msgid "Confirm key password: "
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:67
+#: src/pam_panic_pw/pam_panic_pw.c:69
 msgid "Confirm panic password: "
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:73
+#: src/pam_panic_pw/pam_panic_pw.c:75
 #, c-format
 msgid "Please run this program under root. Write access to %s is mandatory.\n"
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:96
+#: src/pam_panic_pw/pam_panic_pw.c:98
 #, c-format
 msgid "Didn't work. Bye.\n"
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:99
+#: src/pam_panic_pw/pam_panic_pw.c:101
 #, c-format
 msgid "Password didn't match. Try again.\n"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-09-29 18:17+0200\n"
+"POT-Creation-Date: 2018-09-30 00:30+0200\n"
 "PO-Revision-Date: 2018-09-29 18:33+0200\n"
 "Last-Translator: Dashie <dashie@otter.sh>\n"
 "Language-Team: French\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "CRITICAL: Problem with regcomp."
 msgstr "CRITICAL: Problème avec regcomp."
 
-#: src/pam_panic/pam_panic.c:118
+#: src/pam_panic/pam_panic.c:122
 msgid ""
 "ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a "
 "valid GPT UUID."
@@ -30,7 +30,7 @@ msgstr ""
 "ERROR: Arguments invalides. Notez que \"allow\" et \"reject\" doivent avoir "
 "un GPU UUID valide."
 
-#: src/pam_panic/pam_panic.c:154
+#: src/pam_panic/pam_panic.c:158
 msgid "ALERT for argument \"serious\": Device doesn't exist."
 msgstr "ALERT pour l'argument \"serious\": Le périphérique n'existe pas."
 
@@ -57,42 +57,42 @@ msgstr "CRITICAL: Le fichier de mot de passe est corrompu!"
 
 #: src/pam_panic/pam_panic_password.c:91
 msgid "Password: "
-msgstr "Mot de passe: "
+msgstr "Mot de passe : "
 
 #: src/pam_panic_pw/pam_panic_pw.c:28
 #, c-format
 msgid "ERROR opening file!\n"
 msgstr "ERROR en ouvrant le fichier.\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:64
-msgid "Key password: "
-msgstr "Mot de passe clé: "
-
-#: src/pam_panic_pw/pam_panic_pw.c:65
-msgid "Panic password: "
-msgstr "Mot de passe panique: "
-
 #: src/pam_panic_pw/pam_panic_pw.c:66
-msgid "Confirm key password: "
-msgstr "Confirmer le mot de passe de clé:"
+msgid "Key password: "
+msgstr "Mot de passe clé : "
 
 #: src/pam_panic_pw/pam_panic_pw.c:67
-msgid "Confirm panic password: "
-msgstr "Confirmer le mot de passe de panique: "
+msgid "Panic password: "
+msgstr "Mot de passe panique : "
 
-#: src/pam_panic_pw/pam_panic_pw.c:73
+#: src/pam_panic_pw/pam_panic_pw.c:68
+msgid "Confirm key password: "
+msgstr "Confirmer le mot de passe de clé :"
+
+#: src/pam_panic_pw/pam_panic_pw.c:69
+msgid "Confirm panic password: "
+msgstr "Confirmer le mot de passe de panique : "
+
+#: src/pam_panic_pw/pam_panic_pw.c:75
 #, c-format
 msgid "Please run this program under root. Write access to %s is mandatory.\n"
 msgstr ""
 "Veuillez exécuter ce programme avec les privilèges root. L'accès en écriture "
 "à %s est obligatoire.\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:96
+#: src/pam_panic_pw/pam_panic_pw.c:98
 #, c-format
 msgid "Didn't work. Bye.\n"
 msgstr "N'a pas fonctionné. Au revoir.\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:99
+#: src/pam_panic_pw/pam_panic_pw.c:101
 #, c-format
 msgid "Password didn't match. Try again.\n"
 msgstr "Le mot de passe ne correspond pas. Réessayer.\n"
