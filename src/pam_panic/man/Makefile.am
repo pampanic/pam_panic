@@ -10,7 +10,9 @@ nobase_dist_cant_believe_its_not_man_DATA = \
 %.gz: %
 	{ sldr=$$(echo "$(securelibdir)" | $(SED) 's/\//\\\//g') ; bdr=$$(echo "$(bindir)" | $(SED) 's/\//\\\//g') ; $(SED) "s/__PAMPANICSO__/$$sldr\/pam_panic\\\\\&.so/; s/__PAMPANICPW__/$$bdr\/pam_panic_pw/" $< >$<.tmp ; }
 	gzip -c $<.tmp >$@
+	rm $<.tmp
 
 
 clean-local:
-	rm ./*/*.tmp ./*/*.gz ./*/*/*.tmp ./*/*/*.gz
+	$(RM) ./*/*.gz
+	$(FIND) . -type d -not -name man8 -not -path . -exec rm -rf {} +
