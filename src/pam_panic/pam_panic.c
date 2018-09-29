@@ -75,6 +75,10 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
   int8_t bPoweroff = 0;
   int8_t bPassword = 0;
 
+  // gettext
+  setlocale(LC_ALL, "");
+  bindtextdomain(PACKAGE, LOCALEDIR);
+  textdomain(PACKAGE);
 
   // Regex for checking arguments
   regex_t regex;
