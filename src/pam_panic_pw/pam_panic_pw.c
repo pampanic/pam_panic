@@ -63,8 +63,8 @@ int main(void){
   char *prompt[4] = {
     _("Key password: "),
     _("Panic password: "),
-    _("Retype key password: "),
-    _("Retype panic password: ")
+    _("Confirm key password: "),
+    _("Confirm panic password: ")
   };
 
   int i;

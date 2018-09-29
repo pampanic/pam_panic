@@ -26,7 +26,7 @@ int readPassword(pam_handle_t *pamh, char pw[2][99]){
 
   // Open file
   if(access(PPASSFILE, F_OK) == -1){
-    pam_syslog(pamh, LOG_ALERT, _("ALERT for passwort option: No password file detected."));
+    pam_syslog(pamh, LOG_ALERT, _("ALERT for password option: No password file detected."));
     return 2;
   }
   FILE *f = fopen(PPASSFILE, "r");

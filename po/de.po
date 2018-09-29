@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-09-21 22:52+0200\n"
+"POT-Creation-Date: 2018-09-29 18:17+0200\n"
 "PO-Revision-Date: 2018-09-20 21:03+0200\n"
 "Last-Translator:  <bandie@chaospott.de>\n"
 "Language-Team: German\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/pam_panic/pam_panic.c:39
+#: src/pam_panic/pam_panic.c:41
 msgid "CRITICAL: Problem with regcomp."
 msgstr "CRITICAL: Problem mit regcomp."
 
-#: src/pam_panic/pam_panic.c:116
+#: src/pam_panic/pam_panic.c:118
 msgid ""
 "ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a "
 "valid GPT UUID."
@@ -30,31 +30,31 @@ msgstr ""
 "ERROR: Argument ungültig. Hinweis: \"allow\" und \"reject\" müssen eine "
 "valide GPT UUID aufweisen."
 
-#: src/pam_panic/pam_panic.c:152
+#: src/pam_panic/pam_panic.c:154
 msgid "ALERT for argument \"serious\": Device doesn't exist."
 msgstr "ALERT für Argument \"serious\": Gerät existiert nicht."
 
-#: src/pam_panic/pam_panic_authdevice.c:37
+#: src/pam_panic/pam_panic_authdevice.c:35
 msgid "Key? "
 msgstr "Schlüssel? "
 
-#: src/pam_panic/pam_panic_authdevice.c:39
+#: src/pam_panic/pam_panic_authdevice.c:37
 msgid "Couldn't identify any key after 3 tries."
 msgstr "Konnte keinen Schlüssel nach 3 Versuchen identifizieren."
 
-#: src/pam_panic/pam_panic_password.c:31
-msgid "ALERT for passwort option: No password file detected."
+#: src/pam_panic/pam_panic_password.c:29
+msgid "ALERT for password option: No password file detected."
 msgstr "ALERT für Passwort-Option: Keine Passwort-Datei gefunden."
 
-#: src/pam_panic/pam_panic_password.c:36
+#: src/pam_panic/pam_panic_password.c:34
 msgid "ERROR: Couldn't open password file."
 msgstr "ERROR: Konnte Passwort-Datei nicht öffnen."
 
-#: src/pam_panic/pam_panic_password.c:48
+#: src/pam_panic/pam_panic_password.c:46
 msgid "CRITICAL: Password file is corrupt!"
 msgstr "CRITICAL: Passwort-Datei ist beschädigt!"
 
-#: src/pam_panic/pam_panic_password.c:93
+#: src/pam_panic/pam_panic_password.c:91
 msgid "Password: "
 msgstr "Passwort: "
 
@@ -72,12 +72,12 @@ msgid "Panic password: "
 msgstr "Panikpasswort: "
 
 #: src/pam_panic_pw/pam_panic_pw.c:66
-msgid "Retype key password: "
-msgstr "Schlüsselpasswort wiederholen: "
+msgid "Confirm key password: "
+msgstr "Schlüsselpasswort bestätigen: "
 
 #: src/pam_panic_pw/pam_panic_pw.c:67
-msgid "Retype panic password: "
-msgstr "Panikpasswort wiederholen: "
+msgid "Confirm panic password: "
+msgstr "Panikpasswort bestätigen: "
 
 #: src/pam_panic_pw/pam_panic_pw.c:73
 #, c-format

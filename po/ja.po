@@ -1,92 +1,97 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Bandie <bandie@chaospott.de>
+# Japanese translations for pam_panic package.
+# Copyright (C) 2018 Bandie <bandie@chaospott.de>
 # This file is distributed under the same license as the pam_panic package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Chromium Neptune <chromium@neplanet.com>, 2018.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
 "POT-Creation-Date: 2018-09-29 18:17+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-09-29 18:51+0200\n"
+"Last-Translator: Chromium Neptune <chromium@neplanet.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.1.1\n"
 
 #: src/pam_panic/pam_panic.c:41
 msgid "CRITICAL: Problem with regcomp."
-msgstr ""
+msgstr "クリティカル： \"regcomp\"の問題"
 
 #: src/pam_panic/pam_panic.c:118
 msgid ""
 "ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a "
 "valid GPT UUID."
 msgstr ""
+"エラー： 引き数が無効です。 \"allow\"と \"reject\"には有効なGPT UUIDが必要で"
+"す。"
 
 #: src/pam_panic/pam_panic.c:154
 msgid "ALERT for argument \"serious\": Device doesn't exist."
-msgstr ""
+msgstr "引数 \"serious\"のアラート：デバイスが存在しません。"
 
 #: src/pam_panic/pam_panic_authdevice.c:35
 msgid "Key? "
-msgstr ""
+msgstr "キー？ "
 
 #: src/pam_panic/pam_panic_authdevice.c:37
 msgid "Couldn't identify any key after 3 tries."
-msgstr ""
+msgstr "3回の試行後にキーを特定できませんでした。"
 
 #: src/pam_panic/pam_panic_password.c:29
 msgid "ALERT for password option: No password file detected."
-msgstr ""
+msgstr "パスワードオプションの警告：パスワードファイルが検出されませんでした。"
 
 #: src/pam_panic/pam_panic_password.c:34
 msgid "ERROR: Couldn't open password file."
-msgstr ""
+msgstr "エラー：パスワードファイルを開くことができませんでした。"
 
 #: src/pam_panic/pam_panic_password.c:46
 msgid "CRITICAL: Password file is corrupt!"
-msgstr ""
+msgstr "危険：パスワードファイルが壊れています！"
 
 #: src/pam_panic/pam_panic_password.c:91
 msgid "Password: "
-msgstr ""
+msgstr "パスワード： "
 
 #: src/pam_panic_pw/pam_panic_pw.c:28
 #, c-format
 msgid "ERROR opening file!\n"
-msgstr ""
+msgstr "ファイルを開く際にエラーが発生\n"
 
 #: src/pam_panic_pw/pam_panic_pw.c:64
 msgid "Key password: "
-msgstr ""
+msgstr "キーのパスワード： "
 
 #: src/pam_panic_pw/pam_panic_pw.c:65
 msgid "Panic password: "
-msgstr ""
+msgstr "パニックパスワード： "
 
 #: src/pam_panic_pw/pam_panic_pw.c:66
 msgid "Confirm key password: "
-msgstr ""
+msgstr "キーのパスワードを確認： "
 
 #: src/pam_panic_pw/pam_panic_pw.c:67
 msgid "Confirm panic password: "
-msgstr ""
+msgstr "パニックパスワードを確認する： "
 
 #: src/pam_panic_pw/pam_panic_pw.c:73
 #, c-format
 msgid "Please run this program under root. Write access to %s is mandatory.\n"
 msgstr ""
+"root権限でこのプログラムを実行してください。 %sへの書き込みアクセスは必須で"
+"す。\n"
 
 #: src/pam_panic_pw/pam_panic_pw.c:96
 #, c-format
 msgid "Didn't work. Bye.\n"
-msgstr ""
+msgstr "うまくいきませんでした。 さようなら。\n"
 
 #: src/pam_panic_pw/pam_panic_pw.c:99
 #, c-format
 msgid "Password didn't match. Try again.\n"
-msgstr ""
+msgstr "パスワードが一致しませんでした。 再試行する。\n"
