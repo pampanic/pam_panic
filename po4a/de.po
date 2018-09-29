@@ -1,21 +1,23 @@
-# German translations for po package
-# German translation for po
-# Copyright (C) 2018 Free Software Foundation, Inc.
-# This file is distributed under the same license as the po package.
-#  <bandie@chaospott.de>, 2018.
+# German translations for pam_panic package
+# German translation for pam_panic
+# Copyright (C) 2018 Bandie <bandie@chaospott.de>
+# This file is distributed under the same license as the pam_panic package.
+# Bandie <bandie@chaospott.de>, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2018-09-28 22:37+0200\n"
-"PO-Revision-Date: 2018-09-22 22:57+0200\n"
-"Last-Translator:  <bandie@chaospott.de>\n"
+"Report-Msgid-Bugs-To: Bandie <bandie@chaospott.de>\n"
+"POT-Creation-Date: 2018-09-29 16:00+0200\n"
+"PO-Revision-Date: 2018-09-29 16:02+0200\n"
+"Last-Translator: bandie@chaospott.de\n"
 "Language-Team: German\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.1.1\n"
 
 #. type: TH
 #: ../src/pam_panic/man/man8/pam_panic.8:9
@@ -53,7 +55,7 @@ msgid ""
 "emergency situations"
 msgstr ""
 "pam_panic - PAM-Module mit Panik-Funktion zum Schützen von wichtigen Daten "
-"in Notsituationen."
+"in Notsituationen"
 
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:28
@@ -85,7 +87,7 @@ msgid ""
 "function for emergency situations."
 msgstr ""
 "Das pam_panic PAM-Modul schützt wichtige Daten durch das Anbieten einer "
-"Panik-Funktion"
+"Panik-Funktion."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:38
@@ -440,8 +442,8 @@ msgid ""
 "Please report bugs and send pull requests to E<lt>https://github.com/"
 "pampanic/pam_panicE<gt>."
 msgstr ""
-"Fehlerberichte (möglichst auf Englisch) und Codeverbesserungen können "
-"hier eingereicht werden: E<lt>https://github.com/pampanic/pam_panicE<gt>."
+"Fehlerberichte (möglichst auf Englisch) und Codeverbesserungen können hier "
+"eingereicht werden: E<lt>https://github.com/pampanic/pam_panicE<gt>."
 
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:198
@@ -473,10 +475,10 @@ msgstr "pam_panic wurde von Bandie E<lt>bandie@chaospott.deE<gt> entwickelt."
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:92
 msgid ""
 "This man page has been revised by Jordy Dickinson E<lt>jordy."
-"dickinson@icloud.comE<gt>"
+"dickinson@icloud.comE<gt>."
 msgstr ""
-"Diese man page wurde von Bandie E<lt>bandie@chaospott.deE<gt> "
-"ins Deutsche übersetzt."
+"Diese man page wurde von Bandie E<lt>bandie@chaospott.deE<gt> ins Deutsche "
+"übersetzt."
 
 #. type: TH
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:9
@@ -495,7 +497,8 @@ msgstr "2018-09-28"
 msgid ""
 "pam_panic_pw - Set and change the passwords for the B<pam_panic>(8) PAM "
 "module."
-msgstr "pam_panic_pw - Setzen der Passwörter für das B<pam_panic>(8) PAM-Modul."
+msgstr ""
+"pam_panic_pw - Setzen der Passwörter für das B<pam_panic>(8) PAM-Modul."
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:30
@@ -505,7 +508,8 @@ msgstr "B<pam_panic_pw>"
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:35
 msgid "B<pam_panic_pw> sets the passwords for the B<pam_panic>(8) PAM module."
-msgstr "B<pam_panic_pw> setzt die Passwörter für das B<pam_panic>(8) PAM-Modul."
+msgstr ""
+"B<pam_panic_pw> setzt die Passwörter für das B<pam_panic>(8) PAM-Modul."
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:39
@@ -515,8 +519,8 @@ msgid ""
 "\"panic password\" will execute the panic function."
 msgstr ""
 "Man verwendet zwei Passwörter, die als Schlüssel dienen. Dabei wird ein "
-"\"Schlüsselpasswort\" und ein \"Panikpasswort\" festgelegt. "
-"Das Panikpasswort wird hierbei die I<Panikfunktion> aufrufen."
+"\"Schlüsselpasswort\" und ein \"Panikpasswort\" festgelegt. Das "
+"Panikpasswort wird hierbei die I<Panikfunktion> aufrufen."
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:44

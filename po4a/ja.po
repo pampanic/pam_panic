@@ -3,59 +3,63 @@
 # This file is distributed under the same license as the pam_panic package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: Bandie <bandie@chaospott.de>\n"
 "POT-Creation-Date: 2018-09-29 16:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-09-29 16:41+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. type: TH
 #: ../src/pam_panic/man/man8/pam_panic.8:9
 #, no-wrap
 msgid "PAM_PANIC"
-msgstr ""
+msgstr "PAM_PANIC"
 
 #. type: TH
 #: ../src/pam_panic/man/man8/pam_panic.8:9
 #, no-wrap
 msgid "2018-03-26"
-msgstr ""
+msgstr "2018-05-31"
 
 #. type: TH
-#: ../src/pam_panic/man/man8/pam_panic.8:9 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:9
+#: ../src/pam_panic/man/man8/pam_panic.8:9
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:9
 #, no-wrap
 msgid "PAM Panic Manual"
-msgstr ""
+msgstr "PAM Panic マニュアル"
 
 #.  -----------------------------------------------------------------
 #.  * MAIN CONTENT STARTS HERE *
 #.  -----------------------------------------------------------------
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:24 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:23
+#: ../src/pam_panic/man/man8/pam_panic.8:24
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:23
 #, no-wrap
 msgid "NAME"
-msgstr ""
+msgstr "名前"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:26
 msgid ""
 "pam_panic - PAM module with panic function to protect sensitive data in "
 "emergency situations"
-msgstr ""
+msgstr "pam_panic - 緊急時に機密データを保護するPAMモジュール"
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:28 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:27
+#: ../src/pam_panic/man/man8/pam_panic.8:28
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:27
 #, no-wrap
 msgid "SYNOPSIS"
-msgstr ""
+msgstr "概要"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:31
@@ -63,12 +67,15 @@ msgid ""
 "B<pam_panic.so> [password] [allow=I<UUID(GPT)>] [reject=I<UUID(GPT)>] "
 "[reboot] [poweroff] [serious=I<UUID>]"
 msgstr ""
+"B<pam_panic.so> [password] [allow=I<UUID(GPT)>] [reject=I<UUID(GPT)>] "
+"[reboot] [poweroff] [serious=I<UUID>]"
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:33 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:32
+#: ../src/pam_panic/man/man8/pam_panic.8:33
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:32
 #, no-wrap
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "説明"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:36
@@ -76,16 +83,18 @@ msgid ""
 "The pam_panic PAM module protects sensitive data and provides a panic "
 "function for emergency situations."
 msgstr ""
+"pam_panic PAMモジュールは、緊急時にデータを保護するためのパニック機能を実装し"
+"ます。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:38
 msgid "There are two possible options in how to use this PAM module:"
-msgstr ""
+msgstr "このPAMモジュールを使用するには、次の2つの方法があります。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:41
 msgid "First possible option:"
-msgstr ""
+msgstr "方法1:"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:44
@@ -94,16 +103,19 @@ msgid ""
 "key.  The auth key will let you pass to the password prompt whereas the "
 "panic key will call the I<panic function>."
 msgstr ""
+"認証キーとパニックキーの2つのデバイスをキーとして使用します。\n"
+"認証キーではパスワード認証をスキップし、パニックキーではパニック機能が起動し"
+"ます。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:47
 msgid "See options B<allow> and B<reject>."
-msgstr ""
+msgstr "オプションB<allow>とB<reject>を参照してください。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:50
 msgid "Second possible option:"
-msgstr ""
+msgstr "方法2:"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:52
@@ -112,16 +124,19 @@ msgid ""
 "password will let you pass to the original password prompt whereas the panic "
 "password will call the I<panic function>."
 msgstr ""
+"パスワードを2つ用意します。認証パスワードとパニックパスワードです。認証パス"
+"ワードでは通常通り認証が行われ、パニックパスワードではパニック機能が起動しま"
+"す。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:55
 msgid "See option B<password>."
-msgstr ""
+msgstr "オプションB<password>を参照してください。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:60
 msgid "The panic function:"
-msgstr ""
+msgstr "パニック機能:"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:62
@@ -129,17 +144,19 @@ msgid ""
 "The behaviour of this function is defined through the arguments B<reboot>, "
 "B<poweroff> and/or B<serious>. See the B<OPTIONS> section for details."
 msgstr ""
+"この機能の動作は次の引数によって指定されます: B<reboot>, B<poweroff> または "
+"B<serious> 。詳細については、 B<オプション> セクションを確認してください。"
 
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:65
 #, no-wrap
 msgid "OPTIONS"
-msgstr ""
+msgstr "オプション"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:68
 msgid "B<password>"
-msgstr ""
+msgstr "B<password>"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:71
@@ -147,75 +164,85 @@ msgid ""
 "Activates the password function having a panic and key password.  If the "
 "options B<allow> and B<reject> are provided this option will be ignored."
 msgstr ""
+"パスワードを認証に使用します。 引数に B<allow> と B<reject> が指定されている"
+"場合、このオプションは無視されます。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:74
 msgid "These passwords can be set with the B<pam_panic_pw>(1) command."
-msgstr ""
+msgstr "パスワードは B<pam_panic_pw>(1) コマンドによって指定できます。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:79
 msgid "B<allow=>I<UUID(GPT)>"
-msgstr ""
+msgstr "B<allow=>I<UUID(GPT)>"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:81
 msgid "The UUID of the device to be used for authentication (the auth key)."
-msgstr ""
+msgstr "デバイスのUUIDを認証に使用します。"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:86 ../src/pam_panic/man/man8/pam_panic.8:99
+#: ../src/pam_panic/man/man8/pam_panic.8:86
+#: ../src/pam_panic/man/man8/pam_panic.8:99
 msgid ""
 "The device must be GPT-formatted and contain at least one partition.  The "
-"UUID of a GPT-formatted device looks like "
-"\"12345678-9ABC-DEF0-1234-56789ABCDEF0\"."
+"UUID of a GPT-formatted device looks like \"12345678-9ABC-"
+"DEF0-1234-56789ABCDEF0\"."
 msgstr ""
+"デバイスはGPTでフォーマットされている必要があり、最低1つのパーティションを含"
+"んでいる\n"
+"必要があります。GPTでフォーマットされたデバイスのUUIDは次のようになります: "
+"\"12345678-9ABC-DEF0-1234-56789ABCDEF0\"。"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:88 ../src/pam_panic/man/man8/pam_panic.8:101
+#: ../src/pam_panic/man/man8/pam_panic.8:88
+#: ../src/pam_panic/man/man8/pam_panic.8:101
 msgid "See B<HOW TO DETERMINE MY UUIDS> for details."
-msgstr ""
+msgstr "詳細については B<UUIDを調べる方法> を確認してください。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:92
 msgid "B<reject=>I<UUID(GPT)>"
-msgstr ""
+msgstr "B<reject=>I<UUID(GPT)>"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:94
 msgid ""
 "The UUID of the device to be used in emergencies. The presence of this "
 "device will trigger B<reboot>, B<poweroff> and/or the panic function, "
-"depending on whether B<reboot>, B<poweroff>, and/or B<serious> are "
-"specified."
+"depending on whether B<reboot>, B<poweroff>, and/or B<serious> are specified."
 msgstr ""
+"緊急時に使用するデバイスのUUIDを指定します。このデバイスが存在する場合、"
+"B<reboot>, B<poweroff> またはパニック機能が発動します。 パニック機能は "
+"B<reboot>, B<poweroff>, B<serious> のうち、いずれか1つ以上で指定されます。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:105
 msgid "B<reboot> (recommended)"
-msgstr ""
+msgstr "B<reboot> (推奨)"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:107
 msgid ""
 "Indicates that the system should reboot when the I<panic function> is "
 "triggered."
-msgstr ""
+msgstr "I<パニック機能>が起動したときにシステムが再起動することを示します。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:110
 msgid "This option is recommended."
-msgstr ""
+msgstr "このオプションが推奨されます。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:113
 msgid "If B<poweroff> is also specified, B<reboot> will be ignored."
-msgstr ""
+msgstr "B<poweroff> が同時に指定されている場合、 B<reboot> は無視されます。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:117
 msgid "B<poweroff>"
-msgstr ""
+msgstr "B<poweroff>"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:120
@@ -223,11 +250,13 @@ msgid ""
 "Indicates that the system should shut down when the I<panic function> is "
 "triggered.  This option is discouraged for security reasons."
 msgstr ""
+"I<パニック機能>が起動したときにシステムがシャットダウンすることを示します。 "
+"セキュリティ上の理由から、このオプションはお勧めできません。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:124
 msgid "B<serious=>I<UUID>"
-msgstr ""
+msgstr "B<serious=>I<UUID>"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:126
@@ -236,26 +265,29 @@ msgid ""
 "function> is triggered. Erasing the LUKS header will render the data "
 "unreadable."
 msgstr ""
+"LUKSヘッダーを消去するための鍵となるデバイスのUUIDを指定しますLUKSヘッダーを"
+"消去した場合、データは復元できなくなります。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:129
 msgid ""
 "The internal command which will be executed is \"B<cryptsetup luksErase "
 "[UUID]>\"."
-msgstr ""
+msgstr "実行される内部コマンドは \"B<cryptsetup luksErase [UUID]>\"です。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:132
 msgid ""
-"NOTE: You should make a backup of the LUKS header before using this "
-"function."
+"NOTE: You should make a backup of the LUKS header before using this function."
 msgstr ""
+"注意: この機能を使用する前に、LUKSヘッダーをバックアップしておくことをおすす"
+"めします。"
 
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:136
 #, no-wrap
 msgid "USAGE"
-msgstr ""
+msgstr "使用法"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:139
@@ -263,13 +295,15 @@ msgid ""
 "To activate the module you have to configure PAM. See B<pam.conf(5)> for "
 "details."
 msgstr ""
+"ジュールを使用するためには、PAMを設定する必要があります。詳細については、\n"
+"B<pam.conf(5)> を参照してください。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:141
 msgid ""
 "In general, you will want to add the following to the top of a PAM "
 "configuration file:"
-msgstr ""
+msgstr "多くの場合、PAM設定ファイルの先頭に次の内容を設定するばあいです。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:144
@@ -277,27 +311,30 @@ msgid ""
 "auth requisite __PAMPANICSO__ auth=E<lt>UUIDE<gt> reject=E<lt>UUIDE<gt> "
 "reboot serious=E<lt>UUIDE<gt>"
 msgstr ""
+"auth requisite __PAMPANICSO__ auth=E<lt>UUIDE<gt> reject=E<lt>UUIDE<gt> "
+"reboot serious=E<lt>UUIDE<gt>"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:146 ../src/pam_panic/man/man8/pam_panic.8:152
+#: ../src/pam_panic/man/man8/pam_panic.8:146
+#: ../src/pam_panic/man/man8/pam_panic.8:152
 msgid "account requisite __PAMPANICSO__"
-msgstr ""
+msgstr "account requisite __PAMPANICSO__"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:148
 msgid "Or:"
-msgstr ""
+msgstr "または："
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:150
 msgid "auth requisite __PAMPANICSO__ password reboot serious=E<lt>UUIDE<gt>"
-msgstr ""
+msgstr "auth requisite __PAMPANICSO__ password reboot serious=E<lt>UUIDE<gt>"
 
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:156
 #, no-wrap
 msgid "HOW TO DETERMINE MY UUIDS"
-msgstr ""
+msgstr "UUIDを調べる方法"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:160
@@ -306,122 +343,141 @@ msgid ""
 "execute \"B<ls -l /dev/disk/by-partuuid/>\" in your favourite shell to find "
 "out which UUID is which device."
 msgstr ""
+"/dev/disk/by-partuuid でUUIDを調べることができます。 \"ls -l /dev/disk/by-"
+"partuuid/\"\n"
+"を任意のシェルで実行して、どのデバイスがどのUUIDかを調べる必要があるかもしれ"
+"ません。"
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:162 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:41
+#: ../src/pam_panic/man/man8/pam_panic.8:162
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:41
 #, no-wrap
 msgid "RETURN VALUES"
-msgstr ""
+msgstr "返り値"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:165
 msgid "PAM_SUCCESS"
-msgstr ""
+msgstr "PAM_SUCCESS"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:167
 msgid "Access was granted."
-msgstr ""
+msgstr "アクセスは許可されました。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:170
 msgid "PAM_IGNORE"
-msgstr ""
+msgstr "PAM_IGNORE"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:172
 msgid "An error has occured. The module will be ignored."
-msgstr ""
+msgstr "エラーが発生しました。モジュールは無視されます。"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:175
 msgid "PAM_MAXTRIES"
-msgstr ""
+msgstr "PAM_MAXTRIES"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:177
 msgid "The removable media was not detected."
-msgstr ""
+msgstr "リムーバブルメディアが検知されませんでした。"
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:180 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:59
+#: ../src/pam_panic/man/man8/pam_panic.8:180
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:59
 #, no-wrap
 msgid "FILES"
-msgstr ""
+msgstr "ファイル"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:183
 msgid "__PAMPANICSO__"
-msgstr ""
+msgstr "__PAMPANICSO__"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:185
 msgid "This PAM module, which does everything of this above."
-msgstr ""
+msgstr "このPAMモジュールです。"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:188 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:62
+#: ../src/pam_panic/man/man8/pam_panic.8:188
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:62
 msgid "__PAMPANICPW__"
-msgstr ""
+msgstr "__PAMPANICPW__"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:190 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:64
+#: ../src/pam_panic/man/man8/pam_panic.8:190
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:64
 msgid "Program to set and change the passwords."
-msgstr ""
+msgstr "パスワードの設定および変更を行うためのプログラムです。"
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:193 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:72
+#: ../src/pam_panic/man/man8/pam_panic.8:193
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:72
 #, no-wrap
 msgid "BUGS"
-msgstr ""
+msgstr "バグ報告"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:196 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:75
+#: ../src/pam_panic/man/man8/pam_panic.8:196
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:75
 msgid ""
-"Please report bugs and send pull requests to "
-"E<lt>https://github.com/pampanic/pam_panicE<gt>."
+"Please report bugs and send pull requests to E<lt>https://github.com/"
+"pampanic/pam_panicE<gt>."
 msgstr ""
+"E<lt>https://github.com/pampanic/pam_panicE<gt> で、バグの報告やプルリクエス"
+"トを行ってください。"
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:198 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:77
+#: ../src/pam_panic/man/man8/pam_panic.8:198
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:77
 #, no-wrap
 msgid "SEE ALSO"
-msgstr ""
+msgstr "関連項目"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:204
 msgid "B<pam_panic_pw>(1), B<cryptsetup>(8), B<pam>(8), B<pam.conf>(5)"
-msgstr ""
+msgstr "B<pam_panic_pw>(1), B<cryptsetup>(8), B<pam>(8), B<pam.conf>(5)"
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:206 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:85
+#: ../src/pam_panic/man/man8/pam_panic.8:206
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:85
 #, no-wrap
 msgid "AUTHORS"
-msgstr ""
+msgstr "著者"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:210 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:90
+#: ../src/pam_panic/man/man8/pam_panic.8:210
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:90
 msgid "pam_panic was written by Bandie E<lt>bandie@chaospott.deE<gt>."
 msgstr ""
+"pam_panic は Bandie E<lt>bandie@chaospott.deE<gt> によって作成されました。"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:211 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:92
+#: ../src/pam_panic/man/man8/pam_panic.8:211
+#: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:92
 msgid ""
-"This man page has been revised by Jordy Dickinson "
-"E<lt>jordy.dickinson@icloud.comE<gt>."
+"This man page has been revised by Jordy Dickinson E<lt>jordy."
+"dickinson@icloud.comE<gt>."
 msgstr ""
+"この翻訳は Chromium Neptune E<lt>chromium@neplanet.comE<gt> によって作成され"
+"ています。"
 
 #. type: TH
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:9
 #, no-wrap
 msgid "PAM_PANIC_PW"
-msgstr ""
+msgstr "PAM_PANIC_PW"
 
 #. type: TH
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:9
 #, no-wrap
 msgid "2018-03-31"
-msgstr ""
+msgstr "2018-05-31"
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:25
@@ -429,16 +485,20 @@ msgid ""
 "pam_panic_pw - Set and change the passwords for the B<pam_panic>(8) PAM "
 "module."
 msgstr ""
+"pam_panic_pw - B<pam_panic>(8) PAM モジュールで使用するパスワードの設定と変更"
+"を行う。"
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:30
 msgid "B<pam_panic_pw>"
-msgstr ""
+msgstr "B<pam_panic_pw>"
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:35
 msgid "B<pam_panic_pw> sets the passwords for the B<pam_panic>(8) PAM module."
 msgstr ""
+"B<pam_panic_pw> は B<pam_panic>(8) PAM\n"
+" モジュールで使用するパスワードの設定および変更を行います。"
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:39
@@ -447,48 +507,51 @@ msgid ""
 "The \"key password\" is used for the normal authentication whereas the "
 "\"panic password\" will execute the panic function."
 msgstr ""
+"認証パスワードとパニックパスワードの2つのパスワードを用意します。\n"
+"認証パスワードは、通常の認証に使用します。\n"
+"パニックパスワードは、パニック機能の発動に使用します。"
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:44
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:46
 msgid "Passwords set successfully."
-msgstr ""
+msgstr "パスワードは正しく設定されました。"
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:49
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:51
 msgid "Access denied."
-msgstr ""
+msgstr "アクセスが拒否されました。"
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:54
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:56
 msgid "Could not open the password file."
-msgstr ""
+msgstr "パスワードファイルを開けません。"
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:67
 msgid "__PPASSFILE__"
-msgstr ""
+msgstr "__PPASSFILE__"
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:69
 msgid "The password file."
-msgstr ""
+msgstr "パスワードファイルです。"
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:83
 msgid "B<pam_panic>(8), B<cryptsetup>(8), B<pam.conf>(5), B<pam>(8)."
-msgstr ""
+msgstr "B<pam_panic>(8), B<cryptsetup>(8), B<pam.conf>(5), B<pam>(8)."

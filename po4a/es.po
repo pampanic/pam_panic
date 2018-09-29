@@ -1,21 +1,23 @@
-# Spanish translations for po package
-# Traducciones al español para el paquete po
-# Copyright (C) 2018 Free Software Foundation, Inc.
-# This file is distributed under the same license as the po package.
-#  <d@angeredwolf.me>, 2018.
+# Spanish translations for pam_panic package
+# Traducciones al español para el paquete pam_panic
+# Copyright (C) 2018 Bandie <bandie@chaospott.de>
+# This file is distributed under the same license as the pam_panic package.
+# Dangered wolf <d@angeredwolf.me>, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
-"POT-Creation-Date: 2018-09-28 22:37+0200\n"
-"PO-Revision-Date: 2018-09-28 23:12+0200\n"
-"Last-Translator:  <d@angeredwolf.me>\n"
+"Report-Msgid-Bugs-To: Bandie <bandie@chaospott.de>\n"
+"POT-Creation-Date: 2018-09-29 16:00+0200\n"
+"PO-Revision-Date: 2018-09-29 16:02+0200\n"
+"Last-Translator: d@angeredwolf.me\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.1.1\n"
 
 #. type: TH
 #: ../src/pam_panic/man/man8/pam_panic.8:9
@@ -52,8 +54,8 @@ msgid ""
 "pam_panic - PAM module with panic function to protect sensitive data in "
 "emergency situations"
 msgstr ""
-"pam_panic - un módulo de PAM para controlar acceso usando media removible (con función "
-"pánica)"
+"pam_panic - un módulo de PAM para controlar acceso usando media removible "
+"(con función pánica)"
 
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:28
@@ -84,8 +86,8 @@ msgid ""
 "The pam_panic PAM module protects sensitive data and provides a panic "
 "function for emergency situations."
 msgstr ""
-"El módulo pam_panic protege los datos delicados y proporcióna una función pánica para "
-"emergencias."
+"El módulo pam_panic protege los datos delicados y proporcióna una función "
+"pánica para emergencias."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:38
@@ -104,9 +106,10 @@ msgid ""
 "key.  The auth key will let you pass to the password prompt whereas the "
 "panic key will call the I<panic function>."
 msgstr ""
-"Hay dos medias removibles que están usando como claves: La clave de autenticación y "
-"la clave de pánico.  La clave para autenticación se permite ingresar su contraseña "
-"mientras la clave para pánico va a llamar la I<función de pánico>."
+"Hay dos medias removibles que están usando como claves: La clave de "
+"autenticación y la clave de pánico.  La clave para autenticación se permite "
+"ingresar su contraseña mientras la clave para pánico va a llamar la "
+"I<función de pánico>."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:47
@@ -125,9 +128,10 @@ msgid ""
 "password will let you pass to the original password prompt whereas the panic "
 "password will call the I<panic function>."
 msgstr ""
-"Hay dos contraseñas: La contraseña para autenticación y la contraseña de pánico. La "
-"contrasenña clave le permitirá pasar al mensaje de contrasenña original, mientras "
-"que la contrasenña de pánico llamará a la I<función de pánico>."
+"Hay dos contraseñas: La contraseña para autenticación y la contraseña de "
+"pánico. La contrasenña clave le permitirá pasar al mensaje de contrasenña "
+"original, mientras que la contrasenña de pánico llamará a la I<función de "
+"pánico>."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:55
@@ -145,8 +149,9 @@ msgid ""
 "The behaviour of this function is defined through the arguments B<reboot>, "
 "B<poweroff> and/or B<serious>. See the B<OPTIONS> section for details."
 msgstr ""
-"El comportamiento de esta función se define a través de los argumentos B<reboot>, "
-"B<poweroff> o B<serious>. Vea la sección de B<OPCIÓNES> para más detalles."
+"El comportamiento de esta función se define a través de los argumentos "
+"B<reboot>, B<poweroff> o B<serious>. Vea la sección de B<OPCIÓNES> para más "
+"detalles."
 
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:65
@@ -165,13 +170,14 @@ msgid ""
 "Activates the password function having a panic and key password.  If the "
 "options B<allow> and B<reject> are provided this option will be ignored."
 msgstr ""
-"Activa la función de contraseã con pánico y contraseña clave.  Si las opciones"
-"B<allow> y B<reject> son provistas esta opción será ignorada."
+"Activa la función de contraseã con pánico y contraseña clave.  Si las "
+"opcionesB<allow> y B<reject> son provistas esta opción será ignorada."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:74
 msgid "These passwords can be set with the B<pam_panic_pw>(1) command."
-msgstr "Estas contraseñas se pueden configurar con el comando B<pam_panic_pw>(1)."
+msgstr ""
+"Estas contraseñas se pueden configurar con el comando B<pam_panic_pw>(1)."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:79
@@ -191,8 +197,9 @@ msgid ""
 "UUID of a GPT-formatted device looks like \"12345678-9ABC-"
 "DEF0-1234-56789ABCDEF0\"."
 msgstr ""
-"El dispositivo debe estar formateado por GPT y contener al menos una partición. "
-"El UUID de un dispositivo se ve como «12345678-9ABC-DEF0-1234-56789ABCDEF0»."
+"El dispositivo debe estar formateado por GPT y contener al menos una "
+"partición. El UUID de un dispositivo se ve como «12345678-9ABC-"
+"DEF0-1234-56789ABCDEF0»."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:88
@@ -213,8 +220,8 @@ msgid ""
 "depending on whether B<reboot>, B<poweroff>, and/or B<serious> are specified."
 msgstr ""
 "Es el UUID del dispositivo para emergencias. Cuando este dispositivo está "
-"presente, se disparará un reinicio, un apagado, y / o la función pánica, según si "
-"B<reboot>, B<poweroff>, y / o B<serious> han sido especificados."
+"presente, se disparará un reinicio, un apagado, y / o la función pánica, "
+"según si B<reboot>, B<poweroff>, y / o B<serious> han sido especificados."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:105
@@ -227,7 +234,8 @@ msgid ""
 "Indicates that the system should reboot when the I<panic function> is "
 "triggered."
 msgstr ""
-"Indica que la sistema debe reiniciarse cuando se active la I<función de pánico>."
+"Indica que la sistema debe reiniciarse cuando se active la I<función de "
+"pánico>."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:110
@@ -282,7 +290,8 @@ msgstr ""
 msgid ""
 "NOTE: You should make a backup of the LUKS header before using this function."
 msgstr ""
-"NOTA: Se deberiá hacer una copia del encabezamiento de LUKS antes de usar esta función."
+"NOTA: Se deberiá hacer una copia del encabezamiento de LUKS antes de usar "
+"esta función."
 
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:136
@@ -296,7 +305,8 @@ msgid ""
 "To activate the module you have to configure PAM. See B<pam.conf(5)> for "
 "details."
 msgstr ""
-"Para activar el módulo se tiene que configurar PAM. Vea B<pam.conf(5)> para detalles."
+"Para activar el módulo se tiene que configurar PAM. Vea B<pam.conf(5)> para "
+"detalles."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:141
@@ -345,9 +355,9 @@ msgid ""
 "execute \"B<ls -l /dev/disk/by-partuuid/>\" in your favourite shell to find "
 "out which UUID is which device."
 msgstr ""
-"Se puede encontrar sus UUIDs en /dev/disk/by-partuuid.  Es posible que desee ejecutar "
-"«ls -l /dev/disk/by-partuuid» en su shell favorito para encontrar cuál UUID es su "
-"dispositivo."
+"Se puede encontrar sus UUIDs en /dev/disk/by-partuuid.  Es posible que desee "
+"ejecutar «ls -l /dev/disk/by-partuuid» en su shell favorito para encontrar "
+"cuál UUID es su dispositivo."
 
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:162
@@ -429,7 +439,8 @@ msgid ""
 "Please report bugs and send pull requests to E<lt>https://github.com/"
 "pampanic/pam_panicE<gt>."
 msgstr ""
-"Por favor reportar errores y enviar pull requests a E<lt>https://github.com/pampanic/pam_panicE<gt>."
+"Por favor reportar errores y enviar pull requests a E<lt>https://github.com/"
+"pampanic/pam_panicE<gt>."
 
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:198
@@ -461,10 +472,10 @@ msgstr "pam_panic fue escrito por Bandie E<lt>bandie@chaospott.deE<gt>."
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:92
 msgid ""
 "This man page has been revised by Jordy Dickinson E<lt>jordy."
-"dickinson@icloud.comE<gt>"
+"dickinson@icloud.comE<gt>."
 msgstr ""
-"Este página man fue traducido al español por Jordy Dickinson "
-"E<lt>jordy.dickinson@icloud.comE<gt> y dangered wolf E<lt>d@ngeredwolf.meE<gt>."
+"Este página man fue traducido al español por Jordy Dickinson E<lt>jordy."
+"dickinson@icloud.comE<gt> y dangered wolf E<lt>d@ngeredwolf.meE<gt>."
 
 #. type: TH
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:9
@@ -495,7 +506,9 @@ msgstr "B<pam_panic_pw>"
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:35
 msgid "B<pam_panic_pw> sets the passwords for the B<pam_panic>(8) PAM module."
-msgstr "B<pam_panic_pw> establece las contraseñas para el módulo PAM de B<pam_panic>(8)."
+msgstr ""
+"B<pam_panic_pw> establece las contraseñas para el módulo PAM de "
+"B<pam_panic>(8)."
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:39
@@ -505,7 +518,8 @@ msgid ""
 "\"panic password\" will execute the panic function."
 msgstr ""
 "Hay dos contraseñas: La \"contraseña clave\" y la \"contraseña de pánico\".  "
-"La \"contraseña clave\" se usa para autenticación normal mientras la \"contraseña de pánico\" ""ejecutará la función de pánico."
+"La \"contraseña clave\" se usa para autenticación normal mientras la "
+"\"contraseña de pánico\" ejecutará la función de pánico."
 
 #. type: Plain text
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:44
