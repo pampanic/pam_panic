@@ -34,4 +34,5 @@ src/pam_panic_pw/man/*
 !src/pam_panic_pw/man/Makefile.am
 !src/pam_panic_pw/man/man1/
 stamp-h1
+test/pwfile
 test/test
