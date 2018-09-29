@@ -27,6 +27,12 @@ po/*.header
 po/*.sed
 po/*.sin
 po/*.gmo
+src/pam_panic/man/*
+!src/pam_panic/man/Makefile.am
+!src/pam_panic/man/man8
 src/pam_panic_pw/pam_panic_pw
+src/pam_panic_pw/man/*
+!src/pam_panic_pw/man/Makefile.am
+!src/pam_panic_pw/man/man1
 stamp-h1
 test/test
