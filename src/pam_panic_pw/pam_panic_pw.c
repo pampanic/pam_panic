@@ -21,9 +21,9 @@ LICENSE :      GNU-GPLv3
 
 #define _(String) gettext(String)
 
-int writePasswords(char pw[][99]){
+int writePasswords(char pw[][99], char* pwfile){
 
-  FILE *f = fopen(PPASSFILE, "w");
+  FILE *f = fopen(pwfile, "w");
   if(f == NULL){
     fprintf(stderr, _("ERROR opening file!\n"));
     return 2;
@@ -33,11 +33,12 @@ int writePasswords(char pw[][99]){
 
   fclose(f);
 
-  chmod(PPASSFILE, 0644);
+  chmod(pwfile, 0644);
 
   return 0;
 }
 
+#ifndef TEST
 
 int main(void){
 
@@ -105,6 +106,6 @@ int main(void){
 
   /* Save the results. */
   
-  return writePasswords(pw);
+  return writePasswords(pw, PPASSFILE);
 }
-
+#endif
