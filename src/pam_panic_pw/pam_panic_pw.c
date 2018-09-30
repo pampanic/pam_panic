@@ -58,8 +58,8 @@ int main(void){
   char *password[2];
   char *pwvrf[2];
   
-  char pw[2][99];
-  char pwv[2][99];
+  char pw[2][256];
+  char pwv[2][256];
 
   char *prompt[4] = {
     _("Key password: "),
