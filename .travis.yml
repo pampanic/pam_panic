@@ -1,3 +1,4 @@
 language: C
+dist: bionic
 sudo: enabled
 script: sudo apt install autopoint gettext libcunit1 libcunit1-dev &&  autoreconf -i && ./configure && make && make test
