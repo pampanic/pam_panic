@@ -21,7 +21,7 @@ LICENSE :      GNU-GPLv3
 
 #define _(String) gettext(String)
 
-int writePasswords(char pw[][99], char* pwfile){
+int writePasswords(char pw[][256], char* pwfile){
 
   FILE *f = fopen(pwfile, "w");
   if(f == NULL){
