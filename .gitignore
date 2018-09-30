@@ -27,6 +27,7 @@ po/POTFILES
 po/Rules-quot
 po/stamp-po
 po/*.header
+po/*.gmo
 po/*.sed
 po/*.sin
 src/pam_panic/man/*

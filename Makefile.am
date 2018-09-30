@@ -6,5 +6,11 @@ SUBDIRS = po po4a src/pam_panic src/pam_panic_pw
 
 .PHONY: all test clean
 
+
+update-po:
+	make -C po update-po
+
+all: update-po
+
 test:
 	make -C test
