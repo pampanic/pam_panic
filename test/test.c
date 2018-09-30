@@ -193,13 +193,13 @@ int main(void) {
   if (   (NULL == CU_add_test(pSuiteDevice, "Authenticate with good device?", test_authDeviceGood))
       || (NULL == CU_add_test(pSuiteDevice, "Authenticate with bad device?", test_authDeviceBad))
       || (NULL == CU_add_test(pSuiteDevice, "Authenticate with no device?", test_authDeviceNA))
-      || (NULL == CU_add_test(pSuiteReject, "Reject: Serious?", test_rejectSerious))
-      || (NULL == CU_add_test(pSuiteReject, "Reject: Reboot?", test_rejectReboot))
-      || (NULL == CU_add_test(pSuiteReject, "Reject: Poweroff?", test_rejectPoweroff))
-      || (NULL == CU_add_test(pSuiteReject, "Reject: Nothing?", test_rejectNA))
-      || (NULL == CU_add_test(pSuitePasswordWrite, "pam_panic_pw: Write password?", test_writePassword))
-      || (NULL == CU_add_test(pSuitePasswordWrite, "pam_panic_pw: Check with right password?", test_passwordCheckFromFile))
-      || (NULL == CU_add_test(pSuitePasswordWrite, "pam_panic_pw: Check with wrong password?", test_badPasswordCheckFromFile))
+      || (NULL == CU_add_test(pSuiteReject, "Serious function?", test_rejectSerious))
+      || (NULL == CU_add_test(pSuiteReject, "Reboot function?", test_rejectReboot))
+      || (NULL == CU_add_test(pSuiteReject, " Poweroff function?", test_rejectPoweroff))
+      || (NULL == CU_add_test(pSuiteReject, " Nothing at all function?", test_rejectNA))
+      || (NULL == CU_add_test(pSuitePasswordWrite, "Write a password into a file?", test_writePassword))
+      || (NULL == CU_add_test(pSuitePasswordWrite, "Check password file with right passwords?", test_passwordCheckFromFile))
+      || (NULL == CU_add_test(pSuitePasswordWrite, "Check password file with wrong passwords?", test_badPasswordCheckFromFile))
      ) {
     CU_cleanup_registry();
     return CU_get_error();
