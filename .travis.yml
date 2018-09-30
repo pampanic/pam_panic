@@ -1,4 +1,4 @@
 language: C
-dist: bionic
+dist: trusty
 sudo: enabled
-script: sudo apt install gettext-base libcunit1 libcunit1-dev &&  autoreconf -i && ./configure && make && make test
+script: sudo apt install po4a autopoint gettext libcunit1 libcunit1-dev &&  autoreconf -i && ./configure && make && make test
