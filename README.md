@@ -23,6 +23,7 @@ There is
 - [pam_panic](https://aur.archlinux.org/packages/pam_panic/) - Actual [releases](https://github.com/pampanic/pam_panic/releases) and
 - [pam_panic-git](https://aur.archlinux.org/packages/pam_panic-git/) for this actual git repository.
 
+
 ### Ubuntu
 There's a [PPA](https://launchpad.net/~bandie/+archive/ubuntu/pampanic) updating for new [releases](https://github.com/pampanic/pam_panic/releases).
 
