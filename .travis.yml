@@ -1,3 +1,3 @@
 language: C
 sudo: enabled
-script: sudo apt install libcunit1 libcunit1-dev &&  autoreconf -i && ./configure && make && make test
+script: sudo apt install autopoint gettext libcunit1 libcunit1-dev &&  autoreconf -i && ./configure && make && make test
