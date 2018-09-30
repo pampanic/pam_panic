@@ -35,7 +35,7 @@ sudo apt-get install pampanic
 
 ### From sources
 You will need GCC or similar, as well as the PAM headers. Some distributions package the PAM headers as `libpam0g-dev`.
-Also you need `autoconf`.
+Also you need `autoconf` and `gettext`. Some also need `autopoint`.
 
 To compile and install it, do the following within the project's root directory:
 
@@ -103,7 +103,7 @@ See `man 8 pam_panic` and `man 1 pam_panic_pw` for more information.
 
 
 ## TODO
-- [Manpage translations](https://github.com/Bandie/pam_panic/issues?q=is%3Aissue+is%3Aopen+label%3Alocalization)
+- [Translations](https://github.com/pampanic/pam_panic/wiki/How-to-translate)
 
 
 # Addendum
