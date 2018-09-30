@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-09-30 00:30+0200\n"
+"POT-Creation-Date: 2018-09-30 13:04+0200\n"
 "PO-Revision-Date: 2018-09-29 18:33+0200\n"
 "Last-Translator: Dashie <dashie@otter.sh>\n"
 "Language-Team: French\n"
@@ -64,35 +64,35 @@ msgstr "Mot de passe : "
 msgid "ERROR opening file!\n"
 msgstr "ERROR en ouvrant le fichier.\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:66
+#: src/pam_panic_pw/pam_panic_pw.c:65
 msgid "Key password: "
 msgstr "Mot de passe clé : "
 
-#: src/pam_panic_pw/pam_panic_pw.c:67
+#: src/pam_panic_pw/pam_panic_pw.c:66
 msgid "Panic password: "
 msgstr "Mot de passe panique : "
 
-#: src/pam_panic_pw/pam_panic_pw.c:68
+#: src/pam_panic_pw/pam_panic_pw.c:67
 msgid "Confirm key password: "
 msgstr "Confirmer le mot de passe de clé :"
 
-#: src/pam_panic_pw/pam_panic_pw.c:69
+#: src/pam_panic_pw/pam_panic_pw.c:68
 msgid "Confirm panic password: "
 msgstr "Confirmer le mot de passe de panique : "
 
-#: src/pam_panic_pw/pam_panic_pw.c:75
+#: src/pam_panic_pw/pam_panic_pw.c:74
 #, c-format
 msgid "Please run this program under root. Write access to %s is mandatory.\n"
 msgstr ""
 "Veuillez exécuter ce programme avec les privilèges root. L'accès en écriture "
 "à %s est obligatoire.\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:98
+#: src/pam_panic_pw/pam_panic_pw.c:97
 #, c-format
 msgid "Didn't work. Bye.\n"
 msgstr "N'a pas fonctionné. Au revoir.\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:101
+#: src/pam_panic_pw/pam_panic_pw.c:100
 #, c-format
 msgid "Password didn't match. Try again.\n"
 msgstr "Le mot de passe ne correspond pas. Réessayer.\n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-09-30 00:30+0200\n"
+"POT-Creation-Date: 2018-09-30 13:04+0200\n"
 "PO-Revision-Date: 2018-09-29 18:51+0200\n"
 "Last-Translator: Chromium Neptune <chromium@neplanet.com>\n"
 "Language-Team: Japanese\n"
@@ -63,35 +63,35 @@ msgstr "パスフレーズ: "
 msgid "ERROR opening file!\n"
 msgstr "ファイルを開く際にエラーが発生\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:66
+#: src/pam_panic_pw/pam_panic_pw.c:65
 msgid "Key password: "
 msgstr "キーのパスワード： "
 
-#: src/pam_panic_pw/pam_panic_pw.c:67
+#: src/pam_panic_pw/pam_panic_pw.c:66
 msgid "Panic password: "
 msgstr "パニックパスワード： "
 
-#: src/pam_panic_pw/pam_panic_pw.c:68
+#: src/pam_panic_pw/pam_panic_pw.c:67
 msgid "Confirm key password: "
 msgstr "キーのパスワードを確認： "
 
-#: src/pam_panic_pw/pam_panic_pw.c:69
+#: src/pam_panic_pw/pam_panic_pw.c:68
 msgid "Confirm panic password: "
 msgstr "パニックパスワードを確認する： "
 
-#: src/pam_panic_pw/pam_panic_pw.c:75
+#: src/pam_panic_pw/pam_panic_pw.c:74
 #, c-format
 msgid "Please run this program under root. Write access to %s is mandatory.\n"
 msgstr ""
 "root権限でこのプログラムを実行してください。 %sへの書き込みアクセスは必須で"
 "す。\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:98
+#: src/pam_panic_pw/pam_panic_pw.c:97
 #, c-format
 msgid "Didn't work. Bye.\n"
 msgstr "うまくいきませんでした。 さようなら。\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:101
+#: src/pam_panic_pw/pam_panic_pw.c:100
 #, c-format
 msgid "Password didn't match. Try again.\n"
 msgstr "パスワードが一致しませんでした。 再試行する。\n"

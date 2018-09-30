@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-09-30 00:30+0200\n"
+"POT-Creation-Date: 2018-09-30 13:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,33 +60,33 @@ msgstr ""
 msgid "ERROR opening file!\n"
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:66
+#: src/pam_panic_pw/pam_panic_pw.c:65
 msgid "Key password: "
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:67
+#: src/pam_panic_pw/pam_panic_pw.c:66
 msgid "Panic password: "
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:68
+#: src/pam_panic_pw/pam_panic_pw.c:67
 msgid "Confirm key password: "
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:69
+#: src/pam_panic_pw/pam_panic_pw.c:68
 msgid "Confirm panic password: "
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:75
+#: src/pam_panic_pw/pam_panic_pw.c:74
 #, c-format
 msgid "Please run this program under root. Write access to %s is mandatory.\n"
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:98
+#: src/pam_panic_pw/pam_panic_pw.c:97
 #, c-format
 msgid "Didn't work. Bye.\n"
 msgstr ""
 
-#: src/pam_panic_pw/pam_panic_pw.c:101
+#: src/pam_panic_pw/pam_panic_pw.c:100
 #, c-format
 msgid "Password didn't match. Try again.\n"
 msgstr ""
