@@ -13,4 +13,6 @@ update-po:
 all: update-po
 
 test:
+	make clean
 	make -C test
+	@printf "Note: If you want to build pam_panic now, you should run 'make clean' first.\n"
