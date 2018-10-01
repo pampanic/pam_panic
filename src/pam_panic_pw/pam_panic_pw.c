@@ -16,7 +16,7 @@ LICENSE :      GNU-GPLv3
 #include <unistd.h>
 #include <sys/stat.h>
 #include <crypt.h>
-#include "config.h"
+#include "../config.h"
 #include "../../lib/gettext.h"
 
 #define _(String) gettext(String)
