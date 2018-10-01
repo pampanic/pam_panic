@@ -3,7 +3,7 @@ SUBDIRS = man
 securelibdir = $(SECUREDIR)
 securelibexecdir = $(securelibdir)
 
-AM_CFLAGS = -DLOCALEDIR='"$(localedir)"'
+AM_CPPFLAGS = -DLOCALEDIR='"$(localedir)"'
 
 securelibexec_LTLIBRARIES = pam_panic.la
 pam_panic_la_SOURCES = \
