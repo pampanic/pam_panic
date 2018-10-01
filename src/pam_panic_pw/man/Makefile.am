@@ -9,7 +9,9 @@ nobase_dist_cant_believe_its_not_man_DATA = \
 %.gz: %
 	{ ppf=$$(echo "$(PPASSFILE)" | $(SED) 's/\//\\\//g') ; bdr=$$(echo "$(bindir)" | $(SED) 's/\//\\\//g') ; $(SED) "s/__PPASSFILE__/$$ppf/; s/__PAMPANICPW__/$$bdr\/pam_panic\\\\\&.so/" $< >$<.tmp ; }
 	gzip -c $<.tmp >$@
+	rm $<.tmp
 
 
 clean-local:
-	rm ./*/*.tmp ./*/*.gz ./*/*/*.tmp ./*/*/*.g
+	$(RM) -f ./*/*.gz
+	$(FIND) . -type d -not -name man1 -not -path . -exec rm -rf {} +

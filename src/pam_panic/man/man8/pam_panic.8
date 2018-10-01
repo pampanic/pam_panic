@@ -7,8 +7,8 @@
 .\"  Language: English
 .\"
 .TH "PAM_PANIC" "8" "2018-03-26" "PAM Panic Manual" "PAM Panic Manual"
-.ie \n(.g .ds Aq \(aq
-.el       .ds Aq '
+.\".ie \n(.g .ds Aq \(aq
+.\".el       .ds Aq '
 .\" -----------------------------------------------------------------
 .\" * set default formatting
 .\" -----------------------------------------------------------------
@@ -26,32 +26,39 @@ pam_panic \- PAM module with panic function to protect sensitive data in emergen
 
 
 .SH "SYNOPSIS"
-.HP \w'\fBpam_panic\&.so\fR\ 'u
-\fBpam_panic\&.so\fR [password] [allow=\fIUUID(GPT)\fR] [reject=\fIUUID(GPT)\fR] [reboot] [poweroff] [serious=\fIUUID\fR]
+.HP \w'\fBpam_panic.so\fR\ 'u
+\fBpam_panic.so\fR [password] [allow=\fIUUID(GPT)\fR] [reject=\fIUUID(GPT)\fR] [reboot] [poweroff] [serious=\fIUUID\fR]
 
 
 .SH "DESCRIPTION"
 .PP
-The pam_panic PAM module protects sensitive data and provides a panic function for emergency situations\&.
+The pam_panic PAM module protects sensitive data and provides a panic function for emergency situations.
 .PP
 There are two possible options in how to use this PAM module:
 .PD 0
 .PP
 First possible option:
 .RS 2
-There are two removable media which work as keys: the auth key and the panic key\&. 
-The auth key will let you pass to the password prompt whereas the panic key will call the panic function\&.
+There are two removable media which work as keys: the auth key and the panic key.
+The auth key will let you pass to the password prompt whereas the panic key will call the \fIpanic function\fR.
+.PD 0
+.PP
+See options \fBallow\fR and \fBreject\fR.
 .RE
+.PP
 Second possible option:
 .RS 2
-There are two passwords: the key password and the panic password\&. The key password will let you pass to the original password prompt whereas the panic password will call the panic function\&.
+There are two passwords: the key password and the panic password. The key password will let you pass to the original password prompt whereas the panic password will call the \fIpanic function\fR.
+.PD 0
+.PP
+See option \fBpassword\fR.
 .RE
 
 .PD 1
 .PP
 The panic function:
 .RS 2
-The behaviour of this function is defined through the arguments \fBreboot\fR, \fBpoweroff\fR and/or \fBserious\fR\&. See the \fBOPTIONS\fR section for details\&.
+The behaviour of this function is defined through the arguments \fBreboot\fR, \fBpoweroff\fR and/or \fBserious\fR. See the \fBOPTIONS\fR section for details.
 .RE
 
 
@@ -59,25 +66,25 @@ The behaviour of this function is defined through the arguments \fBreboot\fR, \f
 .PP
 \fBpassword\fR
 .RS 4
-Activates the password function having a panic and key password\&.
-If the options \fBallow\fR and \fBreject\fR are provided this option will be ignored\&.
+Activates the password function having a panic and key password.
+If the options \fBallow\fR and \fBreject\fR are provided this option will be ignored.
 .PD 0
 .PP
-These passwords can be set with the \fBpam_panic_pw\fR(1) command\&.
+These passwords can be set with the \fBpam_panic_pw\fR(1) command.
 .RE
 .PD 1
 .PP
 
 \fBallow=\fR\fB\fIUUID(GPT)\fR\fR
 .RS 4
-The UUID of the device to be used for authentication (the auth key)\&.
+The UUID of the device to be used for authentication (the auth key).
 .PD 0
 .PP
 .PD 1
-The device must be GPT-formatted and contain at least one partition\&.
-The UUID of a GPT-formatted device looks like "12345678-9ABC-DEF0-1234-56789ABCDEF0"\&. 
+The device must be GPT-formatted and contain at least one partition.
+The UUID of a GPT-formatted device looks like "12345678-9ABC-DEF0-1234-56789ABCDEF0".
 .PP
-See \fBHOW TO DETERMINE MY UUIDS\fR for details\&.
+See \fBHOW TO DETERMINE MY UUIDS\fR for details.
 .RE
 .PP
 
@@ -87,41 +94,48 @@ The UUID of the device to be used in emergencies. The presence of this device wi
 .PD 0
 .PP
 .PD 1
-The device must be GPT-formatted and contain at least one partition\&.
-The UUID of a GPT-formatted device looks like "12345678-9ABC-DEF0-1234-56789ABCDEF0"\&. 
+The device must be GPT-formatted and contain at least one partition.
+The UUID of a GPT-formatted device looks like "12345678-9ABC-DEF0-1234-56789ABCDEF0".
 .PP
-See \fBHOW TO DETERMINE MY UUIDS\fR for details\&.
+See \fBHOW TO DETERMINE MY UUIDS\fR for details.
 .RE
 .PP
 
 \fBreboot\fR (recommended)
 .RS 4
-Indicates that the system should reboot upon encountering the device specified with \fBreject\fR\&.
+Indicates that the system should reboot when the \fIpanic function\fR is triggered.
+.PD 0
 .PP
-If \fBpoweroff\fR is also specified, \fBreboot\fR will be ignored\&.
+This option is recommended.
+.PD 1
+.PP
+If \fBpoweroff\fR is also specified, \fBreboot\fR will be ignored.
 .RE
 .PP
 
 \fBpoweroff\fR
 .RS 4
-Indicates that the system should shut down upon encountering the device specified with \fBreject\fR\&.
-This option is discouraged for security reasons\&.
+Indicates that the system should shut down when the \fIpanic function\fR is triggered.
+This option is discouraged for security reasons.
 .RE
 .PP
 
 \fBserious=\fR\fB\fIUUID\fR\fR
 .RS 4
-The UUID of the device containing the LUKS header to erase upon encountering the device specified with \fBreject\fR\&.
-Erasing the LUKS header will render the data unreadable\&.
+The UUID of the device containing the LUKS header to erase when the \fIpanic function\fR is triggered. Erasing the LUKS header will render the data unreadable.
+.PD 0
 .PP
-NOTE: You should make a backup of the LUKS header before using this function\&.
+The internal command which will be executed is "\fBcryptsetup luksErase [UUID]\fR".
+.PD 1
+.PP
+NOTE: You should make a backup of the LUKS header before using this function.
 .RE
 .PP
 
 
 .SH "USAGE"
 .PP
-To activate the module you have to configure PAM\&. See \fBpam\&.conf(5)\fR for details\&.
+To activate the module you have to configure PAM. See \fBpam.conf(5)\fR for details.
 .PP
 In general, you will want to add the following to the top of a PAM configuration file:
 .PD 0
@@ -141,25 +155,25 @@ account    requisite    __PAMPANICSO__
 
 .SH "HOW TO DETERMINE MY UUIDS"
 .PP
-You will find your UUIDs in \fI/dev/disk/by-partuuid\fR\&.
-You might want to execute "\fBls -l /dev/disk/by-partuuid/\fR" in your favourite shell to find out which UUID is which device\&.
+You will find your UUIDs in \fI/dev/disk/by-partuuid\fR.
+You might want to execute "\fBls -l /dev/disk/by-partuuid/\fR" in your favourite shell to find out which UUID is which device.
 
 
 .SH "RETURN VALUES"
 .PP
 PAM_SUCCESS
 .RS 4
-Access was granted\&.
+Access was granted.
 .RE
 .PP
 PAM_IGNORE
 .RS 4
-An error has occured\&. The module will be ignored.\&.
+An error has occured. The module will be ignored.
 .RE
 .PP
 PAM_MAXTRIES
 .RS 4
-The removable media was not detected\&.
+The removable media was not detected.
 .RE
 
 
@@ -167,18 +181,18 @@ The removable media was not detected\&.
 .PP
 __PAMPANICSO__
 .RS 4
-This PAM module\&.
+This PAM module, which does everything of this above.
 .RE
 .PP
 __PAMPANICPW__
 .RS 4
-Program to set and change the passwords\&.
+Program to set and change the passwords.
 .RE
 
 
 .SH "BUGS"
 .PP
-Please report bugs and send pull requests to <https://github\&.com/pampanic/pam_panic>\&.
+Please report bugs and send pull requests to <https://github.com/pampanic/pam_panic>.
 
 
 .SH "SEE ALSO"
@@ -186,12 +200,12 @@ Please report bugs and send pull requests to <https://github\&.com/pampanic/pam_
 \fBpam_panic_pw\fR(1),
 \fBcryptsetup\fR(8),
 \fBpam\fR(8),
-\fBpam\&.conf\fR(5)
+\fBpam.conf\fR(5)
 
 
 .SH "AUTHORS"
 .PD 0
 .PP
-pam_panic was written by Bandie <bandie@chaospott\&.de>\&.
+pam_panic was written by Bandie <bandie@chaospott.de>.
 .PP
-This man page has been revised by Jordy Dickinson <jordy\&.dickinson@icloud\&.com>
+This man page has been revised by Jordy Dickinson <jordy.dickinson@icloud.com>.

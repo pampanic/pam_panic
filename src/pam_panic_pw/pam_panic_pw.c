@@ -7,7 +7,7 @@ LICENSE :      GNU-GPLv3
 */
 
 
-
+#include "pam_panic_pw.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,13 +17,15 @@ LICENSE :      GNU-GPLv3
 #include <sys/stat.h>
 #include <crypt.h>
 #include "config.h"
+#include "../../lib/gettext.h"
 
+#define _(String) gettext(String)
 
-int writePasswords(char pw[][99]){
+int writePasswords(char pw[][256], char* pwfile){
 
-  FILE *f = fopen(PPASSFILE, "w");
+  FILE *f = fopen(pwfile, "w");
   if(f == NULL){
-    fprintf(stderr, "ERROR opening file!\n");
+    fprintf(stderr, _("ERROR opening file!\n"));
     return 2;
   }
 
@@ -31,14 +33,21 @@ int writePasswords(char pw[][99]){
 
   fclose(f);
 
-  chmod(PPASSFILE, 0644);
+  chmod(pwfile, 0644);
 
   return 0;
 }
 
+#ifndef TEST
 
 int main(void){
 
+  // gettext
+  setlocale(LC_ALL, "");
+  bindtextdomain(PACKAGE, LOCALEDIR);
+  textdomain(PACKAGE);
+
+  // init
   time_t t;
   srand((unsigned) time(&t));
   unsigned long seed[2];
@@ -49,15 +58,20 @@ int main(void){
   char *password[2];
   char *pwvrf[2];
   
-  char pw[2][99];
-  char pwv[2][99];
+  char pw[2][256];
+  char pwv[2][256];
 
-  char *prompt[4] = {"Key password: ",  "Panic password: ", "Retype key password: ","Retype panic password: "};
+  char *prompt[4] = {
+    _("Key password: "),
+    _("Panic password: "),
+    _("Confirm key password: "),
+    _("Confirm panic password: ")
+  };
 
   int i;
 
   if(getuid() != 0){
-    printf("Please run this program under root. Write access to %s is mandatory.\n", PPASSFILE);    return 1;
+    printf(_("Please run this program under root. Write access to %s is mandatory.\n"), PPASSFILE);    return 1;
   }
   
   for(int j=0; j<2; j++){ 
@@ -80,10 +94,10 @@ int main(void){
       int ok = strcmp(pw[j], pwv[j]) == 0;
       if(!ok){
         if(k==2){
-          printf("Didn't work. Bye.\n");
+          printf(_("Didn't work. Bye.\n"));
           return 1;
         }else
-          printf("Password didn't match. Try again.\n");
+          printf(_("Password didn't match. Try again.\n"));
       }else
         break;
     }
@@ -92,5 +106,6 @@ int main(void){
 
   /* Save the results. */
   
-  return writePasswords(pw);
+  return writePasswords(pw, PPASSFILE);
 }
+#endif

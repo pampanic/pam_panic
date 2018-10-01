@@ -1,6 +1,6 @@
 AC_INIT(
     [pam_panic],
-    [0.1.0],
+    [0.2.0],
     [https://github.com/pampanic/pam_panic/issues],
     [pam_panic])
 AC_CONFIG_AUX_DIR([build-aux])
@@ -20,6 +20,15 @@ CFLAGS+=" -std=gnu11"
 
 AM_PROG_AR
 
+AM_GNU_GETTEXT_VERSION(0.18.3)
+AM_GNU_GETTEXT([external])
+
+AC_PATH_PROG([PO4A],po4a)
+if test -z "$PO4A" ; then
+    AC_MSG_ERROR([Please install po4a before building pam_panic.])
+fi
+AC_DEFINE_UNQUOTED([PO4A], "$PO4A",
+    [path to po4a])
 
 AC_PATH_PROG([REBOOT], [reboot])
 AC_DEFINE_UNQUOTED([REBOOT], "$REBOOT",
@@ -30,6 +39,10 @@ AC_DEFINE_UNQUOTED([POWEROFF], "$POWEROFF",
 AC_PATH_PROG([CRYPTSETUP], [cryptsetup])
 AC_DEFINE_UNQUOTED([CRYPTSETUP], "$CRYPTSETUP",
     [path to the cryptsetup command])
+
+AC_PATH_PROG([FIND], [find])
+AC_DEFINE_UNQUOTED([FIND], "$FIND",
+    [path to the find command])
 
 AC_ARG_ENABLE(securedir,
     AS_HELP_STRING([--enable-securedir=DIR],
@@ -51,6 +64,8 @@ AC_ENABLE_SHARED([yes])
 
 AC_CONFIG_FILES([
     Makefile
+    po/Makefile.in
+    po4a/Makefile
     src/pam_panic/Makefile
     src/pam_panic/man/Makefile
     src/pam_panic_pw/Makefile

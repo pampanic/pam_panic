@@ -1,25 +1,15 @@
 /*
-FILENAME :     pam_panic.c
-DESCRIPTION :  Header is made for testing purposes.
+FILENAME :     pam_panic.h
+DESCRIPTION :  Header.
 AUTHOR :       Bandie
 DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/wait.h>
-#include <regex.h>
-#include <string.h>
 #include <security/pam_modules.h>
 #include <security/pam_ext.h>
 #include <syslog.h>
-#include "pam_panic_reject.h"
-#include "pam_panic_authdevice.h"
-#include "pam_panic_password.h"
 
 
 void argSplit(char **some_arg, char **some_temp, const char *arg);

@@ -6,6 +6,8 @@ DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */
 
+#include "pam_panic.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -16,12 +18,18 @@ LICENSE :      GNU-GPLv3
 #include <security/pam_modules.h>
 #include <security/pam_ext.h>
 #include <syslog.h>
-#include "config.h"
+
 #include "pam_panic_reject.h"
+#include "../../lib/gettext.h"
+
+#define _(String) gettext(String)
+
 #include "pam_panic_authdevice.h"
 #include "pam_panic_password.h"
 
 
+#ifdef PACKAGE
+#ifdef LOCALEDIR
 #ifdef REBOOT
 #ifdef POWEROFF
 #ifdef CRYPTSETUP
@@ -30,7 +38,7 @@ int makeRegex(pam_handle_t *pamh, regex_t *regex){
   char *pattern = "^[A-Fa-f0-9]\\{8\\}\\-[A-Fa-f0-9]\\{4\\}\\-[A-Fa-f0-9]\\{4\\}\\-[A-Fa-f0-9]\\{4\\}\\-[A-Fa-f0-9]\\{12\\}$";
 
   if(regcomp(regex, pattern, 0)){
-    pam_syslog(pamh, LOG_CRIT, "ERROR: Problem with regcomp.");
+    pam_syslog(pamh, LOG_CRIT, _("CRITICAL: Problem with regcomp."));
     return 1;
   }
   
@@ -67,6 +75,10 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
   int8_t bPoweroff = 0;
   int8_t bPassword = 0;
 
+  // gettext
+  setlocale(LC_ALL, "");
+  bindtextdomain(PACKAGE, LOCALEDIR);
+  textdomain(PACKAGE);
 
   // Regex for checking arguments
   regex_t regex;
@@ -107,7 +119,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
       || (rejected_temp != NULL && regexec(&regex, rejected_temp, 0, NULL, 0) == REG_NOMATCH)
       || (bSerious && serious_temp == NULL)
     ) {
-    pam_syslog(pamh, LOG_ERR, "Arguments invalid. Note that allow and reject must have a valid GPT UUID.");
+    pam_syslog(pamh, LOG_ERR, _("ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a valid GPT UUID."));
     return (PAM_ABORT);
   } 
 
@@ -143,7 +155,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
 
   // Check if panic key exist
   if(bSerious && access(serious_dev, F_OK) == -1){
-    pam_syslog(pamh, LOG_ALERT, "ALERT for argument \"serious\": Device doesn't exist.");
+    pam_syslog(pamh, LOG_ALERT, _("ALERT for argument \"serious\": Device doesn't exist."));
     return (PAM_ABORT);
   }
 
@@ -198,6 +210,8 @@ PAM_EXTERN int pam_sm_chauthtok(pam_handle_t *pamh, int flags, int argc, const c
 	return (PAM_SERVICE_ERR);
 }
 
+#endif
+#endif
 #endif
 #endif
 #endif

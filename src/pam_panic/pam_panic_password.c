@@ -6,33 +6,32 @@ DATE :         2018-03-27T02:34:08+02:00
 LICENSE :      GNU-GPLv3
 */
 
+#include "pam_panic_password.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <security/pam_modules.h>
-#include <security/pam_ext.h>
+
+#include "../../lib/gettext.h"
+
 #include <syslog.h>
 #include <crypt.h>
-#include "pam_panic_password.h"
 #include "pam_panic_reject.h"
 
-#define MSG_NOFILE "ALERT for password option: No password file detected."
-#define MSG_ERROPEN "ERROR: Couldn't open password file."
-#define MSG_CORRUPT "CRITICAL: Password file is corrupt!"
-
+#define _(String) gettext(String)
 
 int readPassword(pam_handle_t *pamh, char pw[2][99]){
 
   // Open file
   if(access(PPASSFILE, F_OK) == -1){
-    pam_syslog(pamh, LOG_ALERT, MSG_NOFILE);
+    pam_syslog(pamh, LOG_ALERT, _("ALERT for password option: No password file detected."));
     return 2;
   }
   FILE *f = fopen(PPASSFILE, "r");
   if(f == NULL){
-    pam_syslog(pamh, LOG_ALERT, MSG_ERROPEN);
+    pam_syslog(pamh, LOG_ALERT, _("ERROR: Couldn't open password file."));
     return 1;
   }
 
@@ -44,7 +43,7 @@ int readPassword(pam_handle_t *pamh, char pw[2][99]){
   fclose(f);
 
   if(nread != 198){
-    pam_syslog(pamh, LOG_CRIT, MSG_CORRUPT);
+    pam_syslog(pamh, LOG_CRIT, _("CRITICAL: Password file is corrupt!"));
     return 3;
   }
 
@@ -65,6 +64,11 @@ int readPassword(pam_handle_t *pamh, char pw[2][99]){
 
 int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t bReboot, int8_t bPoweroff){
 
+  // gettext
+  setlocale (LC_ALL, "");
+  bindtextdomain(PACKAGE, LOCALEDIR);
+  textdomain(PACKAGE);
+
   // PAM password response
   char resp[256];
   char *response = NULL;
@@ -84,7 +88,7 @@ int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t 
 
 
 
-  pam_prompt(pamh, PAM_PROMPT_ECHO_OFF, &response, PWPROMPT);
+  pam_prompt(pamh, PAM_PROMPT_ECHO_OFF, &response, _("Password: "));
 
   // Is response null?
   if(!response)

@@ -7,8 +7,8 @@
 .\"  Language: English
 .\"
 .TH "PAM_PANIC_PW" "8" "2018-03-31" "PAM Panic Manual" "PAM Panic Manual"
-.ie \n(.g .ds Aq \(aq
-.el       .ds Aq '
+.\".ie \n(.g .ds Aq \(aq
+.\".el       .ds Aq '
 .\" -----------------------------------------------------------------
 .\" * set default formatting
 .\" -----------------------------------------------------------------
@@ -21,7 +21,7 @@
 .\" -----------------------------------------------------------------
 
 .SH "NAME"
-pam_panic_pw \- Set and change the passwords for the \fBpam_panic\fR(8) PAM module\&.
+pam_panic_pw \- Set and change the passwords for the \fBpam_panic\fR(8) PAM module.
 
 
 .SH "SYNOPSIS"
@@ -31,28 +31,28 @@ pam_panic_pw \- Set and change the passwords for the \fBpam_panic\fR(8) PAM modu
 
 .SH "DESCRIPTION"
 .PP
-\fBpam_panic_pw\fR sets the passwords for the \fBpam_panic\fR(8) PAM module\&.
+\fBpam_panic_pw\fR sets the passwords for the \fBpam_panic\fR(8) PAM module.
 .PP
-There are two passwords: the "key password" and the "panic password"\&.
+There are two passwords: the "key password" and the "panic password".
 The "key password" is used for the normal authentication
-whereas the "panic password" will execute the panic function\&.
+whereas the "panic password" will execute the panic function.
 
 
 .SH "RETURN VALUES"
 .PP
 0
 .RS 4
-Passwords set successfully\&.
+Passwords set successfully.
 .RE
 .PP
 1
 .RS 4
-Access denied\&.
+Access denied.
 .RE
 .PP
 2
 .RS 4
-Could not open the password file\&.
+Could not open the password file.
 .RE
 
 
@@ -60,33 +60,33 @@ Could not open the password file\&.
 .PP
 __PAMPANICPW__
 .RS 4
-Program to set and change the passwords\&.
+Program to set and change the passwords.
 .RE
 .PP
 __PPASSFILE__
 .RS 4
-The password file\&.
+The password file.
 .RE
 
 
 .SH "BUGS"
 .PP
-Please report bugs and send pull requests to <https://github\&.com/pampanic/pam_panic>\&.
+Please report bugs and send pull requests to <https://github.com/pampanic/pam_panic>.
 
 
 .SH "SEE ALSO"
 .PP
 \fBpam_panic\fR(8),
 \fBcryptsetup\fR(8),
-\fBpam\&.conf\fR(5),
-\fBpam\fR(8)\&.
+\fBpam.conf\fR(5),
+\fBpam\fR(8).
 
 
 .SH "AUTHORS"
 
 .PD 0
 .PP
-pam_panic was written by Bandie <bandie@chaospott\&.de>\&.
+pam_panic was written by Bandie <bandie@chaospott.de>.
 .PP
-This man page has been revised by Jordy Dickinson <jordy\&.dickinson@icloud\&.com>
+This man page has been revised by Jordy Dickinson <jordy.dickinson@icloud.com>.
 

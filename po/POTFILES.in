@@ -1,0 +1,5 @@
+# The sources which contains output strings
+src/pam_panic/pam_panic.c
+src/pam_panic/pam_panic_authdevice.c
+src/pam_panic/pam_panic_password.c
+src/pam_panic_pw/pam_panic_pw.c
