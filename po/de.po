@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-09-30 13:04+0200\n"
+"POT-Creation-Date: 2018-10-03 20:26+0200\n"
 "PO-Revision-Date: 2018-09-20 21:03+0200\n"
 "Last-Translator:  <bandie@chaospott.de>\n"
 "Language-Team: German\n"
@@ -58,40 +58,40 @@ msgstr "CRITICAL: Passwort-Datei ist beschädigt!"
 msgid "Password: "
 msgstr "Passwort: "
 
-#: src/pam_panic_pw/pam_panic_pw.c:28
+#: src/pam_panic_pw/pam_panic_pw.c:43
 #, c-format
 msgid "ERROR opening file!\n"
 msgstr "ERROR: Datei konnte nicht geöffnet werden!\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:65
+#: src/pam_panic_pw/pam_panic_pw.c:80
 msgid "Key password: "
 msgstr "Schlüsselpasswort: "
 
-#: src/pam_panic_pw/pam_panic_pw.c:66
+#: src/pam_panic_pw/pam_panic_pw.c:81
 msgid "Panic password: "
 msgstr "Panikpasswort: "
 
-#: src/pam_panic_pw/pam_panic_pw.c:67
+#: src/pam_panic_pw/pam_panic_pw.c:82
 msgid "Confirm key password: "
 msgstr "Schlüsselpasswort bestätigen: "
 
-#: src/pam_panic_pw/pam_panic_pw.c:68
+#: src/pam_panic_pw/pam_panic_pw.c:83
 msgid "Confirm panic password: "
 msgstr "Panikpasswort bestätigen: "
 
-#: src/pam_panic_pw/pam_panic_pw.c:74
+#: src/pam_panic_pw/pam_panic_pw.c:89
 #, c-format
 msgid "Please run this program under root. Write access to %s is mandatory.\n"
 msgstr ""
 "Dieses Programm muss als root ausgeführt werden. Schreibrechte auf %s sind "
 "dabei notwendig.\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:97
+#: src/pam_panic_pw/pam_panic_pw.c:112
 #, c-format
 msgid "Didn't work. Bye.\n"
 msgstr "Hat nicht funktioniert. Tschüss.\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:100
+#: src/pam_panic_pw/pam_panic_pw.c:115
 #, c-format
 msgid "Password didn't match. Try again.\n"
 msgstr "Passwort stimmt nicht überein. Bitte noch einmal versuchen.\n"
