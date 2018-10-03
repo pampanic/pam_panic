@@ -1,3 +1,9 @@
+## [0.2.2]
+- pam_panic_pw: Create folder if not existent
+
+## [0.2.1]
+- Missing header fix
+
 ## [0.2.0]
 - Adding gettext for translation capability
 - Adding po4a system for man pages
