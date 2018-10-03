@@ -12,6 +12,7 @@ LICENSE :      GNU-GPLv3
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <libgen.h>
 #include <time.h>
 #include <unistd.h>
 #include <sys/stat.h>
@@ -20,8 +21,22 @@ LICENSE :      GNU-GPLv3
 #include "../../lib/gettext.h"
 
 #define _(String) gettext(String)
+#define FMODE 0644
+#define DMODE 0755
 
 int writePasswords(char pw[][256], char* pwfile){
+
+  // Check, if path of pwfile exist
+  // Get parent dir of pwfile
+  char* parentdir;
+  parentdir = strdup(pwfile);
+  dirname(parentdir);
+
+  // Get POSIX info about the parent dir and create dir, if it does not exist
+  struct stat pd;
+  if(stat(parentdir, &pd) != 0 && !(S_ISDIR(pd.st_mode))){
+    mkdir(parentdir, DMODE);
+  }
 
   FILE *f = fopen(pwfile, "w");
   if(f == NULL){
@@ -33,7 +48,7 @@ int writePasswords(char pw[][256], char* pwfile){
 
   fclose(f);
 
-  chmod(pwfile, 0644);
+  chmod(pwfile, FMODE);
 
   return 0;
 }
