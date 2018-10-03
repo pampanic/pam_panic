@@ -14,6 +14,7 @@ LICENSE :      GNU-GPLv3
 #include "../src/pam_panic/pam_panic_authdevice.h"
 #include "../src/pam_panic/pam_panic_reject.h"
 #include "../src/pam_panic_pw/pam_panic_pw.h"
+#include <crypt.h>
 #include <CUnit/Basic.h>
 
 #define STATE_GOOD 0
