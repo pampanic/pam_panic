@@ -1,4 +1,4 @@
 language: C
-dist: trusty
+dist: xenial
 sudo: enabled
-script: sudo apt install po4a autopoint gettext libcunit1 libcunit1-dev &&  autoreconf -i && ./configure && make && make test
+script: sudo apt update && sudo apt install -y autopoint po4a gettext libcunit1 libcunit1-dev &&  autoreconf -i && ./configure && make && make test

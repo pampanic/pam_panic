@@ -157,6 +157,7 @@ account    requisite    __PAMPANICSO__
 .PP
 You will find your UUIDs in \fI/dev/disk/by-partuuid\fR.
 You might want to execute "\fBls -l /dev/disk/by-partuuid/\fR" in your favourite shell to find out which UUID is which device.
+If \fI/dev/disk/by-partuuid\fR is not existent, you can use the ID from \fI/dev/disk/by-uuid\fR or \fI/dev/disk/by-id\fR.
 
 
 .SH "RETURN VALUES"
