@@ -53,7 +53,26 @@ void argSplit(char **some_arg, char **some_temp, const char *arg){
 }
 
 void constrPath(char **dst, char **src){
-  sprintf(*dst, "/dev/disk/by-partuuid/%s", *src);
+
+  char tmp[256];
+
+  // EFI
+  strcpy(tmp, "/dev/disk/by-partuuid/");
+  strcat(tmp, *src);
+  if(access(tmp, F_OK) != -1)
+    sprintf(*dst, "/dev/disk/by-partuuid/%s", *src);
+ 
+  // MBR
+  memset(tmp, 0, sizeof tmp);
+  strcat(tmp, "/dev/disk/by-uuid/");
+  strcat(tmp, *src);
+  if(access(tmp, F_OK) != -1)
+    sprintf(*dst, "/dev/disk/by-uuid/%s", *src);
+
+  // Fallback vendor hardware id
+  else
+    sprintf(*dst, "/dev/disk/by-id/%s", *src);
+
 }
 
 PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, const char *argv[]){
