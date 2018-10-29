@@ -1,3 +1,6 @@
+## [0.2.4]
+- MBR support
+
 ## [0.2.2]
 - pam_panic_pw: Create folder if not existent
 
