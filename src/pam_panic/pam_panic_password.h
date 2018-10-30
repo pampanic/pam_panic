@@ -8,6 +8,7 @@ LICENSE :      GNU-GPLv3
 #ifndef PAM_PANIC_PASSWORD_H
 #define PAM_PANIC_PASSWORD_H
 
+
 #include "../config.h"
 #include <stdint.h>
 #include <security/pam_modules.h>
@@ -18,5 +19,6 @@ LICENSE :      GNU-GPLv3
 #endif
 
 int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t bReboot, int8_t bPoweroff);
+
 
 #endif
