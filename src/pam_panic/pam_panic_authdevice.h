@@ -7,6 +7,7 @@ LICENSE :      GNU-GPLv3
 
 #ifndef PAM_PANIC_AUTHDEVICE_H
 #define PAM_PANIC_AUTHDEVICE_H
+
 #include "../config.h"
 #include <stdint.h>
 #include <security/pam_modules.h>
