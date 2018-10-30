@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/pampanic/pam_panic.svg?branch=master)](https://travis-ci.org/pampanic/pam_panic)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/001445f05a4e47bcad151c2f6a05a29c)](https://app.codacy.com/app/pampanic/pam_panic?utm_source=github.com&utm_medium=referral&utm_content=pampanic/pam_panic&utm_campaign=badger)
+[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/pampanic/pam_panic.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/pampanic/pam_panic/context:cpp)
 # pam\_panic
 
 
