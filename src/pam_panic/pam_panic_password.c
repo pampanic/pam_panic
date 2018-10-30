@@ -90,7 +90,8 @@ int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t 
 
   pam_prompt(pamh, PAM_PROMPT_ECHO_OFF, &response, _("Password: "));
 
-  // Is response null?
+  // Abort on null response. xscreensaver is known for passing null instead of aborting.
+  // refer to https://bandie.org/programming/2018/04/24/pam_panic-Security-fix.html
   if(!response)
     return(PAM_ABORT);
 
