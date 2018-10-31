@@ -77,11 +77,10 @@ You'll find the UUID of your partition in `/dev/disk/by-partuuid/`. You can find
 
 
 ## Configuration
-The more easy way is to `pam_panic_config`. 
+The more easy way is to run `pam_panic_config`. 
 
 
-The hard way:
-
+The hard way:  
 To configure the module, add the following to the appropriate PAM configuration file(s): (see `pam.conf(5)` for details on these files)
 
 ### Using the removable media:
