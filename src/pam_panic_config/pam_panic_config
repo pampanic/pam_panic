@@ -14,24 +14,31 @@ if [ $EUID -ne 0 ]; then
 fi
 
 
-
+# Call when using the Cancel button
 function cancel(){
   clear
   echo "Bye! :)"
   exit 0
 }
 
+# Call when CTRL+C
 trap "cancel" INT
 
+
+# Check, if $1 is a gpt formatted device
 function checkGPT(){
   blkid $1 -t PTTYPE=gpt >> /dev/null
   return $?
 }
 
+
+# Get the GPT PartitionUUID
 function getPARTUUID(){
   blkid $1 | awk '{print $4;}' | sed 's/PARTUUID="//;s/"//'
 }
 
+
+# Get the LUKS-Device's UUId
 function getLUKSDevice(){
   if [ "$1" = "UUID" ]; then
     blkid /dev/sda*[1-9] | grep "crypto_LUKS" | awk '{print $2;}' | sed 's/UUID="//;s/"//'
@@ -41,6 +48,8 @@ function getLUKSDevice(){
   fi
 }
 
+
+# Generic dialog question
 function ask(){
 
   dialog --backtitle "pam_panic's Configuration Generator" --title "$1"  --yesno "$2" 8 80
@@ -48,10 +57,14 @@ function ask(){
 
 }
 
+
+# Generic message box
 msg() {
   dialog --backtitle "pam_panic's Configuration Generator" --msgbox "$1" 8 80
 }
 
+
+# Generate a two dimensional flat array of all GPT devices from sdb-sdz
 function getMediaDevice(){
   local i=0
   local uuid
@@ -65,8 +78,8 @@ function getMediaDevice(){
   done
 }
 
-declare -g -a mediaArray
 
+# Hint for GPT formatted key before searching for it 
 function chooseMediumPre(){
   local title="Removable media: $1 device"
 
@@ -74,8 +87,10 @@ function chooseMediumPre(){
   if [ $? -eq 1 ]; then
     cancel
   fi
-
 }
+
+
+# Choosing a GPT formatted key
 function chooseMedium(){
   local ans 
   local title="Removable media: $1 device"
@@ -92,6 +107,8 @@ function chooseMedium(){
   return $ans
 }
 
+
+# A "Detecting devices...", assures to use a more up to date device list
 function showDetectDev(){
   dialog --backtitle "pam_panic's Configuration Generator" \
     --title "$title" \
@@ -100,6 +117,8 @@ function showDetectDev(){
   sleep 2
 }
 
+
+# Welcome
 dialog --backtitle "pam_panic's Configuration Generator" \
   --title "Welcome" \
   --ok-label "Yip!" \
@@ -108,6 +127,7 @@ dialog --backtitle "pam_panic's Configuration Generator" \
 auth_mode=2
 while [ $auth_mode -eq 2 ]; do
 
+  # Authentication mode
   dialog --backtitle "pam_panic's Configuration Generator" \
     --title "Authentication mode" \
     --help-button \
@@ -119,7 +139,8 @@ while [ $auth_mode -eq 2 ]; do
 
   case $auth_mode in
     "0")
-
+      # Removable media
+      # Authentication
       while [ -z $media ]; do
         chooseMediumPre Authentication
         showDetectDev
@@ -130,7 +151,7 @@ while [ $auth_mode -eq 2 ]; do
       auth_dev=$(echo ${mediaArray[$?]} | sed 's/\/dev\/sd[b-z]*[0-1]\[//;s/\]//')
       msg "Authentication device chosen with UUID $auth_dev."
 
-
+      # Panic
       unset media
       while [ -z $media ]; do
         chooseMediumPre Panic
@@ -144,6 +165,7 @@ while [ $auth_mode -eq 2 ]; do
 
       ;;
     "3")
+      # Passwords
       ask "Passwords" "Do you want to set the passwords now?"
       setpw=$?
       case $setpw in
@@ -159,15 +181,17 @@ while [ $auth_mode -eq 2 ]; do
       esac
       ;;
     "2")
+      # Help
       man pam_panic
       ;;
     "1")
+      # Cancel
       cancel
       ;;
   esac
 done
 
-
+# serious flag
 ask "pam_panic's behaviour" "Do you wish to destroy your LUKS header in case of emergency?\nThis means that your encrypted device won't be readable anymore. After this question you will be asked to make a backup of this header."
 serious=$?
 
@@ -175,6 +199,7 @@ if [ $serious -eq 0 ]; then
   serious_dev=$(getLUKSDevice UUID)
   msg "We will destroy $(getLUKSDevice NAME) [$serious_dev] when you trigger the panic function."
 
+  # LUKS header backup
   ask "LUKS Header backup" "Do you want to make a LUKS-Header backup now?\nIt will be saved at \"$LHBU\"."
   bu=$?
   case $bu in 
@@ -185,6 +210,7 @@ if [ $serious -eq 0 ]; then
   esac
 fi
 
+# poweroff / reboot behaviour
 dialog --backtitle "pam_panic's Configuration Generator" \
   --title "pam_panic's behaviour" \
   --ok-label "Reboot" \
@@ -193,6 +219,8 @@ dialog --backtitle "pam_panic's Configuration Generator" \
   --yesno "Do you wish a reboot or a shutdown after issuing the panic function? n for nothing of those? " 10 80
 power=$?
 
+
+# Configuration generation
 dialog --backtitle "pam_panic's Configuration Generator" \
   --infobox "Generating configuration..." 3 40
 config="#%PAM-1.0\nauth       requisite    pam_panic.so"
@@ -223,6 +251,8 @@ esac
 config="$config\naccount    requisite    pam_panic.so"
 
 
+
+# Write config file
 if [ -f $CONFIGFILE ]; then
   ask "Configfile exist" "$CONFIGFILE exists. Overwrite it?"
   ov=$?
@@ -235,7 +265,7 @@ else
   echo -e "$config" > $CONFIGFILE
 fi
 
-
+# Finished message
 clear
 [ $ov -eq 0 ] && echo "Done! <3" || echo "Nothing done! </3"
 
