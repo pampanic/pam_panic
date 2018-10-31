@@ -2,7 +2,7 @@ ACLOCAL_AMFLAGS = -I m4
 
 AM_CPPFLAGS = -I src
 
-SUBDIRS = po po4a src/pam_panic src/pam_panic_pw
+SUBDIRS = po po4a src/pam_panic src/pam_panic_pw src/pam_panic_config
 
 .PHONY: all test clean
 

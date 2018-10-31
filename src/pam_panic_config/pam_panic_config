@@ -1,0 +1,250 @@
+#!/bin/bash
+#
+# Name: pam_panic_config
+# Description: Create a pam_panic configuration.
+# Author: Bandie <bandie@chaospott.de>
+#
+
+CONFIGFILE="/etc/pam.d/pampanic"
+LHBU="$HOME/LUKSHeaderBackup"
+
+if [ $EUID -ne 0 ]; then
+  echo "Please run this script as root or using sudo."
+  exit 1
+fi
+
+
+
+function cancel(){
+  clear
+  echo "Bye! :)"
+  exit 0
+}
+
+trap "cancel" INT
+
+function checkGPT(){
+  blkid $1 -t PTTYPE=gpt >> /dev/null
+  return $?
+}
+
+function getPARTUUID(){
+  blkid $1 | awk '{print $4;}' | sed 's/PARTUUID="//;s/"//'
+}
+
+function getLUKSDevice(){
+  if [ "$1" = "UUID" ]; then
+    blkid /dev/sda*[1-9] | grep "crypto_LUKS" | awk '{print $2;}' | sed 's/UUID="//;s/"//'
+  fi
+  if [ "$1" = "NAME" ]; then
+    blkid /dev/sda*[1-9] | grep "crypto_LUKS" | awk '{print $1;}' | sed 's/://'
+  fi
+}
+
+function ask(){
+
+  dialog --backtitle "pam_panic's Configuration Generator" --title "$1"  --yesno "$2" 8 80
+  return $?
+
+}
+
+msg() {
+  dialog --backtitle "pam_panic's Configuration Generator" --msgbox "$1" 8 80
+}
+
+function getMediaDevice(){
+  local i=0
+  local uuid
+  for dev in $(ls /dev/sd[b-z] 2> /dev/null); do
+    if $(checkGPT $dev); then
+      for part in $(ls $dev*[1-9]); do
+        echo -n "$i $part[$(getPARTUUID $part)] "
+        (( i++ ))
+      done
+    fi
+  done
+}
+
+declare -g -a mediaArray
+
+function chooseMediumPre(){
+  local title="Removable media: $1 device"
+
+  dialog --backtitle "pam_panic's Configuration Generator" --title "$title" --yes-label "OK" --no-label "Cancel" --yesno "Please remove all media devices before your continue.\nNote, if you device doesn't show up it might not be a GPT formatted device.\n\nPlease insert the device you want to use as $1 device and press OK." 10 80
+  if [ $? -eq 1 ]; then
+    cancel
+  fi
+
+}
+function chooseMedium(){
+  local ans 
+  local title="Removable media: $1 device"
+
+  dialog --backtitle "pam_panic's Configuration Generator" --title "$title" --menu "Choose your device:" 10 80 5 $media 2> .pam_panic_media_choice
+  if [ $? -eq 1 ]; then
+    cancel
+  fi
+
+  ans=$(cat .pam_panic_media_choice)
+  (( ans=(2*ans)+1 ))
+  rm -f .pam_panic_media_choice
+
+  return $ans
+}
+
+function showDetectDev(){
+  dialog --backtitle "pam_panic's Configuration Generator" \
+    --title "$title" \
+    --infobox "Detecting devices..." 3 80
+  # Prevention for impatient beings
+  sleep 2
+}
+
+dialog --backtitle "pam_panic's Configuration Generator" \
+  --title "Welcome" \
+  --ok-label "Yip!" \
+  --msgbox "Welcome to pam_panic's Configuration Generator.\n\nIt will help you to create a valid pam_panic setup. It will also generate a Linux' PAM configuration file.\n\nAfter you're done with this Configuration Generator, you will see some hints how to integrate the new PAM configuration file in your system." 20 80
+
+auth_mode=2
+while [ $auth_mode -eq 2 ]; do
+
+  dialog --backtitle "pam_panic's Configuration Generator" \
+    --title "Authentication mode" \
+    --help-button \
+    --extra-button --extra-label "Passwords" \
+    --ok-label "Removable Media" \
+    --yesno "You can choose between the \"two removable media\" option and the \"two passwords\" option.\nSee \"Help\" to learn what it is.\n\nRemovable media or passwords?" 10 80
+
+  auth_mode=$?
+
+  case $auth_mode in
+    "0")
+
+      while [ -z $media ]; do
+        chooseMediumPre Authentication
+        showDetectDev
+        media=$(getMediaDevice)
+        read -r -a mediaArray <<< "$media"
+      done    
+      chooseMedium Authentication
+      auth_dev=$(echo ${mediaArray[$?]} | sed 's/\/dev\/sd[b-z]*[0-1]\[//;s/\]//')
+      msg "Authentication device chosen with UUID $auth_dev."
+
+
+      unset media
+      while [ -z $media ]; do
+        chooseMediumPre Panic
+        showDetectDev
+        media=$(getMediaDevice)
+        read -r -a mediaArray <<< "$media"
+      done
+      chooseMedium Panic
+      panic_dev=$(echo ${mediaArray[$?]} | sed 's/\/dev\/sd[b-z]*[0-1]\[//;s/\]//')
+      msg "Panic device chosen with UUID $panic_dev."
+
+      ;;
+    "3")
+      ask "Passwords" "Do you want to set the passwords now?"
+      setpw=$?
+      case $setpw in
+          "0")
+            clear
+            pam_panic_pw
+            if [ $? -ne 0 ]; then
+              clear
+              echo "Failed to set a password. :("
+              exit 1
+            fi
+            ;;
+      esac
+      ;;
+    "2")
+      man pam_panic
+      ;;
+    "1")
+      cancel
+      ;;
+  esac
+done
+
+
+ask "pam_panic's behaviour" "Do you wish to destroy your LUKS header in case of emergency?\nThis means that your encrypted device won't be readable anymore. After this question you will be asked to make a backup of this header."
+serious=$?
+
+if [ $serious -eq 0 ]; then
+  serious_dev=$(getLUKSDevice UUID)
+  msg "We will destroy $(getLUKSDevice NAME) [$serious_dev] when you trigger the panic function."
+
+  ask "LUKS Header backup" "Do you want to make a LUKS-Header backup now?\nIt will be saved at \"$LHBU\"."
+  bu=$?
+  case $bu in 
+    "0")
+      cryptsetup luksHeaderBackup $(getLUKSDevice NAME) --header-backup-file "$LHBU"
+      msg "LUKSHeader backup has been saved here: $LHBU"
+      ;;
+  esac
+fi
+
+dialog --backtitle "pam_panic's Configuration Generator" \
+  --title "pam_panic's behaviour" \
+  --ok-label "Reboot" \
+  --extra-button --extra-label "Shutdown" \
+  --cancel-label "Nothing" \
+  --yesno "Do you wish a reboot or a shutdown after issuing the panic function? n for nothing of those? " 10 80
+power=$?
+
+dialog --backtitle "pam_panic's Configuration Generator" \
+  --infobox "Generating configuration..." 3 40
+config="#%PAM-1.0\nauth       requisite    pam_panic.so"
+
+case $power in 
+  "0")
+    config="$config reboot"
+    ;;
+  "3")
+    config="$config poweroff"
+    ;;
+esac
+
+case $auth_mode in
+  "3")
+    config="$config password"
+    ;;
+  "0")
+    config="$config allow=$auth_dev reject=$panic_dev"
+    ;;
+esac
+
+case $serious in
+  "0")
+    config="$config serious=$serious_dev"
+    ;;
+esac
+config="$config\naccount    requisite    pam_panic.so"
+
+
+if [ -f $CONFIGFILE ]; then
+  ask "Configfile exist" "$CONFIGFILE exists. Overwrite it?"
+  ov=$?
+  case $ov in
+    "0")
+      echo -e "$config" > $CONFIGFILE
+      ;;
+  esac
+else
+  echo -e "$config" > $CONFIGFILE
+fi
+
+
+clear
+[ $ov -eq 0 ] && echo "Done! <3" || echo "Nothing done! </3"
+
+echo -e "\n"
+echo "What now?"
+echo "========="
+echo "Now we saved our configuration to $CONFIGFILE."
+echo "If you want to let them apply to the other modules,"
+echo "like in xscreensaver and system-local-login [the system login],"
+echo "do as follows:"
+echo -e "\t1. Open a module in /etc/pam.d/ (like xscreensaver or system-local-login).\n\t2. After the line \"#%PAM-1.0\" append\n\t\tauth       include    pampanic\n\t\taccount    include    pampanic\nAfter you have saved the file pam_panic will be working at once."
+echo "If you got any question, don't hesitate to ask via IRC (chat.freenode.de in room #pampanic) or via mail."
