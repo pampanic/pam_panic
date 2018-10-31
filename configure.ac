@@ -30,6 +30,11 @@ fi
 AC_DEFINE_UNQUOTED([PO4A], "$PO4A",
     [path to po4a])
 
+AC_PATH_PROG([DIALOG],dialog)
+if test -z "$DIALOG" ; then
+    AC_MSG_ERROR([Please install dialog. Needed by pam_panic_config])
+fi
+
 AC_PATH_PROG([REBOOT], [reboot])
 AC_DEFINE_UNQUOTED([REBOOT], "$REBOOT",
     [path to the reboot command])
