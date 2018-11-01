@@ -73,6 +73,7 @@ AC_CONFIG_FILES([
     po4a/Makefile
     src/pam_panic/Makefile
     src/pam_panic/man/Makefile
+    src/pam_panic/data/Makefile
     src/pam_panic_pw/Makefile
     src/pam_panic_pw/man/Makefile
     src/pam_panic_config/Makefile
