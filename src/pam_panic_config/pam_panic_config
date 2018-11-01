@@ -16,6 +16,7 @@ fi
 
 # Call when using the Cancel button
 function cancel(){
+  rm -f .pam_panic_media_choice
   clear
   echo "Bye! :)"
   exit 0
@@ -51,16 +52,14 @@ function getLUKSDevice(){
 
 # Generic dialog question
 function ask(){
-
   dialog --backtitle "pam_panic's Configuration Generator" --title "$1"  --yesno "$2" 8 80
   return $?
-
 }
 
 
 # Generic message box
 msg() {
-  dialog --backtitle "pam_panic's Configuration Generator" --msgbox "$1" 8 80
+  dialog --backtitle "pam_panic's Configuration Generator" --title "$1" --msgbox "$2" 8 80
 }
 
 
@@ -149,7 +148,7 @@ while [ $auth_mode -eq 2 ]; do
       done    
       chooseMedium Authentication
       auth_dev=$(echo ${mediaArray[$?]} | sed 's/\/dev\/sd[b-z]*[0-1]\[//;s/\]//')
-      msg "Authentication device chosen with UUID $auth_dev."
+      msg "Removable media: Authentication device" "Authentication device chosen with UUID $auth_dev."
 
       # Panic
       unset media
@@ -161,7 +160,7 @@ while [ $auth_mode -eq 2 ]; do
       done
       chooseMedium Panic
       panic_dev=$(echo ${mediaArray[$?]} | sed 's/\/dev\/sd[b-z]*[0-1]\[//;s/\]//')
-      msg "Panic device chosen with UUID $panic_dev."
+      msg "Removable media: Panic device" "Panic device chosen with UUID $panic_dev."
 
       ;;
     "3")
@@ -192,22 +191,27 @@ while [ $auth_mode -eq 2 ]; do
 done
 
 # serious flag
-ask "pam_panic's behaviour" "Do you wish to destroy your LUKS header in case of emergency?\nThis means that your encrypted device won't be readable anymore. After this question you will be asked to make a backup of this header."
+ask "pam_panic's behaviour" "Do you wish to destroy your LUKS header in case of emergency?\nThis means that your encrypted root device won't be readable anymore. After this question you will be asked to make a backup of this header."
 serious=$?
 
 if [ $serious -eq 0 ]; then
   serious_dev=$(getLUKSDevice UUID)
-  msg "We will destroy $(getLUKSDevice NAME) [$serious_dev] when you trigger the panic function."
+  if [ ! -z $serious_dev ]; then
+    msg "pam_panic's behaviour" "We will destroy $(getLUKSDevice NAME) [$serious_dev] when you trigger the panic function."
 
-  # LUKS header backup
-  ask "LUKS Header backup" "Do you want to make a LUKS-Header backup now?\nIt will be saved at \"$LHBU\"."
-  bu=$?
-  case $bu in 
-    "0")
-      cryptsetup luksHeaderBackup $(getLUKSDevice NAME) --header-backup-file "$LHBU"
-      msg "LUKSHeader backup has been saved here: $LHBU"
-      ;;
-  esac
+    # LUKS header backup
+    ask "LUKS Header backup" "Do you want to make a LUKS-Header backup now?\nIt will be saved at \"$LHBU\"."
+    bu=$?
+    case $bu in 
+      "0")
+        cryptsetup luksHeaderBackup $(getLUKSDevice NAME) --header-backup-file "$LHBU"
+        msg "LUKS Header backup" "LUKSHeader backup has been saved here: $LHBU"
+        ;;
+    esac
+  else
+    msg "pam_panic's behaviour" "ERROR: There is no encrypted root device on /dev/sda."
+    serious=1
+  fi
 fi
 
 # poweroff / reboot behaviour
