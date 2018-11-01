@@ -23,13 +23,6 @@ AM_PROG_AR
 AM_GNU_GETTEXT_VERSION(0.18.3)
 AM_GNU_GETTEXT([external])
 
-AC_PATH_PROG([DIRNAME],dirname)
-if test -z "$DIRNAME" ; then
-    AC_MSG_ERROR([dirname is needed to make proper installation])
-fi
-AC_DEFINE_UNQUOTED([DIRNAME], "$DIRNAME",
-    [path to dirname])
-
 AC_PATH_PROG([PO4A],po4a)
 if test -z "$PO4A" ; then
     AC_MSG_ERROR([Please install po4a before building pam_panic.])
