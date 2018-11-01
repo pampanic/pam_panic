@@ -123,10 +123,11 @@ dialog --backtitle "pam_panic's Configuration Generator" \
   --ok-label "Yip!" \
   --msgbox "Welcome to pam_panic's Configuration Generator.\n\nIt will help you to create a valid pam_panic setup. It will also generate a Linux' PAM configuration file.\n\nAfter you're done with this Configuration Generator, you will see some hints how to integrate the new PAM configuration file in your system." 20 80
 
+
+# Authentication mode
 auth_mode=2
 while [ $auth_mode -eq 2 ]; do
 
-  # Authentication mode
   dialog --backtitle "pam_panic's Configuration Generator" \
     --title "Authentication mode" \
     --help-button \
@@ -190,6 +191,7 @@ while [ $auth_mode -eq 2 ]; do
   esac
 done
 
+
 # serious flag
 ask "pam_panic's behaviour" "Do you wish to destroy your LUKS header in case of emergency?\nThis means that your encrypted root device won't be readable anymore. After this question you will be asked to make a backup of this header."
 serious=$?
@@ -213,6 +215,7 @@ if [ $serious -eq 0 ]; then
     serious=1
   fi
 fi
+
 
 # poweroff / reboot behaviour
 dialog --backtitle "pam_panic's Configuration Generator" \
@@ -268,6 +271,7 @@ if [ -f $CONFIGFILE ]; then
 else
   echo -e "$config" > $CONFIGFILE
 fi
+
 
 # Finished message
 clear
