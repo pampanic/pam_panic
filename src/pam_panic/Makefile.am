@@ -1,4 +1,4 @@
-SUBDIRS = man data
+SUBDIRS = man
 
 securelibdir = $(SECUREDIR)
 securelibexecdir = $(securelibdir)
