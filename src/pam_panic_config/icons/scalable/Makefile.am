@@ -1,2 +1,2 @@
 appicondir=$(datadir)/icons/hicolor/scalable/apps
-appicon_DATA=pam_panic.svg
+appicon_DATA=pampanic.svg
