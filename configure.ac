@@ -76,6 +76,8 @@ AC_CONFIG_FILES([
     src/pam_panic_pw/Makefile
     src/pam_panic_pw/man/Makefile
     src/pam_panic_config/Makefile
+    src/pam_panic_config/applications/Makefile
+    src/pam_panic_config/icons/Makefile
     test/Makefile
 ])
 

@@ -1,0 +1,24 @@
+[Desktop Entry]
+Version=0.2.6
+Type=Application
+Name=pam_panic Configuration Generator
+Name[de]=pam_panic Konfigurationsgenerator
+Name[fr]=Générateur de configuration pam_panic
+Name[es]=Generador de configuraciones pam_panic
+Name[jp]=pam_panic設定ジェネレータ
+Comment=Configure your pam_panic module
+Comment[de]=Konfigurieren des pam_panic-Moduls
+Comment[fr]=Configurer le module pam_panic
+Comment[es]=Configurar el módulo pam_panic
+Comment[jp]=pam_panicモジュールを設定する
+Keywords=PAM;security;password;authentication;usb;
+Keywords[de]=PAM;Sicherheit;Passwort;Authentifizierung;USB;
+Keywords[fr]=PAM;sécurité;mot de passe;authentification;usb;
+Keywords[es]=PAM;seguridad;contraseña;autenticación;usb;
+Keywords[jp]=PAM;セキュリティ;パスワード;認証;USB;
+Exec=gksu pam_panic_config
+TryExec=pam_panic_config
+Icon=pam_panic
+Terminal=true
+Categories=Settings;Security;ConsoleOnly;
+StartupNotify=false
