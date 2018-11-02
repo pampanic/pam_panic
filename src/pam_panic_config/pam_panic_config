@@ -286,3 +286,5 @@ echo "like in xscreensaver and system-local-login [the system login],"
 echo "do as follows:"
 echo -e "\t1. Open a module in /etc/pam.d/ (like xscreensaver or system-local-login).\n\t2. After the line \"#%PAM-1.0\" append\n\t\tauth       include    pampanic\n\t\taccount    include    pampanic\nAfter you have saved the file pam_panic will be working at once."
 echo "If you got any question, don't hesitate to ask via IRC (chat.freenode.de in room #pampanic) or via mail."
+echo -e "\nPress Enter to exit."
+read -n1
