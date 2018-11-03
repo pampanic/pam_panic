@@ -283,14 +283,29 @@ fi
 clear
 [ $writeout -eq 0 ] && echo "Done! <3" || echo "Nothing done! </3"
 
-echo -e "\n"
-echo "What now?"
-echo "========="
-echo "Now we saved our configuration to $CONFIGFILE."
-echo "If you want to let them apply to the other modules,"
-echo "like in xscreensaver and system-local-login [the system login],"
-echo "do as follows:"
-echo -e "\t1. Open a module in /etc/pam.d/ (like xscreensaver or system-local-login).\n\t2. After the line \"#%PAM-1.0\" append\n\t\tauth       include    pampanic\n\t\taccount    include    pampanic\nAfter you have saved the file pam_panic will be working at once."
-echo "If you got any question, don't hesitate to ask via IRC (chat.freenode.de in room #pampanic) or via mail."
+echo -e "\n
+What now?
+=========
+Now we saved our configuration to $CONFIGFILE.
+If you want to let them apply to the other modules,
+proceed as follows:
+  1. Open a module in /etc/pam.d/
+     You can try out:
+     - xscreensaver
+     - system-local-login (on Arch Linux)
+     - common-auth and common-account (Ubuntu)
+  2. After the line \"#%PAM-1.0\" append
+       auth       include    pampanic
+       account    include    pampanic
+On Ubuntu you might want to seperate both lines in common-auth and common-account.
+
+Once you have changed and saved those files, pam_panic will be active.
+On your next login you need to
+  - type your pam_panic authentification password or
+  - insert your removable authentication media
+previous your regular user password.
+" | more
+
+echo "If you got any question, don't hesitate to ask via IRC (chat.freenode.de in room #pampanic) or via mail + GPG."
 echo -e "\nPress Enter to exit."
 read -n1
