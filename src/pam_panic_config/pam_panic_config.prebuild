@@ -10,6 +10,9 @@ LHBU="$HOME/LUKSHeaderBackup"
 
 # Set on build time
 SECUREDIR="__SECURELIBDIR__"
+PAMPANICPW="__PAMPANICPW__"
+
+[[ ! -d $SECUREDIR ]] || [[ ! -f $PAMPANICPW ]]  && { echo "ERROR: Bash script was not build correctly." ; exit 1 ; }
 
 if [ $EUID -ne 0 ]; then
   echo "Please run this script as root or using sudo."
@@ -174,7 +177,7 @@ while [ $auth_mode -eq 2 ]; do
       case $setpw in
           "0")
             clear
-            pam_panic_pw
+            $PAMPANICPW
             if [ $? -ne 0 ]; then
               clear
               echo "Failed to set a password. :("
