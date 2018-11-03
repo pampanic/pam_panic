@@ -8,6 +8,9 @@
 CONFIGFILE="/etc/pam.d/pampanic"
 LHBU="$HOME/LUKSHeaderBackup"
 
+# Set on build time
+SECUREDIR="__SECURELIBDIR__"
+
 if [ $EUID -ne 0 ]; then
   echo "Please run this script as root or using sudo."
   exit 1
@@ -230,7 +233,7 @@ power=$?
 # Configuration generation
 dialog --backtitle "pam_panic's Configuration Generator" \
   --infobox "Generating configuration..." 3 40
-config="#%PAM-1.0\nauth       requisite    pam_panic.so"
+config="#%PAM-1.0\nauth       requisite    $SECUREDIR/pam_panic.so"
 
 case $power in 
   "0")
@@ -255,7 +258,7 @@ case $serious in
     config="$config serious=$serious_dev"
     ;;
 esac
-config="$config\naccount    requisite    pam_panic.so"
+config="$config\naccount    requisite    $SECUREDIR/pam_panic.so"
 
 
 # Write config file
