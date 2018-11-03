@@ -1,4 +1,4 @@
-SUBDIRS = applications icons
+SUBDIRS = applications icons/64x64 icons/scalable
 bin_SCRIPTS = pam_panic_config
 
 %: %.prebuild
