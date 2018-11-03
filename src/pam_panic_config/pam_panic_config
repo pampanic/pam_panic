@@ -258,12 +258,12 @@ esac
 config="$config\naccount    requisite    pam_panic.so"
 
 
-
 # Write config file
+writeout=0
 if [ -f $CONFIGFILE ]; then
   ask "Configfile exist" "$CONFIGFILE exists. Overwrite it?"
-  ov=$?
-  case $ov in
+  writeout=$?
+  case $writeout in
     "0")
       echo -e "$config" > $CONFIGFILE
       ;;
@@ -275,7 +275,7 @@ fi
 
 # Finished message
 clear
-[ $ov -eq 0 ] && echo "Done! <3" || echo "Nothing done! </3"
+[ $writeout -eq 0 ] && echo "Done! <3" || echo "Nothing done! </3"
 
 echo -e "\n"
 echo "What now?"
