@@ -3,3 +3,4 @@ src/pam_panic/pam_panic.c
 src/pam_panic/pam_panic_authdevice.c
 src/pam_panic/pam_panic_password.c
 src/pam_panic_pw/pam_panic_pw.c
+src/pam_panic_config/pam_panic_config.prebuild.sh
