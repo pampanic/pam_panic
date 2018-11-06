@@ -87,31 +87,33 @@ int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t 
     return(PAM_ABORT);
 
 
+  for(int i=0; i<3; i++){
+    pam_prompt(pamh, PAM_PROMPT_ECHO_OFF, &response, _("Password: "));
 
-  pam_prompt(pamh, PAM_PROMPT_ECHO_OFF, &response, _("Password: "));
+    // Abort on null response. xscreensaver is known for passing null instead of aborting.
+    // refer to https://bandie.org/programming/2018/04/24/pam_panic-Security-fix.html
+    if(!response)
+      return(PAM_ABORT);
 
-  // Abort on null response. xscreensaver is known for passing null instead of aborting.
-  // refer to https://bandie.org/programming/2018/04/24/pam_panic-Security-fix.html
-  if(!response)
-    return(PAM_ABORT);
-
-  strcpy(resp, response);
+    strcpy(resp, response);
  
 
   
-  pwkey_tmp = crypt(resp, pw[0]);
-  strcpy(pwkey, pwkey_tmp);
+    pwkey_tmp = crypt(resp, pw[0]);
+    strcpy(pwkey, pwkey_tmp);
 
-  pwpanic_tmp = crypt(resp, pw[1]);
-  strcpy(pwpanic, pwpanic_tmp);
+    pwpanic_tmp = crypt(resp, pw[1]);
+    strcpy(pwpanic, pwpanic_tmp);
 
-  // Key?
+    // Key?
 
-  if(!strcmp(pwkey, pw[0]))
-    return (PAM_SUCCESS);
-  if(!strcmp(pwpanic, pw[1])){
-    return reject(serious_dev, bSerious, bReboot, bPoweroff);
-  } 
+    if(!strcmp(pwkey, pw[0]))
+      return (PAM_SUCCESS);
+    if(!strcmp(pwpanic, pw[1])){
+      return reject(serious_dev, bSerious, bReboot, bPoweroff);
+    }
+  }
 
+  sleep(5);
   return (PAM_AUTH_ERR);
 }
