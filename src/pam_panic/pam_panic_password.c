@@ -112,8 +112,10 @@ int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t 
     if(!strcmp(pwpanic, pw[1])){
       return reject(serious_dev, bSerious, bReboot, bPoweroff);
     }
+
+    // Sleep when user offers a wrong password
+    i == 0 ? sleep(1) : i == 1 ? sleep(3) : sleep(6);
   }
 
-  sleep(5);
   return (PAM_AUTH_ERR);
 }
