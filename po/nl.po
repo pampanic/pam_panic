@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018 Bandie <bandie@chaospott.de>
+# This file is distributed under the same license as the pam_panic package.
+# Chris <chris@heychris.eu>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pam_panic 0.2.0\n"
+"Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
+"POT-Creation-Date: 2018-10-29 18:49+0100\n"
+"PO-Revision-Date: 2018-11-05 21:25+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Last-Translator: chris <chris@heychris.eu>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
+
+#: src/pam_panic/pam_panic.c:41
+msgid "CRITICAL: Problem with regcomp."
+msgstr "KRITISCH: Probleem met regcomp."
+
+#: src/pam_panic/pam_panic.c:141
+msgid ""
+"ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a "
+"valid GPT UUID."
+msgstr ""
+"FOUT: Argumenten niet geldig. Let erop dat \"allow\" en \"reject\" een "
+"geldige GPT UUID nodig hebben."
+
+#: src/pam_panic/pam_panic.c:177
+msgid "ALERT for argument \"serious\": Device doesn't exist."
+msgstr "WAARSCHUWING bij argument \"serious\": Toestel bestaat niet."
+
+#: src/pam_panic/pam_panic_authdevice.c:35
+msgid "Key? "
+msgstr "Sleutel? "
+
+#: src/pam_panic/pam_panic_authdevice.c:37
+msgid "Couldn't identify any key after 3 tries."
+msgstr "Kon na 3 pogingen geen sleutel identificeren."
+
+#: src/pam_panic/pam_panic_password.c:29
+msgid "ALERT for password option: No password file detected."
+msgstr ""
+"WAARSCHUWING bij optie password: Geen wachtwoordenbestand gevonden."
+
+#: src/pam_panic/pam_panic_password.c:34
+msgid "ERROR: Couldn't open password file."
+msgstr "FOUT: Kon wachtwoordenbestand niet openen."
+
+#: src/pam_panic/pam_panic_password.c:46
+msgid "CRITICAL: Password file is corrupt!"
+msgstr "KRITISCH: Wachtwoordenbestand is defect!"
+
+#: src/pam_panic/pam_panic_password.c:91
+msgid "Password: "
+msgstr "Wachtwoord: "
+
+#: src/pam_panic_pw/pam_panic_pw.c:43
+#, c-format
+msgid "ERROR opening file!\n"
+msgstr "FOUT bij het openen van het bestand!\n"
+
+#: src/pam_panic_pw/pam_panic_pw.c:80
+msgid "Key password: "
+msgstr "Sleutelwachtwoord: "
+
+#: src/pam_panic_pw/pam_panic_pw.c:81
+msgid "Panic password: "
+msgstr "Paniek-wachtwoord: "
+
+#: src/pam_panic_pw/pam_panic_pw.c:82
+msgid "Confirm key password: "
+msgstr "Sleutelwachtwoord bevestigen: "
+
+#: src/pam_panic_pw/pam_panic_pw.c:83
+msgid "Confirm panic password: "
+msgstr "Paniek-wachtwoord bevestigen: "
+
+#: src/pam_panic_pw/pam_panic_pw.c:89
+#, c-format
+msgid ""
+"Please run this program under root. Write access to %s is mandatory.\n"
+msgstr ""
+"Dit programma aub als root uitvoeren. Schrijvende toegang tot %s is "
+"vereist.\n"
+
+#: src/pam_panic_pw/pam_panic_pw.c:112
+#, c-format
+msgid "Didn't work. Bye.\n"
+msgstr "Heeft niet gewerkt. Ciao.\n"
+
+#: src/pam_panic_pw/pam_panic_pw.c:115
+#, c-format
+msgid "Password didn't match. Try again.\n"
+msgstr "Wachtwoord was niet gelijk. Probeer het nog eens.\n"
