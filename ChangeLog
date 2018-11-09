@@ -1,3 +1,8 @@
+## [0.2.6]
+- pam_panic_config, a configuration generator
+- Translations for pam_panic_config
+- Timeouts when typing wrong passwords
+
 ## [0.2.5]
 - MBR support
 
