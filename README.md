@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/pampanic/pam_panic.svg?branch=master)](https://travis-ci.org/pampanic/pam_panic)
+[![Build Status](https://travis-ci.com/pampanic/pam_panic.svg?branch=master)](https://travis-ci.com/pampanic/pam_panic)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/pampanic/pam_panic.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/pampanic/pam_panic/context:cpp)
 # pam\_panic
 
