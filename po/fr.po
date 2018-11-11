@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
 "POT-Creation-Date: 2018-11-04 21:44+0100\n"
-"PO-Revision-Date: 2018-11-04 21:51+0100\n"
+"PO-Revision-Date: 2018-11-11 16:36+0100\n"
 "Last-Translator: Dashie <dashie@otter.sh>\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -16,44 +16,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: src/pam_panic/pam_panic.c:41
 msgid "CRITICAL: Problem with regcomp."
-msgstr "CRITICAL: Problème avec regcomp."
+msgstr "CRITIQUE: Problème avec regcomp."
 
 #: src/pam_panic/pam_panic.c:141
 msgid ""
 "ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a "
 "valid GPT UUID."
 msgstr ""
-"ERROR: Arguments invalides. Notez que \"allow\" et \"reject\" doivent avoir "
-"un GPU UUID valide."
+"ERREUR: Arguments invalides. Notez que \"allow\" et \"reject\" doivent avoir "
+"un UUID GPT valide."
 
 #: src/pam_panic/pam_panic.c:177
 msgid "ALERT for argument \"serious\": Device doesn't exist."
-msgstr "ALERT pour l'argument \"serious\": Le périphérique n'existe pas."
+msgstr "ALERTE pour l'argument \"serious\" : Le périphérique n'existe pas."
 
 #: src/pam_panic/pam_panic_authdevice.c:35
 msgid "Key? "
-msgstr "Clé?"
+msgstr "Clé? "
 
 #: src/pam_panic/pam_panic_authdevice.c:37
 msgid "Couldn't identify any key after 3 tries."
-msgstr "Impossible d'identifier une clé après 3 essais."
+msgstr "Impossible d'identifier une touche après 3 essais."
 
 #: src/pam_panic/pam_panic_password.c:29
 msgid "ALERT for password option: No password file detected."
 msgstr ""
-"ALERT pour l'option de mot de passe: Aucun fichier de mot de passe détecté."
+"ALERTE pour l'option de mot de passe: Aucun fichier de mot de passe détecté."
 
 #: src/pam_panic/pam_panic_password.c:34
 msgid "ERROR: Couldn't open password file."
-msgstr "ERROR: Impossible d'ouvrir le fichier de mot de passe."
+msgstr "ERREUR: Impossible d'ouvrir le fichier de mot de passe."
 
 #: src/pam_panic/pam_panic_password.c:46
 msgid "CRITICAL: Password file is corrupt!"
-msgstr "CRITICAL: Le fichier de mot de passe est corrompu!"
+msgstr "CRITIQUE: Le fichier de mot de passe est corrompu!"
 
 #: src/pam_panic/pam_panic_password.c:91
 msgid "Password: "
@@ -62,7 +62,7 @@ msgstr "Mot de passe : "
 #: src/pam_panic_pw/pam_panic_pw.c:43
 #, c-format
 msgid "ERROR opening file!\n"
-msgstr "ERROR en ouvrant le fichier.\n"
+msgstr "ERREUR en ouvrant le fichier.\n"
 
 #: src/pam_panic_pw/pam_panic_pw.c:80
 msgid "Key password: "
@@ -74,7 +74,7 @@ msgstr "Mot de passe panique : "
 
 #: src/pam_panic_pw/pam_panic_pw.c:82
 msgid "Confirm key password: "
-msgstr "Confirmer le mot de passe de clé :"
+msgstr "Confirmer le mot de passe de clé : "
 
 #: src/pam_panic_pw/pam_panic_pw.c:83
 msgid "Confirm panic password: "
@@ -103,7 +103,7 @@ msgstr "pam_panic"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:21
 msgid "ERROR: Bash script was not built correctly."
-msgstr "ERROR: Le script Bash n'a pas été construit correctement."
+msgstr "ERREUR: Le script Bash n'a pas été construit correctement."
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:22
 msgid "Please run this script as root or use sudo."
@@ -173,7 +173,7 @@ msgstr "Choisissez votre disque amovible:"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:36
 msgid "Detecting devices..."
-msgstr "Détecter des disques amovibles ..."
+msgstr "Détection des disques amovibles ..."
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:37
 msgid "Welcome!"
@@ -250,7 +250,7 @@ msgstr "Le comportement de pam_panic"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:52
 msgid "Do you wish to destroy your LUKS header in case of emergency?"
-msgstr "Souhaitez-vous détruire votre LUKS header en cas d'urgence?"
+msgstr "Souhaitez-vous détruire votre en-tête LUKS en cas d'urgence?"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:53
 msgid ""
@@ -258,8 +258,8 @@ msgid ""
 "After this question we will create a LUKS header backup, if you wish."
 msgstr ""
 "Cela signifie que votre partition root chiffrée ne sera plus déchiffrable. "
-"Après cette question, nous allons créer une sauvegarde LUKS header, si vous "
-"le souhaitez."
+"Après cette question, nous allons créer une sauvegarde de l'en-tête LUKS, si "
+"vous le souhaitez."
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:54
 msgid "We will destroy"
@@ -271,19 +271,19 @@ msgstr "lorsque vous déclencherez la fonction de panique."
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:56
 msgid "Do you want to make a LUKS-Header backup now?"
-msgstr "Voulez-vous effectuer une sauvegarde LUKS header maintenant?"
+msgstr "Voulez-vous effectuer une sauvegarde de l'en-tête LUKS maintenant?"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:57
 msgid "Save location:"
-msgstr "Lieu:"
+msgstr "Emplacement:"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:58
 msgid "The LUKSHeader backup has been saved here:"
-msgstr "La sauvegarde de LUKS Header a été sauvegardée ici:"
+msgstr "La sauvegarde de l'en-tête LUKS à été sauvegardée ici:"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:59
 msgid "ERROR: There is no encrypted root partition on /dev/sda."
-msgstr "ERROR: Il n'y a pas de partition chiffrée sur /dev/sda."
+msgstr "ERREUR: Il n'y à pas de partition chiffrée sur /dev/sda."
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:60
 msgid "Reboot"
@@ -315,7 +315,7 @@ msgstr "Le fichier de configuration existe"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:66
 msgid "exists. Overwrite it?"
-msgstr "existe. Réécrit dessus?"
+msgstr "existe. Le remplacer?"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:68
 msgid "What now?"
@@ -354,7 +354,7 @@ msgid ""
 "part."
 msgstr ""
 "Sous Ubuntu, vous voudrez peut-être séparer les lignes mentionnées ci-dessus "
-"sur les fichiers common-auth pour la partie \"auth\" et common-account pour "
+"dans les fichiers common-auth pour la partie \"auth\" et common-account pour "
 "la partie \"account\"."
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:76
@@ -365,7 +365,7 @@ msgstr ""
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:77
 msgid "At your next login you need to"
-msgstr "À la prochaine ouverture, vous devez"
+msgstr "À la prochaine connexion, vous devez"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:78
 msgid "type your pam_panic authentification password or"
@@ -385,7 +385,7 @@ msgid ""
 "room #pampanic) or via mail + GPG."
 msgstr ""
 "Si vous avez des questions, n'hésitez pas à les demander via IRC (chat."
-"freenode.net dans la salle #pampanic) ou via mail + GPG."
+"freenode.net dans le salon #pampanic) ou via mail + GPG."
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:82
 msgid "Press enter to exit."
