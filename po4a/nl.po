@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: Bandie <bandie@chaospott.de>\n"
-"POT-Creation-Date: 2018-10-29 18:54+0100\n"
+"POT-Creation-Date: 2018-11-13 17:02+0100\n"
 "PO-Revision-Date: 2018-11-05 21:56+0100\n"
+"Last-Translator: Chris <chris@heychris.eu>\n"
 "Language-Team: \n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.6\n"
-"Last-Translator: Chris <chris@heychris.eu>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: nl\n"
 
 #. type: TH
 #: ../src/pam_panic/man/man8/pam_panic.8:9
@@ -37,9 +37,9 @@ msgstr "2018-11-05"
 msgid "PAM Panic Manual"
 msgstr "Handleiding voor PAM Panic"
 
-#. -----------------------------------------------------------------
-#. * MAIN CONTENT STARTS HERE *
-#. -----------------------------------------------------------------
+#.  -----------------------------------------------------------------
+#.  * MAIN CONTENT STARTS HERE *
+#.  -----------------------------------------------------------------
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:24
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:23
@@ -269,12 +269,12 @@ msgstr "B<serious=>I<UUID>"
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:126
 msgid ""
-"The UUID of the device containing the LUKS header to erase when the I<panic "
-"function> is triggered. Erasing the LUKS header will render the data "
-"unreadable."
+"The UUID of the device containing the LUKS header to erase the key slots "
+"from when the I<panic function> is triggered. Erasing the LUKS header key "
+"slots will render the data unreadable."
 msgstr ""
 "De UUID van het toestel dat de bij het oproepen van de I<paniek-functie> te "
-"wissende LUKS-header bevat. Het wissen van de LUKS-header zal de data "
+"wissende LUKS-header key slots bevat. Het wissen van de LUKS-header zal de data "
 "onleesbaar maken."
 
 #. type: Plain text
@@ -476,8 +476,7 @@ msgstr "pam_panic is geschreven door Bandie E<lt>bandie@chaospott.deE<gt>."
 msgid ""
 "This man page has been revised by Jordy Dickinson E<lt>jordy."
 "dickinson@icloud.comE<gt>."
-msgstr ""
-"Deze handleiding is vertaald door Chris E<lt>chris@heychris.euE<gt>."
+msgstr "Deze handleiding is vertaald door Chris E<lt>chris@heychris.euE<gt>."
 
 #. type: TH
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:9

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: Bandie <bandie@chaospott.de>\n"
-"POT-Creation-Date: 2018-10-29 18:54+0100\n"
+"POT-Creation-Date: 2018-11-13 17:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -232,9 +232,9 @@ msgstr ""
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:126
 msgid ""
-"The UUID of the device containing the LUKS header to erase when the I<panic "
-"function> is triggered. Erasing the LUKS header will render the data "
-"unreadable."
+"The UUID of the device containing the LUKS header to erase the key slots "
+"from when the I<panic function> is triggered. Erasing the LUKS header key "
+"slots will render the data unreadable."
 msgstr ""
 
 #. type: Plain text

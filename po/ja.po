@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-11-04 21:44+0100\n"
+"POT-Creation-Date: 2018-11-13 16:51+0100\n"
 "PO-Revision-Date: 2018-11-04 22:52+0100\n"
 "Last-Translator: Chromium Neptune <chromium@neplanet.com>\n"
 "Language-Team: Japanese\n"
@@ -244,8 +244,8 @@ msgid "pam_panic's behaviour"
 msgstr "pam_panicの動作"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:52
-msgid "Do you wish to destroy your LUKS header in case of emergency?"
-msgstr "緊急時にLUKSヘッダーを破棄したいですか？"
+msgid "Do you wish to destroy your LUKS header key slots in case of emergency?"
+msgstr "緊急時にLUKSヘッダーキースロットを破棄したいですか？"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:53
 msgid ""

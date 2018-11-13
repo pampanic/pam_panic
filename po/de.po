@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-11-04 21:44+0100\n"
+"POT-Creation-Date: 2018-11-13 16:51+0100\n"
 "PO-Revision-Date: 2018-11-04 21:44+0100\n"
 "Last-Translator: Bandie <bandie@chaospott.de>\n"
 "Language-Team: German\n"
@@ -249,8 +249,8 @@ msgid "pam_panic's behaviour"
 msgstr "Verhalten von pam_panic"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:52
-msgid "Do you wish to destroy your LUKS header in case of emergency?"
-msgstr "Soll der LUKS header im Falle eines Notfalls zerstört werden?"
+msgid "Do you wish to destroy your LUKS header key slots in case of emergency?"
+msgstr "Sollen die LUKS header-Schlüsselslots im Falle eines Notfalls zerstört werden?"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:53
 msgid ""

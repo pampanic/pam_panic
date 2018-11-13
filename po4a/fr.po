@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
 "Report-Msgid-Bugs-To: Bandie <bandie@chaospott.de>\n"
-"POT-Creation-Date: 2018-10-29 18:54+0100\n"
+"POT-Creation-Date: 2018-11-13 17:02+0100\n"
 "PO-Revision-Date: 2018-11-11 16:35+0100\n"
 "Last-Translator: Dashie <dashie@otter.sh>\n"
 "Language-Team: French\n"
@@ -37,9 +37,9 @@ msgstr "2018-03-26"
 msgid "PAM Panic Manual"
 msgstr "Manuel de PAM Panic"
 
-#. -----------------------------------------------------------------
-#. * MAIN CONTENT STARTS HERE *
-#. -----------------------------------------------------------------
+#.  -----------------------------------------------------------------
+#.  * MAIN CONTENT STARTS HERE *
+#.  -----------------------------------------------------------------
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:24
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:23
@@ -270,11 +270,11 @@ msgstr "B<serious=>I<UUID>"
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:126
 msgid ""
-"The UUID of the device containing the LUKS header to erase when the I<panic "
-"function> is triggered. Erasing the LUKS header will render the data "
-"unreadable."
+"The UUID of the device containing the LUKS header to erase the key slots "
+"from when the I<panic function> is triggered. Erasing the LUKS header key "
+"slots will render the data unreadable."
 msgstr ""
-"L'UUID du périphérique contenant l'en-tête LUKS à effacer lorsque la "
+"L'UUID du périphérique contenant les emplacements de clés en-tête LUKS à effacer lorsque la "
 "I<fonction de panique> est déclenchée. Effacer l'en-tête LUKS rendra les "
 "données illisibles."
 
