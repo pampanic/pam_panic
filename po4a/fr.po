@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po 4a\n"
 "Report-Msgid-Bugs-To: Bandie <bandie@chaospott.de>\n"
-"POT-Creation-Date: 2018-11-13 17:02+0100\n"
-"PO-Revision-Date: 2018-11-11 16:35+0100\n"
+"POT-Creation-Date: 2018-11-14 17:46+0100\n"
+"PO-Revision-Date: 2018-11-14 17:47+0100\n"
 "Last-Translator: Dashie <dashie@otter.sh>\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2\n"
 
 #. type: TH
 #: ../src/pam_panic/man/man8/pam_panic.8:9
@@ -37,9 +37,9 @@ msgstr "2018-03-26"
 msgid "PAM Panic Manual"
 msgstr "Manuel de PAM Panic"
 
-#.  -----------------------------------------------------------------
-#.  * MAIN CONTENT STARTS HERE *
-#.  -----------------------------------------------------------------
+#. -----------------------------------------------------------------
+#. * MAIN CONTENT STARTS HERE *
+#. -----------------------------------------------------------------
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:24
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:23
@@ -274,9 +274,9 @@ msgid ""
 "from when the I<panic function> is triggered. Erasing the LUKS header key "
 "slots will render the data unreadable."
 msgstr ""
-"L'UUID du périphérique contenant les emplacements de clés en-tête LUKS à effacer lorsque la "
-"I<fonction de panique> est déclenchée. Effacer l'en-tête LUKS rendra les "
-"données illisibles."
+"L'UUID du périphérique contenant les emplacements de clés en-tête LUKS à "
+"effacer lorsque la I<fonction de panique> est déclenchée. Effacer l'en-tête "
+"LUKS rendra les données illisibles."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:129
@@ -295,14 +295,28 @@ msgstr ""
 "NOTE: Vous devriez faire une sauvegarde de l'entête LUKS avant d'utiliser "
 "cette fonction."
 
-#. type: SH
+#. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:136
+msgid "B<strict>"
+msgstr "B<strict>"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:138
+msgid ""
+"Indicates that this module will refuse any logins if the configuration is "
+"corrupt."
+msgstr ""
+"Indique que ce module refusera toute connexion si la configuration est "
+"corrompue."
+
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:142
 #, no-wrap
 msgid "USAGE"
 msgstr "UTILISATION"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:139
+#: ../src/pam_panic/man/man8/pam_panic.8:145
 msgid ""
 "To activate the module you have to configure PAM. See B<pam.conf(5)> for "
 "details."
@@ -311,7 +325,7 @@ msgstr ""
 "plus de détails."
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:141
+#: ../src/pam_panic/man/man8/pam_panic.8:147
 msgid ""
 "In general, you will want to add the following to the top of a PAM "
 "configuration file:"
@@ -320,7 +334,7 @@ msgstr ""
 "configuration PAM:"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:144
+#: ../src/pam_panic/man/man8/pam_panic.8:150
 msgid ""
 "auth requisite __PAMPANICSO__ auth=E<lt>UUIDE<gt> reject=E<lt>UUIDE<gt> "
 "reboot serious=E<lt>UUIDE<gt>"
@@ -329,29 +343,29 @@ msgstr ""
 "reboot serious=E<lt>UUIDE<gt>"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:146
 #: ../src/pam_panic/man/man8/pam_panic.8:152
+#: ../src/pam_panic/man/man8/pam_panic.8:158
 msgid "account requisite __PAMPANICSO__"
 msgstr "account requisite __PAMPANICSO__"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:148
+#: ../src/pam_panic/man/man8/pam_panic.8:154
 msgid "Or:"
 msgstr "Ou:"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:150
+#: ../src/pam_panic/man/man8/pam_panic.8:156
 msgid "auth requisite __PAMPANICSO__ password reboot serious=E<lt>UUIDE<gt>"
 msgstr "auth requisite __PAMPANICSO__ password reboot serious=E<lt>UUIDE<gt>"
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:156
+#: ../src/pam_panic/man/man8/pam_panic.8:162
 #, no-wrap
 msgid "HOW TO DETERMINE MY UUIDS"
 msgstr "COMMENT DÉTERMINER MES UUIDS"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:161
+#: ../src/pam_panic/man/man8/pam_panic.8:167
 msgid ""
 "You will find your UUIDs in I</dev/disk/by-partuuid>.  You might want to "
 "execute \"B<ls -l /dev/disk/by-partuuid/>\" in your favourite shell to find "
@@ -365,80 +379,80 @@ msgstr ""
 "I</dev/disk/by-id>. "
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:163
+#: ../src/pam_panic/man/man8/pam_panic.8:169
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:41
 #, no-wrap
 msgid "RETURN VALUES"
 msgstr "VALEURS DE RETOUR"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:166
+#: ../src/pam_panic/man/man8/pam_panic.8:172
 msgid "PAM_SUCCESS"
 msgstr "PAM_SUCCESS"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:168
+#: ../src/pam_panic/man/man8/pam_panic.8:174
 msgid "Access was granted."
 msgstr "Accès autorisé."
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:171
+#: ../src/pam_panic/man/man8/pam_panic.8:177
 msgid "PAM_IGNORE"
 msgstr "PAM_IGNORE"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:173
+#: ../src/pam_panic/man/man8/pam_panic.8:179
 msgid "An error has occured. The module will be ignored."
 msgstr "Une erreur est survenue. Le module sera ignoré."
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:176
+#: ../src/pam_panic/man/man8/pam_panic.8:182
 msgid "PAM_MAXTRIES"
 msgstr "PAM_MAXTRIES"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:178
+#: ../src/pam_panic/man/man8/pam_panic.8:184
 msgid "The removable media was not detected."
 msgstr "Le péripherique amovible n'a pas été détécté."
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:181
+#: ../src/pam_panic/man/man8/pam_panic.8:187
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:59
 #, no-wrap
 msgid "FILES"
 msgstr "FICHIERS"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:184
+#: ../src/pam_panic/man/man8/pam_panic.8:190
 msgid "__PAMPANICSO__"
 msgstr "__PAMPANICSO__"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:186
+#: ../src/pam_panic/man/man8/pam_panic.8:192
 msgid "This PAM module, which does everything of this above."
 msgstr "Ce module PAM."
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:189
+#: ../src/pam_panic/man/man8/pam_panic.8:195
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:62
 msgid "__PAMPANICPW__"
 msgstr "__PAMPANICPW__"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:191
+#: ../src/pam_panic/man/man8/pam_panic.8:197
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:64
 msgid "Program to set and change the passwords."
 msgstr "Programme pour configurer les mots de passe."
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:194
+#: ../src/pam_panic/man/man8/pam_panic.8:200
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:72
 #, no-wrap
 msgid "BUGS"
 msgstr "BUGS"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:197
+#: ../src/pam_panic/man/man8/pam_panic.8:203
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:75
 msgid ""
 "Please report bugs and send pull requests to E<lt>https://github.com/"
@@ -448,32 +462,32 @@ msgstr ""
 "E<lt>https://github.com/pampanic/pam_panicE<gt>."
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:199
+#: ../src/pam_panic/man/man8/pam_panic.8:205
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:77
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "VOIR AUSSI"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:205
+#: ../src/pam_panic/man/man8/pam_panic.8:211
 msgid "B<pam_panic_pw>(1), B<cryptsetup>(8), B<pam>(8), B<pam.conf>(5)"
 msgstr "B<pam_panic_pw>(1), B<cryptsetup>(8), B<pam>(8), B<pam.conf>(5)"
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:207
+#: ../src/pam_panic/man/man8/pam_panic.8:213
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:85
 #, no-wrap
 msgid "AUTHORS"
 msgstr "AUTEURS"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:211
+#: ../src/pam_panic/man/man8/pam_panic.8:217
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:90
 msgid "pam_panic was written by Bandie E<lt>bandie@chaospott.deE<gt>."
 msgstr "pam_panic à été écris par Bandie E<lt>bandie@chaospott.deE<gt>."
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:212
+#: ../src/pam_panic/man/man8/pam_panic.8:218
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:92
 msgid ""
 "This man page has been revised by Jordy Dickinson E<lt>jordy."
