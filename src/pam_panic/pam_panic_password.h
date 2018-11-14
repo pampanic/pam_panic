@@ -18,7 +18,7 @@ LICENSE :      GNU-GPLv3
   #error PPASSFILE must be declared!
 #endif
 
-int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t bReboot, int8_t bPoweroff);
+int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t bReboot, int8_t bPoweroff, int8_t bStrict);
 
 
 #endif

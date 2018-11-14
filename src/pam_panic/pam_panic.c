@@ -93,6 +93,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
   int8_t bReboot = 0;
   int8_t bPoweroff = 0;
   int8_t bPassword = 0;
+  int8_t bStrict = 0;
 
   // gettext
   setlocale(LC_ALL, "");
@@ -122,6 +123,9 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
     if(strstr(argv[i], "password") != NULL){
       bPassword = 1;
     }
+    if(strstr(argv[i], "strict") != NULL){
+      bStrict = 1;
+    }
 
     if(strstr(argv[i], "serious") != NULL){
       argSplit(&serious_arg, &serious_temp, argv[i]);
@@ -139,7 +143,10 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
       || (bSerious && serious_temp == NULL)
     ) {
     pam_syslog(pamh, LOG_ERR, _("ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a valid GPT UUID."));
-    return (PAM_ABORT);
+    if(bStrict)
+      return (PAM_ABORT);
+    else
+      return (PAM_IGNORE);
   } 
 
   // Poweroff wins.
@@ -175,7 +182,10 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
   // Check if panic key exist
   if(bSerious && access(serious_dev, F_OK) == -1){
     pam_syslog(pamh, LOG_ALERT, _("ALERT for argument \"serious\": Device doesn't exist."));
-    return (PAM_ABORT);
+    if(bStrict)
+      return (PAM_ABORT);
+    else
+      return (PAM_IGNORE);
   }
 
 
@@ -187,10 +197,10 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
   }
   // Prompt for password
   else if(bPassword){
-    return authPassword(pamh, serious_dev, bSerious, bReboot, bPoweroff); 
+    return authPassword(pamh, serious_dev, bSerious, bReboot, bPoweroff, bStrict);
   }
   
-  return (PAM_ABORT);  
+  return (PAM_ABORT);
 
 }
 

@@ -62,7 +62,7 @@ int readPassword(pam_handle_t *pamh, char pw[2][99]){
 }
 
 
-int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t bReboot, int8_t bPoweroff){
+int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t bReboot, int8_t bPoweroff, int8_t bStrict){
 
   // gettext
   setlocale (LC_ALL, "");
@@ -84,7 +84,10 @@ int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t 
   // Read passwords from file
   char pw[2][99];
   if(readPassword(pamh, pw))
-    return(PAM_ABORT);
+    if(bStrict)
+      return(PAM_ABORT);
+    else
+      return(PAM_IGNORE);
 
 
   for(int i=0; i<3; i++){
