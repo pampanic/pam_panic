@@ -61,6 +61,8 @@ REBOOT=$(N_ "Reboot")
 SHUTDOWN=$(N_ "Shutdown")
 NOTHING=$(N_ "Nothing")
 ASK_EXTENDED_BEHAVIOUR=$(N_ "Do you wish a reboot or a shutdown after issuing the panic function? Or shall we do nothing at all?") 
+TITLE_STRICT=$(N_ "Strict mode")
+ASK_STRICT=$(N_ "Do you want to use the strict mode? It means that pam_panic will lock you out and reject any logins if the configuration is corrupt (like a missing password database).")
 GEN_CONFIG=$(N_ "Generating configuration...")
 CONFIG_EXISTS=$(N_ "Config file exists")
 CONFIG_OVERWRITE=$(N_ "exists. Overwrite it?")
@@ -310,6 +312,10 @@ dialog --backtitle "$BACKTITLE" \
 power=$?
 
 
+# strictness and lockout
+ask "$TITLE_STRICT" "$ASK_STRICT"
+strict=$?
+
 # Configuration generation
 dialog --backtitle "$BACKTITLE" \
   --infobox "$GEN_CONFIG" 3 40
@@ -338,6 +344,12 @@ case $serious in
     config="$config serious=$serious_dev"
     ;;
 esac
+
+case $strict in
+  "0")
+    config="$config strict"
+esac
+
 config="$config\naccount    requisite    $SECUREDIR/pam_panic.so"
 
 

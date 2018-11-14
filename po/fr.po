@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-11-13 16:51+0100\n"
-"PO-Revision-Date: 2018-11-11 16:36+0100\n"
+"POT-Creation-Date: 2018-11-14 17:26+0100\n"
+"PO-Revision-Date: 2018-11-14 17:26+0100\n"
 "Last-Translator: Dashie <dashie@otter.sh>\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -16,13 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2\n"
 
 #: src/pam_panic/pam_panic.c:41
 msgid "CRITICAL: Problem with regcomp."
 msgstr "CRITIQUE: Problème avec regcomp."
 
-#: src/pam_panic/pam_panic.c:141
+#: src/pam_panic/pam_panic.c:145
 msgid ""
 "ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a "
 "valid GPT UUID."
@@ -30,7 +30,7 @@ msgstr ""
 "ERREUR: Arguments invalides. Notez que \"allow\" et \"reject\" doivent avoir "
 "un UUID GPT valide."
 
-#: src/pam_panic/pam_panic.c:177
+#: src/pam_panic/pam_panic.c:184
 msgid "ALERT for argument \"serious\": Device doesn't exist."
 msgstr "ALERTE pour l'argument \"serious\" : Le périphérique n'existe pas."
 
@@ -55,7 +55,7 @@ msgstr "ERREUR: Impossible d'ouvrir le fichier de mot de passe."
 msgid "CRITICAL: Password file is corrupt!"
 msgstr "CRITIQUE: Le fichier de mot de passe est corrompu!"
 
-#: src/pam_panic/pam_panic_password.c:91
+#: src/pam_panic/pam_panic_password.c:94
 msgid "Password: "
 msgstr "Mot de passe : "
 
@@ -250,7 +250,8 @@ msgstr "Le comportement de pam_panic"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:52
 msgid "Do you wish to destroy your LUKS header key slots in case of emergency?"
-msgstr "Souhaitez-vous détruire votre fentes de clés d'en-tête LUKS en cas d'urgence?"
+msgstr ""
+"Souhaitez-vous détruire votre fentes de clés d'en-tête LUKS en cas d'urgence?"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:53
 msgid ""
@@ -306,48 +307,62 @@ msgstr ""
 "panique? Ou ne ferons-nous rien du tout?"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:64
+msgid "Strict mode"
+msgstr "Mode strict"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:65
+msgid ""
+"Do you want to use the strict mode? It means that pam_panic will lock you "
+"out and reject any logins if the configuration is corrupt (like a missing "
+"password database)."
+msgstr ""
+"Voulez-vous utiliser le mode strict? Cela signifie que pam_panic vous "
+"bloquera et rejettera toutes les connexions si la configuration est "
+"corrompue (comme la base de données de mots de passe est manquante)."
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:66
 msgid "Generating configuration..."
 msgstr "Génération de la configuration ..."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:65
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:67
 msgid "Config file exists"
 msgstr "Le fichier de configuration existe"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:66
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:68
 msgid "exists. Overwrite it?"
 msgstr "existe. Le remplacer?"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:68
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:70
 msgid "What now?"
 msgstr "Et maintenant?"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:69
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:71
 msgid "Now we saved our configuration to"
 msgstr "Nous avons maintenant enregistré notre configuration sur"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:70
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:72
 msgid "If you want to let them apply to the other modules, proceed as follows:"
 msgstr ""
 "Si vous souhaitez les laisser s’appliquer à d’autres modules, procédez comme "
 "suit:"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:71
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:73
 msgid "Open a module configuration in"
 msgstr "Ouvrez une configuration de module dans"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:72
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:74
 msgid "You can try out:"
 msgstr "Vous pouvez essayer:"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:73
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:75
 msgid "and"
 msgstr "et"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:74
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:76
 msgid "After the line \"#%PAM-1.0\" append"
 msgstr "Après la ligne \"#%PAM-1.0\", ajoutez"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:75
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:77
 msgid ""
 "On Ubuntu you might want to separate the above mentioned lines on the files "
 "common-auth for the \"auth\" part and common-account for the \"account\" "
@@ -357,29 +372,29 @@ msgstr ""
 "dans les fichiers common-auth pour la partie \"auth\" et common-account pour "
 "la partie \"account\"."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:76
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:78
 msgid "Once you have changed and saved those files, pam_panic will be active."
 msgstr ""
 "Une fois que vous avez modifié et enregistré ces fichiers, pam_panic sera "
 "actif."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:77
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:79
 msgid "At your next login you need to"
 msgstr "À la prochaine connexion, vous devez"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:78
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:80
 msgid "type your pam_panic authentification password or"
 msgstr "taper votre mot de passe d’authentification pam_panic ou"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:79
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:81
 msgid "insert your removable authentication media"
 msgstr "insérer votre disque d'authentification amovible"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:80
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:82
 msgid "previous your regular user password."
 msgstr "avant votre mot de passe utilisateur habituel."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:81
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:83
 msgid ""
 "If you got any question, don't hesitate to ask via IRC (chat.freenode.net in "
 "room #pampanic) or via mail + GPG."
@@ -387,6 +402,6 @@ msgstr ""
 "Si vous avez des questions, n'hésitez pas à les demander via IRC (chat."
 "freenode.net dans le salon #pampanic) ou via mail + GPG."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:82
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:84
 msgid "Press enter to exit."
 msgstr "Appuyez sur la touche Entrée pour quitter."

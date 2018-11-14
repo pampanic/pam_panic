@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-11-13 16:51+0100\n"
-"PO-Revision-Date: 2018-11-04 22:52+0100\n"
+"POT-Creation-Date: 2018-11-14 17:26+0100\n"
+"PO-Revision-Date: 2018-11-14 17:14+0100\n"
 "Last-Translator: Chromium Neptune <chromium@neplanet.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "CRITICAL: Problem with regcomp."
 msgstr "クリティカル： \"regcomp\"の問題"
 
-#: src/pam_panic/pam_panic.c:141
+#: src/pam_panic/pam_panic.c:145
 msgid ""
 "ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a "
 "valid GPT UUID."
@@ -30,7 +30,7 @@ msgstr ""
 "エラー： 引き数が無効です。 \"allow\"と \"reject\"には有効なGPT UUIDが必要で"
 "す。"
 
-#: src/pam_panic/pam_panic.c:177
+#: src/pam_panic/pam_panic.c:184
 msgid "ALERT for argument \"serious\": Device doesn't exist."
 msgstr "引数 \"serious\"のアラート：デバイスが存在しません。"
 
@@ -54,7 +54,7 @@ msgstr "エラー：パスワードファイルを開くことができません
 msgid "CRITICAL: Password file is corrupt!"
 msgstr "危険：パスワードファイルが壊れています！"
 
-#: src/pam_panic/pam_panic_password.c:91
+#: src/pam_panic/pam_panic_password.c:94
 msgid "Password: "
 msgstr "パスフレーズ: "
 
@@ -300,46 +300,61 @@ msgstr ""
 "ちは何もしませんか？"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:64
+msgid "Strict mode"
+msgstr "厳密モード"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:65
+#, fuzzy
+msgid ""
+"Do you want to use the strict mode? It means that pam_panic will lock you "
+"out and reject any logins if the configuration is corrupt (like a missing "
+"password database)."
+msgstr ""
+"あなたはstrictモードを使いたいですか？ つまり、パスワードデータベースが見つか"
+"らないなど、設定が壊れていると、pam_panicはあなたをロックアウトし、ログインを"
+"拒否します。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:66
 msgid "Generating configuration..."
 msgstr "設定の生成中..."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:65
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:67
 msgid "Config file exists"
 msgstr "設定ファイルが存在する"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:66
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:68
 msgid "exists. Overwrite it?"
 msgstr "が存在する。 それを上書きする？"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:68
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:70
 msgid "What now?"
 msgstr "今何？"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:69
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:71
 msgid "Now we saved our configuration to"
 msgstr "これで設定が保存されました："
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:70
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:72
 msgid "If you want to let them apply to the other modules, proceed as follows:"
 msgstr "他のモジュールに適用させる場合は、次の手順を実行します。"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:71
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:73
 msgid "Open a module configuration in"
 msgstr "モジュール設定を開く："
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:72
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:74
 msgid "You can try out:"
 msgstr "試してみることができます："
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:73
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:75
 msgid "and"
 msgstr "と"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:74
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:76
 msgid "After the line \"#%PAM-1.0\" append"
 msgstr "\"#%PAM-1.0\"行の後に、追加してください"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:75
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:77
 msgid ""
 "On Ubuntu you might want to separate the above mentioned lines on the files "
 "common-auth for the \"auth\" part and common-account for the \"account\" "
@@ -348,28 +363,28 @@ msgstr ""
 "Ubuntuでは、ファイル内の上記の行を、 \"auth\"部分の \"common-auth\"と "
 "\"account\"部分の \"common-account\"に分割することができます。"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:76
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:78
 msgid "Once you have changed and saved those files, pam_panic will be active."
 msgstr ""
 "これらのファイルを変更して保存すると、pam_panicがアクティブになります。"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:77
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:79
 msgid "At your next login you need to"
 msgstr "次のログイン時に"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:78
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:80
 msgid "type your pam_panic authentification password or"
 msgstr "pam_panic認証パスワードを入力するか、"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:79
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:81
 msgid "insert your removable authentication media"
 msgstr "取り外し可能な認証メディアを挿入する"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:80
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:82
 msgid "previous your regular user password."
 msgstr "これは、通常のユーザーパスワードの前のものでなければなりません。"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:81
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:83
 msgid ""
 "If you got any question, don't hesitate to ask via IRC (chat.freenode.net in "
 "room #pampanic) or via mail + GPG."
@@ -377,6 +392,6 @@ msgstr ""
 "ご質問がある場合は、IRC（chat.freenode.net room #pampanic）または電子メール+ "
 "GPGでお気軽にお問い合わせください。"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:82
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:84
 msgid "Press enter to exit."
 msgstr "Enterキーを押して終了します。"
