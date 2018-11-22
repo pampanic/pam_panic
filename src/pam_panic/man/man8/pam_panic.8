@@ -122,13 +122,19 @@ This option is discouraged for security reasons.
 
 \fBserious=\fR\fB\fIUUID\fR\fR
 .RS 4
-The UUID of the device containing the LUKS header to erase when the \fIpanic function\fR is triggered. Erasing the LUKS header will render the data unreadable.
+The UUID of the device containing the LUKS header to erase the key slots from when the \fIpanic function\fR is triggered. Erasing the LUKS header key slots will render the data unreadable.
 .PD 0
 .PP
 The internal command which will be executed is "\fBcryptsetup luksErase [UUID]\fR".
 .PD 1
 .PP
 NOTE: You should make a backup of the LUKS header before using this function.
+.RE
+.PP
+
+\fBstrict\fR
+.RS 4
+Indicates that this module will refuse any logins if the configuration is corrupt.
 .RE
 .PP
 

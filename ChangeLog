@@ -1,3 +1,9 @@
+## [0.2.6]
+- pam_panic_config, a configuration generator
+- Translations for pam_panic_config
+- Timeouts when typing wrong passwords
+- Strict mode: Choose if you want to be locked out if the configuration is corrupt
+
 ## [0.2.5]
 - MBR support
 

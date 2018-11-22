@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-10-29 18:49+0100\n"
-"PO-Revision-Date: 2018-09-29 18:51+0200\n"
+"POT-Creation-Date: 2018-11-14 17:26+0100\n"
+"PO-Revision-Date: 2018-11-14 17:14+0100\n"
 "Last-Translator: Chromium Neptune <chromium@neplanet.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -16,13 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 
 #: src/pam_panic/pam_panic.c:41
 msgid "CRITICAL: Problem with regcomp."
 msgstr "クリティカル： \"regcomp\"の問題"
 
-#: src/pam_panic/pam_panic.c:141
+#: src/pam_panic/pam_panic.c:145
 msgid ""
 "ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a "
 "valid GPT UUID."
@@ -30,7 +30,7 @@ msgstr ""
 "エラー： 引き数が無効です。 \"allow\"と \"reject\"には有効なGPT UUIDが必要で"
 "す。"
 
-#: src/pam_panic/pam_panic.c:177
+#: src/pam_panic/pam_panic.c:184
 msgid "ALERT for argument \"serious\": Device doesn't exist."
 msgstr "引数 \"serious\"のアラート：デバイスが存在しません。"
 
@@ -54,7 +54,7 @@ msgstr "エラー：パスワードファイルを開くことができません
 msgid "CRITICAL: Password file is corrupt!"
 msgstr "危険：パスワードファイルが壊れています！"
 
-#: src/pam_panic/pam_panic_password.c:91
+#: src/pam_panic/pam_panic_password.c:94
 msgid "Password: "
 msgstr "パスフレーズ: "
 
@@ -95,3 +95,303 @@ msgstr "うまくいきませんでした。 さようなら。\n"
 #, c-format
 msgid "Password didn't match. Try again.\n"
 msgstr "パスワードが一致しませんでした。 再試行する。\n"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:18
+msgid "pam_panic"
+msgstr "pam_panic"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:21
+msgid "ERROR: Bash script was not built correctly."
+msgstr "エラー：Bashスクリプトが正しく構築されていませんでした。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:22
+msgid "Please run this script as root or use sudo."
+msgstr "このスクリプトをrootとして実行するか、sudoを使用してください。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:23
+msgid "pam_panic's Configuration Generator."
+msgstr "pam_panicの設定ジェネレータ。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:24
+msgid "Bye! :)"
+msgstr "さようなら！ :)"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:25
+msgid "OK"
+msgstr "OK"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:26
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:27
+msgid "Authentication"
+msgstr "認証"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:28
+msgid "Panic"
+msgstr "パニック"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:29
+msgid "Please remove all removable media devices before you continue."
+msgstr ""
+"続行する前に、すべてのリムーバブルメディアデバイスを取り外してください。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:30
+msgid ""
+"Note, if your device doesn't show up in the upcoming list it might not be a "
+"GPT formatted device."
+msgstr ""
+"デバイスが今後のリストに表示されない場合は、GPT形式のデバイスではない可能性が"
+"あります。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:31
+msgid ""
+"Please insert the device you want to use as Authentication device and press "
+"OK."
+msgstr "認証デバイスとして使用するデバイスを挿入し、[OK]を押してください。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:32
+msgid "Please insert the device you want to use as Panic device and press OK."
+msgstr "パニックデバイスとして使用するデバイスを挿入し、[OK]を押してください。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:33
+msgid "Removable media: Authentication device"
+msgstr "リムーバブルディスク：認証デバイス"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:34
+msgid "Removable media: Panic device"
+msgstr "リムーバブルディスク：パニックデバイス"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:35
+msgid "Choose your device:"
+msgstr "あなたのデバイスを選択してください："
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:36
+msgid "Detecting devices..."
+msgstr "デバイスを検出しています..."
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:37
+msgid "Welcome!"
+msgstr "ようこそ！"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:38
+msgid "Welcome to pam_panic's Configuration Generator."
+msgstr "pam_panicのConfiguration Generatorへようこそ。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:39
+msgid ""
+"It will help you to create a valid pam_panic setup. It will also generate a "
+"PAM configuration file."
+msgstr ""
+"これは、有効なpam_panicセットアップを作成するのに役立ちます。 また、PAM構成"
+"ファイルも生成されます。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:40
+msgid ""
+"After you're done with this Configuration Generator, you will see some hints "
+"how to integrate the new PAM configuration file in your system."
+msgstr ""
+"この設定ジェネレータを完了すると、新しいPAM設定ファイルをシステムに統合する方"
+"法のヒントが表示されます。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:41
+msgid "Authentication mode"
+msgstr "認証モード"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:42
+msgid "Passwords"
+msgstr "パスワード"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:43
+msgid "Media"
+msgstr "ディスク"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:44
+msgid ""
+"You can choose between the \"two removable media\" option and the \"two "
+"passwords\" option."
+msgstr ""
+"「2つのリムーバブルディスク」オプションと「2つのパスワード」オプションのどち"
+"らかを選択できます。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:45
+msgid "See \"Help\" to learn what it is."
+msgstr "それが何であるかを知るには、「ヘルプ」を参照してください。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:46
+msgid "Removable media or passwords?"
+msgstr "リムーバブルディスクまたはパスワード？"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:47
+msgid "Authentication device chosen with UUID"
+msgstr "UUIDで選択された認証デバイス："
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:48
+msgid "Panic device chosen with UUID"
+msgstr "UUIDで選択されたパニックデバイス："
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:49
+msgid "Do you want to set the passwords now?"
+msgstr "今すぐパスワードを設定しますか？"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:50
+msgid "Failed to set the passwords. :("
+msgstr "パスワードの設定に失敗しました。 :("
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:51
+msgid "pam_panic's behaviour"
+msgstr "pam_panicの動作"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:52
+msgid "Do you wish to destroy your LUKS header key slots in case of emergency?"
+msgstr "緊急時にLUKSヘッダーキースロットを破棄したいですか？"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:53
+msgid ""
+"This means that your encrypted root partition won't be decryptable anymore. "
+"After this question we will create a LUKS header backup, if you wish."
+msgstr ""
+"つまり、暗号化されたシステムパーティションはもはや復号化できません。 この質問"
+"の後、必要に応じてLUKSヘッダーバックアップを作成します。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:54
+msgid "We will destroy"
+msgstr "私たちは、パニック機能をトリガするときに"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:55
+msgid "when you trigger the panic function."
+msgstr "を破壊します。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:56
+msgid "Do you want to make a LUKS-Header backup now?"
+msgstr "今LUKSヘッダーバックアップを作成しますか？"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:57
+msgid "Save location:"
+msgstr "ファイルの場所："
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:58
+msgid "The LUKSHeader backup has been saved here:"
+msgstr "LUKSHeaderバックアップがここに保存されました："
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:59
+msgid "ERROR: There is no encrypted root partition on /dev/sda."
+msgstr "エラー：/dev/sdaには暗号化されたルートパーティションはありません。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:60
+msgid "Reboot"
+msgstr "再起動"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:61
+msgid "Shutdown"
+msgstr "シャットダウン"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:62
+msgid "Nothing"
+msgstr "何も"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:63
+msgid ""
+"Do you wish a reboot or a shutdown after issuing the panic function? Or "
+"shall we do nothing at all?"
+msgstr ""
+"パニック機能を実行した後に再起動またはシャットダウンしますか？ あるいは、私た"
+"ちは何もしませんか？"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:64
+msgid "Strict mode"
+msgstr "厳密モード"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:65
+#, fuzzy
+msgid ""
+"Do you want to use the strict mode? It means that pam_panic will lock you "
+"out and reject any logins if the configuration is corrupt (like a missing "
+"password database)."
+msgstr ""
+"あなたはstrictモードを使いたいですか？ つまり、パスワードデータベースが見つか"
+"らないなど、設定が壊れていると、pam_panicはあなたをロックアウトし、ログインを"
+"拒否します。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:66
+msgid "Generating configuration..."
+msgstr "設定の生成中..."
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:67
+msgid "Config file exists"
+msgstr "設定ファイルが存在する"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:68
+msgid "exists. Overwrite it?"
+msgstr "が存在する。 それを上書きする？"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:70
+msgid "What now?"
+msgstr "今何？"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:71
+msgid "Now we saved our configuration to"
+msgstr "これで設定が保存されました："
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:72
+msgid "If you want to let them apply to the other modules, proceed as follows:"
+msgstr "他のモジュールに適用させる場合は、次の手順を実行します。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:73
+msgid "Open a module configuration in"
+msgstr "モジュール設定を開く："
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:74
+msgid "You can try out:"
+msgstr "試してみることができます："
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:75
+msgid "and"
+msgstr "と"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:76
+msgid "After the line \"#%PAM-1.0\" append"
+msgstr "\"#%PAM-1.0\"行の後に、追加してください"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:77
+msgid ""
+"On Ubuntu you might want to separate the above mentioned lines on the files "
+"common-auth for the \"auth\" part and common-account for the \"account\" "
+"part."
+msgstr ""
+"Ubuntuでは、ファイル内の上記の行を、 \"auth\"部分の \"common-auth\"と "
+"\"account\"部分の \"common-account\"に分割することができます。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:78
+msgid "Once you have changed and saved those files, pam_panic will be active."
+msgstr ""
+"これらのファイルを変更して保存すると、pam_panicがアクティブになります。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:79
+msgid "At your next login you need to"
+msgstr "次のログイン時に"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:80
+msgid "type your pam_panic authentification password or"
+msgstr "pam_panic認証パスワードを入力するか、"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:81
+msgid "insert your removable authentication media"
+msgstr "取り外し可能な認証メディアを挿入する"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:82
+msgid "previous your regular user password."
+msgstr "これは、通常のユーザーパスワードの前のものでなければなりません。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:83
+msgid ""
+"If you got any question, don't hesitate to ask via IRC (chat.freenode.net in "
+"room #pampanic) or via mail + GPG."
+msgstr ""
+"ご質問がある場合は、IRC（chat.freenode.net room #pampanic）または電子メール+ "
+"GPGでお気軽にお問い合わせください。"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:84
+msgid "Press enter to exit."
+msgstr "Enterキーを押して終了します。"

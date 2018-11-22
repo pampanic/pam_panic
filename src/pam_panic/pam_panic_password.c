@@ -62,7 +62,7 @@ int readPassword(pam_handle_t *pamh, char pw[2][99]){
 }
 
 
-int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t bReboot, int8_t bPoweroff){
+int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t bReboot, int8_t bPoweroff, int8_t bStrict){
 
   // gettext
   setlocale (LC_ALL, "");
@@ -84,34 +84,41 @@ int authPassword(pam_handle_t *pamh, char *serious_dev, int8_t bSerious, int8_t 
   // Read passwords from file
   char pw[2][99];
   if(readPassword(pamh, pw))
-    return(PAM_ABORT);
+    if(bStrict)
+      return(PAM_ABORT);
+    else
+      return(PAM_IGNORE);
 
 
+  for(int i=0; i<3; i++){
+    pam_prompt(pamh, PAM_PROMPT_ECHO_OFF, &response, _("Password: "));
 
-  pam_prompt(pamh, PAM_PROMPT_ECHO_OFF, &response, _("Password: "));
+    // Abort on null response. xscreensaver is known for passing null instead of aborting.
+    // refer to https://bandie.org/programming/2018/04/24/pam_panic-Security-fix.html
+    if(!response)
+      return(PAM_ABORT);
 
-  // Abort on null response. xscreensaver is known for passing null instead of aborting.
-  // refer to https://bandie.org/programming/2018/04/24/pam_panic-Security-fix.html
-  if(!response)
-    return(PAM_ABORT);
-
-  strcpy(resp, response);
+    strcpy(resp, response);
  
 
   
-  pwkey_tmp = crypt(resp, pw[0]);
-  strcpy(pwkey, pwkey_tmp);
+    pwkey_tmp = crypt(resp, pw[0]);
+    strcpy(pwkey, pwkey_tmp);
 
-  pwpanic_tmp = crypt(resp, pw[1]);
-  strcpy(pwpanic, pwpanic_tmp);
+    pwpanic_tmp = crypt(resp, pw[1]);
+    strcpy(pwpanic, pwpanic_tmp);
 
-  // Key?
+    // Key?
 
-  if(!strcmp(pwkey, pw[0]))
-    return (PAM_SUCCESS);
-  if(!strcmp(pwpanic, pw[1])){
-    return reject(serious_dev, bSerious, bReboot, bPoweroff);
-  } 
+    if(!strcmp(pwkey, pw[0]))
+      return (PAM_SUCCESS);
+    if(!strcmp(pwpanic, pw[1])){
+      return reject(serious_dev, bSerious, bReboot, bPoweroff);
+    }
+
+    // Sleep when user offers a wrong password
+    i == 0 ? sleep(1) : i == 1 ? sleep(3) : sleep(6);
+  }
 
   return (PAM_AUTH_ERR);
 }
