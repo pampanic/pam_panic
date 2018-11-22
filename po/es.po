@@ -277,7 +277,7 @@ msgstr "¿Quieres hacer una copia de seguridad de LUKS header ahora?"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:57
 msgid "Save location:"
-msgstr "Ubicación:"
+msgstr "Guardar ubicación:"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:58
 msgid "The LUKSHeader backup has been saved here:"
