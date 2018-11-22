@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: po 4a\n"
 "Report-Msgid-Bugs-To: Bandie <bandie@chaospott.de>\n"
 "POT-Creation-Date: 2018-11-14 17:46+0100\n"
-"PO-Revision-Date: 2018-11-22 22:43+0100\n"
+"PO-Revision-Date: 2018-11-22 22:57+0100\n"
 "Last-Translator: d@angeredwolf.me\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
@@ -275,7 +275,7 @@ msgid ""
 msgstr ""
 "El UUID del dispositivo que contiene las ranuras de clave de encabezado. A "
 "partir de que se active la función de pánico, la clave del encabezado de LUKS "
-"las entradas harán que los sean ilegibles."
+"las entradas harán que los datos sean ilegibles."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:129
