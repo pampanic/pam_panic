@@ -102,7 +102,7 @@ msgstr "pam_panic"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:21
 msgid "ERROR: Bash script was not built correctly."
-msgstr "FOUT: het Bash-script is niet correct gebouwd."
+msgstr "FOUT: Het bash-script is niet correct gebouwd."
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:22
 msgid "Please run this script as root or use sudo."
