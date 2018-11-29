@@ -160,11 +160,11 @@ msgstr ""
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:33
 msgid "Removable media: Authentication device"
-msgstr "Verwijderbare media: authenticatie-toestel"
+msgstr "Verwijderbare media: Authenticatie-toestel"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:34
 msgid "Removable media: Panic device"
-msgstr "Verwijderbare media: paniek-toestel"
+msgstr "Verwijderbare media: Paniek-toestel"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:35
 msgid "Choose your device:"
