@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
 "POT-Creation-Date: 2018-11-14 17:26+0100\n"
-"PO-Revision-Date: 2018-11-14 17:14+0100\n"
+"PO-Revision-Date: 2018-11-29 19:47+0100\n"
 "Last-Translator: Chromium Neptune <chromium@neplanet.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -304,7 +304,6 @@ msgid "Strict mode"
 msgstr "厳密モード"
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:65
-#, fuzzy
 msgid ""
 "Do you want to use the strict mode? It means that pam_panic will lock you "
 "out and reject any logins if the configuration is corrupt (like a missing "
