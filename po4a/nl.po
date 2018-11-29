@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: Bandie <bandie@chaospott.de>\n"
 "POT-Creation-Date: 2018-11-14 17:46+0100\n"
-"PO-Revision-Date: 2018-11-05 21:56+0100\n"
+"PO-Revision-Date: 2018-11-23 23:52+0100\n"
 "Last-Translator: Chris <chris@heychris.eu>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -37,9 +37,9 @@ msgstr "2018-11-05"
 msgid "PAM Panic Manual"
 msgstr "Handleiding voor PAM Panic"
 
-#.  -----------------------------------------------------------------
-#.  * MAIN CONTENT STARTS HERE *
-#.  -----------------------------------------------------------------
+#. -----------------------------------------------------------------
+#. * MAIN CONTENT STARTS HERE *
+#. -----------------------------------------------------------------
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:24
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:23
@@ -297,7 +297,7 @@ msgstr ""
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:136
 msgid "B<strict>"
-msgstr ""
+msgstr "B<strict>"
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:138
@@ -305,6 +305,8 @@ msgid ""
 "Indicates that this module will refuse any logins if the configuration is "
 "corrupt."
 msgstr ""
+"Toont dat de module alle login-pogingen afwijst als de configuratie een fout "
+"heeft."
 
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:142
