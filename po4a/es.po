@@ -38,9 +38,9 @@ msgstr "2018-03-28"
 msgid "PAM Panic Manual"
 msgstr "PAM Panic Manual"
 
-#. -----------------------------------------------------------------
-#. * MAIN CONTENT STARTS HERE *
-#. -----------------------------------------------------------------
+#.  -----------------------------------------------------------------
+#.  * MAIN CONTENT STARTS HERE *
+#.  -----------------------------------------------------------------
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:24
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:23
@@ -103,13 +103,13 @@ msgstr "Primera opción posible:"
 #: ../src/pam_panic/man/man8/pam_panic.8:44
 msgid ""
 "There are two removable media which work as keys: the auth key and the panic "
-"key.  The auth key will let you pass to the password prompt whereas the panic "
-"key will call the I<panic function>."
+"key.  The auth key will let you pass to the password prompt whereas the "
+"panic key will call the I<panic function>."
 msgstr ""
 "Hay dos medias removibles que están usando como claves: La clave de "
 "autenticación y la clave de pánico.  La clave para autenticación se permite "
-"ingresar su contraseña mientras la clave para pánico va a llamar la I<función "
-"de pánico>."
+"ingresar su contraseña mientras la clave para pánico va a llamar la "
+"I<función de pánico>."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:47
@@ -215,9 +215,9 @@ msgstr "B<reject=>I<UUID(GPT)>"
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:94
 msgid ""
-"The UUID of the device to be used in emergencies. The presence of this device "
-"will trigger B<reboot>, B<poweroff> and/or the panic function, depending on "
-"whether B<reboot>, B<poweroff>, and/or B<serious> are specified."
+"The UUID of the device to be used in emergencies. The presence of this "
+"device will trigger B<reboot>, B<poweroff> and/or the panic function, "
+"depending on whether B<reboot>, B<poweroff>, and/or B<serious> are specified."
 msgstr ""
 "Es el UUID del dispositivo para emergencias. Cuando este dispositivo está "
 "presente, se disparará un reinicio, un apagado, y / o la función pánica, "
@@ -269,13 +269,13 @@ msgstr "B<serious=>I<UUID>"
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:126
 msgid ""
-"The UUID of the device containing the LUKS header to erase the key slots from "
-"when the I<panic function> is triggered. Erasing the LUKS header key slots "
-"will render the data unreadable."
+"The UUID of the device containing the LUKS header to erase the key slots "
+"from when the I<panic function> is triggered. Erasing the LUKS header key "
+"slots will render the data unreadable."
 msgstr ""
 "El UUID del dispositivo que contiene las ranuras de clave de encabezado. A "
-"partir de que se active la función de pánico, la clave del encabezado de LUKS "
-"las entradas harán que los datos sean ilegibles."
+"partir de que se active la función de pánico, la clave del encabezado de "
+"LUKS las entradas harán que los datos sean ilegibles."
 
 #. type: Plain text
 #: ../src/pam_panic/man/man8/pam_panic.8:129
@@ -367,8 +367,8 @@ msgstr "CÓMO DETERMINAR MIS UUIDS"
 msgid ""
 "You will find your UUIDs in I</dev/disk/by-partuuid>.  You might want to "
 "execute \"B<ls -l /dev/disk/by-partuuid/>\" in your favourite shell to find "
-"out which UUID is which device.  If I</dev/disk/by-partuuid> is not existent, "
-"you can use the ID from I</dev/disk/by-uuid> or I</dev/disk/by-id>."
+"out which UUID is which device.  If I</dev/disk/by-partuuid> is not "
+"existent, you can use the ID from I</dev/disk/by-uuid> or I</dev/disk/by-id>."
 msgstr ""
 "Se puede encontrar sus UUIDs en /dev/disk/by-partuuid.  Es posible que desee "
 "ejecutar «ls -l /dev/disk/by-partuuid» en su shell favorito para encontrar "
@@ -452,8 +452,8 @@ msgstr "ERRORES"
 #: ../src/pam_panic/man/man8/pam_panic.8:203
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:75
 msgid ""
-"Please report bugs and send pull requests to E<lt>https://github.com/pampanic/"
-"pam_panicE<gt>."
+"Please report bugs and send pull requests to E<lt>https://github.com/"
+"pampanic/pam_panicE<gt>."
 msgstr ""
 "Por favor reportar errores y enviar pull requests a E<lt>https://github.com/"
 "pampanic/pam_panicE<gt>."
@@ -487,8 +487,8 @@ msgstr "pam_panic fue escrito por Bandie E<lt>bandie@chaospott.deE<gt>."
 #: ../src/pam_panic/man/man8/pam_panic.8:218
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:92
 msgid ""
-"This man page has been revised by Jordy Dickinson E<lt>jordy.dickinson@icloud."
-"comE<gt>."
+"This man page has been revised by Jordy Dickinson E<lt>jordy."
+"dickinson@icloud.comE<gt>."
 msgstr ""
 "Este página man fue traducido al español por Jordy Dickinson E<lt>jordy."
 "dickinson@icloud.comE<gt> y dangered wolf E<lt>d@ngeredwolf.meE<gt>."
