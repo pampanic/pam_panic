@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-11-14 17:26+0100\n"
+"POT-Creation-Date: 2018-12-03 00:25+0100\n"
 "PO-Revision-Date: 2018-11-14 17:26+0100\n"
 "Last-Translator: Dangered wolf <d@ngeredwolf.me>\n"
 "Language-Team: Spanish\n"
@@ -61,40 +61,40 @@ msgstr "CRITICAL: Archivo de contraseña está dañado!"
 msgid "Password: "
 msgstr "Contraseña: "
 
-#: src/pam_panic_pw/pam_panic_pw.c:43
+#: src/pam_panic_pw/pam_panic_pw.c:44
 #, c-format
 msgid "ERROR opening file!\n"
 msgstr "ERROR al abrir el archivo!\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:80
+#: src/pam_panic_pw/pam_panic_pw.c:81
 msgid "Key password: "
 msgstr "Contraseña clave: "
 
-#: src/pam_panic_pw/pam_panic_pw.c:81
+#: src/pam_panic_pw/pam_panic_pw.c:82
 msgid "Panic password: "
 msgstr "Contraseña de pánico: "
 
-#: src/pam_panic_pw/pam_panic_pw.c:82
+#: src/pam_panic_pw/pam_panic_pw.c:83
 msgid "Confirm key password: "
 msgstr "Confirmar contraseña clave: "
 
-#: src/pam_panic_pw/pam_panic_pw.c:83
+#: src/pam_panic_pw/pam_panic_pw.c:84
 msgid "Confirm panic password: "
 msgstr "Confirmar contraseña de pánico: "
 
-#: src/pam_panic_pw/pam_panic_pw.c:89
+#: src/pam_panic_pw/pam_panic_pw.c:90
 #, c-format
 msgid "Please run this program under root. Write access to %s is mandatory.\n"
 msgstr ""
 "Ejecute este programa con acceso root. El acceso de escritura a %s es "
 "obligatorio.\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:112
+#: src/pam_panic_pw/pam_panic_pw.c:115
 #, c-format
 msgid "Didn't work. Bye.\n"
 msgstr "No funcionó. Adiós.\n"
 
-#: src/pam_panic_pw/pam_panic_pw.c:115
+#: src/pam_panic_pw/pam_panic_pw.c:118
 #, c-format
 msgid "Password didn't match. Try again.\n"
 msgstr "La contraseña no coincide. Inténtalo de nuevo.\n"
