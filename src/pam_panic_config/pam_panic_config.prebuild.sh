@@ -11,7 +11,7 @@ LHBU="$HOME/LUKSHeaderBackup"
 # Set on build time
 SECUREDIR="__SECURELIBDIR__"
 PAMPANICPW="__PAMPANICPW__"
-
+VERSION="__VERSION__"
 
 # Localization
 N_(){
@@ -20,7 +20,7 @@ N_(){
 
 NOT_BUILT=$(N_ "ERROR: Bash script was not built correctly.")
 RUN_AS_ROOT=$(N_ "Please run this script as root or use sudo.")
-BACKTITLE=$(N_ "pam_panic's Configuration Generator.")
+BACKTITLE="$(N_ "pam_panic's Configuration Generator.") Version $VERSION"
 BYE=$(N_ "Bye! :)")
 OK=$(N_ "OK")
 CANCEL=$(N_ "Cancel")

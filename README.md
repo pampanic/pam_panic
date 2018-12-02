@@ -35,7 +35,7 @@ sudo apt-get install pampanic
 
 ### From sources
 You will need GCC or similar, as well as the PAM headers. Some distributions package the PAM headers as `libpam0g-dev`.
-Also you need `autoconf` and `gettext`. Some also need `autopoint`.
+Also you need `dialog`, `autoconf` and `gettext`. Some also need `autopoint`.
 
 To compile and install it, do the following within the project's root directory:
 
