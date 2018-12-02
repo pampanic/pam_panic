@@ -23,6 +23,7 @@ LICENSE :      GNU-GPLv3
 #define _(String) gettext(String)
 #define FMODE 0644
 #define DMODE 0755
+#ifdef VERSION
 
 int writePasswords(char pw[][256], char* pwfile){
 
@@ -89,6 +90,8 @@ int main(void){
     printf(_("Please run this program under root. Write access to %s is mandatory.\n"), PPASSFILE);    return 1;
   }
   
+  printf("pam_panic_pw %s\n", VERSION);
+
   for(int j=0; j<2; j++){ 
 
     seed[0] = time(&t);
@@ -123,4 +126,5 @@ int main(void){
   
   return writePasswords(pw, PPASSFILE);
 }
+#endif
 #endif

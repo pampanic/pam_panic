@@ -1,6 +1,6 @@
 SUBDIRS = man
 
-AM_CPPFLAGS = -DLOCALEDIR='"$(localedir)"'
+AM_CPPFLAGS = -DLOCALEDIR='"$(localedir)"' -DVERSION='"$(VERSION)"'
 
 bin_PROGRAMS = pam_panic_pw
 pam_panic_pw_SOURCES = pam_panic_pw.c pam_panic_pw.h
