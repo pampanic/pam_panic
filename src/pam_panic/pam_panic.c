@@ -59,21 +59,23 @@ void constrPath(char **dst, char **src, int8_t bGPTOnly){
   // GPT
   strcpy(tmp, "/dev/disk/by-partuuid/");
   strcat(tmp, *src);
-  if(access(tmp, F_OK) != -1 || bGPTOnly)
+  if(access(tmp, F_OK) != -1 || bGPTOnly){
     sprintf(*dst, "/dev/disk/by-partuuid/%s", *src);
-    return;
+  } else{
 
-  // MBR
-  memset(tmp, 0, sizeof tmp);
-  strcat(tmp, "/dev/disk/by-uuid/");
-  strcat(tmp, *src);
-  if(access(tmp, F_OK) != -1)
-    sprintf(*dst, "/dev/disk/by-uuid/%s", *src);
-    return;
+    // MBR
+    memset(tmp, 0, sizeof tmp);
+    strcat(tmp, "/dev/disk/by-uuid/");
+    strcat(tmp, *src);
+    if(access(tmp, F_OK) != -1){
+      sprintf(*dst, "/dev/disk/by-uuid/%s", *src);
+    } else {
 
-  // Fallback vendor hardware id
-  sprintf(*dst, "/dev/disk/by-id/%s", *src);
-  return;
+      // Fallback vendor hardware id
+      sprintf(*dst, "/dev/disk/by-id/%s", *src);
+    }
+
+  }
 
 }
 
@@ -181,7 +183,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
 
 
 
-  // Check if panic key exist
+  // Check if device to be destroyed exist
   if(bSerious && access(serious_dev, F_OK) == -1){
     pam_syslog(pamh, LOG_ALERT, _("ALERT for argument \"serious\": Device doesn't exist."));
     if(bStrict)
