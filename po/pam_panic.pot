@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: pam_panic 0.3.0\n"
+"Project-Id-Version: pam_panic 0.3.1\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-12-03 00:25+0100\n"
+"POT-Creation-Date: 2018-12-23 15:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,13 +21,13 @@ msgstr ""
 msgid "CRITICAL: Problem with regcomp."
 msgstr ""
 
-#: src/pam_panic/pam_panic.c:145
+#: src/pam_panic/pam_panic.c:147
 msgid ""
 "ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a "
 "valid GPT UUID."
 msgstr ""
 
-#: src/pam_panic/pam_panic.c:184
+#: src/pam_panic/pam_panic.c:186
 msgid "ALERT for argument \"serious\": Device doesn't exist."
 msgstr ""
 

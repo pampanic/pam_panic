@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-12-03 00:25+0100\n"
+"POT-Creation-Date: 2018-12-23 15:26+0100\n"
 "PO-Revision-Date: 2018-11-14 17:26+0100\n"
 "Last-Translator: Dangered wolf <d@ngeredwolf.me>\n"
 "Language-Team: Spanish\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "CRITICAL: Problem with regcomp."
 msgstr "CRITICAL: Problema con regcomp."
 
-#: src/pam_panic/pam_panic.c:145
+#: src/pam_panic/pam_panic.c:147
 msgid ""
 "ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a "
 "valid GPT UUID."
@@ -31,7 +31,7 @@ msgstr ""
 "ERROR: Argumentos inválidos. Tenga en cuenta que \"allow\" y \"reject\" "
 "deben tener un UUID de GPT válido."
 
-#: src/pam_panic/pam_panic.c:184
+#: src/pam_panic/pam_panic.c:186
 msgid "ALERT for argument \"serious\": Device doesn't exist."
 msgstr "ALERT para el argumento \"serious\": El dispositivo no existe."
 

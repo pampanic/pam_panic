@@ -10,10 +10,11 @@ LICENSE :      GNU-GPLv3
 #include <security/pam_modules.h>
 #include <security/pam_ext.h>
 #include <syslog.h>
+#include <stdlib.h>
 
 
 void argSplit(char **some_arg, char **some_temp, const char *arg);
-void constrPath(char **dst, char **src);
+void constrPath(char **dst, char **src, int8_t bGPTOnly);
 PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags, int argc, const char *argv[]);
 
 

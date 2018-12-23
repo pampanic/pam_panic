@@ -52,26 +52,28 @@ void argSplit(char **some_arg, char **some_temp, const char *arg){
   *some_temp = strtok(NULL, "="); 
 }
 
-void constrPath(char **dst, char **src){
+void constrPath(char **dst, char **src, int8_t bGPTOnly){
 
   char tmp[256];
 
-  // EFI
+  // GPT
   strcpy(tmp, "/dev/disk/by-partuuid/");
   strcat(tmp, *src);
-  if(access(tmp, F_OK) != -1)
+  if(access(tmp, F_OK) != -1 || bGPTOnly)
     sprintf(*dst, "/dev/disk/by-partuuid/%s", *src);
- 
+    return;
+
   // MBR
   memset(tmp, 0, sizeof tmp);
   strcat(tmp, "/dev/disk/by-uuid/");
   strcat(tmp, *src);
   if(access(tmp, F_OK) != -1)
     sprintf(*dst, "/dev/disk/by-uuid/%s", *src);
+    return;
 
   // Fallback vendor hardware id
-  else
-    sprintf(*dst, "/dev/disk/by-id/%s", *src);
+  sprintf(*dst, "/dev/disk/by-id/%s", *src);
+  return;
 
 }
 
@@ -160,8 +162,8 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
 
   // Construct variables from arguments 
   if(allowed_temp != NULL && rejected_temp != NULL){
-    constrPath(&rejected, &rejected_temp);
-    constrPath(&allowed, &allowed_temp);
+    constrPath(&rejected, &rejected_temp, 1);
+    constrPath(&allowed, &allowed_temp, 1);
   }else{
     rejected = NULL;
     allowed = NULL;
@@ -169,7 +171,7 @@ PAM_EXTERN int pam_sm_authenticate(pam_handle_t *pamh, int flags,	int argc, cons
     
 
   if(bSerious)
-    constrPath(&serious_dev, &serious_temp);
+    constrPath(&serious_dev, &serious_temp, 0);
 
 
   // Free not needed vars
