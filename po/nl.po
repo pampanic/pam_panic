@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-12-23 15:26+0100\n"
+"POT-Creation-Date: 2018-12-23 16:43+0100\n"
 "PO-Revision-Date: 2018-11-23 23:50+0100\n"
 "Last-Translator: chris <chris@heychris.eu>\n"
 "Language-Team: \n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "CRITICAL: Problem with regcomp."
 msgstr "KRITISCH: Probleem met regcomp."
 
-#: src/pam_panic/pam_panic.c:147
+#: src/pam_panic/pam_panic.c:149
 msgid ""
 "ERROR: Arguments invalid. Note that \"allow\" and \"reject\" must have a "
 "valid GPT UUID."
@@ -30,7 +30,7 @@ msgstr ""
 "FOUT: Argumenten niet geldig. Let erop dat \"allow\" en \"reject\" een "
 "geldige GPT UUID nodig hebben."
 
-#: src/pam_panic/pam_panic.c:186
+#: src/pam_panic/pam_panic.c:188
 msgid "ALERT for argument \"serious\": Device doesn't exist."
 msgstr "WAARSCHUWING bij argument \"serious\": Toestel bestaat niet."
 
