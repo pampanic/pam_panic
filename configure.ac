@@ -1,6 +1,6 @@
 AC_INIT(
     [pam_panic],
-    [0.3.1],
+    [0.3.2],
     [https://github.com/pampanic/pam_panic/issues],
     [pam_panic])
 AC_CONFIG_AUX_DIR([build-aux])
