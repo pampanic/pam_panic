@@ -171,6 +171,25 @@ If \fI/dev/disk/by-partuuid\fR is not existent, you can use the ID from \fI/dev/
 You should not issue the panic function if you think that your data has been cloned before. This might cause more problems than it can help you.
 
 
+.SH "ADDITIONAL SECURITY: MEMORY POISONING"
+.PP
+.PD 0
+If you want to be sure to have your memory clear of all information when issuing a reboot/shutdown you might want to add the options 
+.RS 4
+page_poison=on
+.RE
+and
+.RS 4
+slub_debug=P
+.RE
+to your kernel arguments.
+For GRUB2 you just append it on your \fBGRUB_CMDLINE_LINUX\fR entry in \fI/etc/default/grub\fR and generate a new GRUB2 config:
+.RS 4
+grub-mkconfig -o /boot/grub/grub.cfg
+.RE
+.PD 1
+
+
 .SH "RETURN VALUES"
 .PP
 PAM_SUCCESS

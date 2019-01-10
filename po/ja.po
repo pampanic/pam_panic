@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2019-01-10 12:36+0100\n"
-"PO-Revision-Date: 2019-01-10 12:40+0100\n"
+"POT-Creation-Date: 2019-01-10 20:50+0100\n"
+"PO-Revision-Date: 2019-01-10 20:59+0100\n"
 "Last-Translator: Chromium Neptune <chromium@neplanet.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -398,12 +398,20 @@ msgstr "これは、通常のユーザーパスワードの前のものでなけ
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:85
 msgid ""
+"You want more security? Read section ADDITIONAL SECURITY: MEMORY POISONING "
+"in the man pages of pam_panic (\"man pam_panic\")."
+msgstr ""
+"もっとセキュリティが欲しい？ pam_panicのmanページの「追加セキュリティ：メモリ"
+"ポイズニング」セクションを読んでください。 （ \"man pam_panic\"）"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:86
+msgid ""
 "If you got any question, don't hesitate to ask via IRC (chat.freenode.net in "
 "room #pampanic) or via mail + GPG."
 msgstr ""
 "ご質問がある場合は、IRC（chat.freenode.net room #pampanic）または電子メール+ "
 "GPGでお気軽にお問い合わせください。"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:86
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:87
 msgid "Press enter to exit."
 msgstr "Enterキーを押して終了します。"

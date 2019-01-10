@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: Bandie <bandie@chaospott.de>\n"
-"POT-Creation-Date: 2019-01-10 12:23+0100\n"
-"PO-Revision-Date: 2019-01-10 12:41+0100\n"
+"POT-Creation-Date: 2019-01-10 20:22+0100\n"
+"PO-Revision-Date: 2019-01-10 21:01+0100\n"
 "Last-Translator: Chris <chris@heychris.eu>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -394,79 +394,125 @@ msgstr ""
 
 #. type: SH
 #: ../src/pam_panic/man/man8/pam_panic.8:174
+#, no-wrap
+msgid "ADDITIONAL SECURITY: MEMORY POISONING"
+msgstr "EXTRA VEILIGHEID: MEMORY POISONING"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:178
+msgid ""
+"If you want to be sure to have your memory clear of all information when "
+"issuing a reboot/shutdown you might want to add the options"
+msgstr ""
+"Als je zeker wilt zijn dat uw geheugen vrij is van alle informatie bij het "
+"opnieuw opstarten / afsluiten, wilt je misschien de opties toevoegen"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:180
+msgid "page_poison=on"
+msgstr "page_poison=on"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:182
+msgid "and"
+msgstr "en"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:184
+msgid "slub_debug=P"
+msgstr "slub_debug=P"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:187
+msgid ""
+"to your kernel arguments.  For GRUB2 you just append it on your "
+"B<GRUB_CMDLINE_LINUX> entry in I</etc/default/grub> and generate a new GRUB2 "
+"config:"
+msgstr ""
+"naar je kernelargumenten. Voor GRUB2 voeg je het gewoon toe aan je "
+"B<GRUB_CMDLINE_LINUX>-item in I</etc/default/grub> en genereer je een nieuwe "
+"GRUB2-configuratie:"
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:189
+msgid "grub-mkconfig -o /boot/grub/grub.cfg"
+msgstr "grub-mkconfig -o /boot/grub/grub.cfg"
+
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:193
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:41
 #, no-wrap
 msgid "RETURN VALUES"
 msgstr "AFSLUITSTATUS"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:177
+#: ../src/pam_panic/man/man8/pam_panic.8:196
 msgid "PAM_SUCCESS"
 msgstr "PAM_SUCCESS"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:179
+#: ../src/pam_panic/man/man8/pam_panic.8:198
 msgid "Access was granted."
 msgstr "Toegang toegestaan."
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:182
+#: ../src/pam_panic/man/man8/pam_panic.8:201
 msgid "PAM_IGNORE"
 msgstr "PAM_IGNORE"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:184
+#: ../src/pam_panic/man/man8/pam_panic.8:203
 msgid "An error has occured. The module will be ignored."
 msgstr "Er was een fout. Dit module wordt genegeerd."
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:187
+#: ../src/pam_panic/man/man8/pam_panic.8:206
 msgid "PAM_MAXTRIES"
 msgstr "PAM_MAXTRIES"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:189
+#: ../src/pam_panic/man/man8/pam_panic.8:208
 msgid "The removable media was not detected."
 msgstr "Het verwijderbare medium werd niet gedetecteerd."
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:192
+#: ../src/pam_panic/man/man8/pam_panic.8:211
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:59
 #, no-wrap
 msgid "FILES"
 msgstr "BESTANDEN"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:195
+#: ../src/pam_panic/man/man8/pam_panic.8:214
 msgid "__PAMPANICSO__"
 msgstr "__PAMPANICSO__"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:197
+#: ../src/pam_panic/man/man8/pam_panic.8:216
 msgid "This PAM module, which does everything of this above."
 msgstr "Dit PAM-module wat het bovenstaande doet."
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:200
+#: ../src/pam_panic/man/man8/pam_panic.8:219
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:62
 msgid "__PAMPANICPW__"
 msgstr "__PAMPANICPW__"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:202
+#: ../src/pam_panic/man/man8/pam_panic.8:221
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:64
 msgid "Program to set and change the passwords."
 msgstr "Programma om de wachtwoorden te zetten en te wisselen."
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:205
+#: ../src/pam_panic/man/man8/pam_panic.8:224
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:72
 #, no-wrap
 msgid "BUGS"
 msgstr "BUGS"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:208
+#: ../src/pam_panic/man/man8/pam_panic.8:227
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:75
 msgid ""
 "Please report bugs and send pull requests to E<lt>https://github.com/"
@@ -476,32 +522,32 @@ msgstr ""
 "pam_panicE<gt>."
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:210
+#: ../src/pam_panic/man/man8/pam_panic.8:229
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:77
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "ZIE OOK"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:216
+#: ../src/pam_panic/man/man8/pam_panic.8:235
 msgid "B<pam_panic_pw>(1), B<cryptsetup>(8), B<pam>(8), B<pam.conf>(5)"
 msgstr "B<pam_panic_pw>(1), B<cryptsetup>(8), B<pam>(8), B<pam.conf>(5)"
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:218
+#: ../src/pam_panic/man/man8/pam_panic.8:237
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:85
 #, no-wrap
 msgid "AUTHORS"
 msgstr "AUTEURS"
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:222
+#: ../src/pam_panic/man/man8/pam_panic.8:241
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:90
 msgid "pam_panic was written by Bandie E<lt>bandie@chaospott.deE<gt>."
 msgstr "pam_panic is geschreven door Bandie E<lt>bandie@chaospott.deE<gt>."
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:223
+#: ../src/pam_panic/man/man8/pam_panic.8:242
 #: ../src/pam_panic_pw/man/man1/pam_panic_pw.1:92
 msgid ""
 "This man page has been revised by Jordy Dickinson E<lt>jordy."

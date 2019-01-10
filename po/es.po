@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2019-01-10 12:36+0100\n"
-"PO-Revision-Date: 2019-01-10 12:38+0100\n"
+"POT-Creation-Date: 2019-01-10 20:50+0100\n"
+"PO-Revision-Date: 2019-01-10 20:54+0100\n"
 "Last-Translator: Dangered wolf <d@ngeredwolf.me>\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
@@ -406,12 +406,20 @@ msgstr "antes de su contraseña de usuario habitual."
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:85
 msgid ""
+"You want more security? Read section ADDITIONAL SECURITY: MEMORY POISONING "
+"in the man pages of pam_panic (\"man pam_panic\")."
+msgstr ""
+"¿Quieres más seguridad? Lea la sección SEGURIDAD ADICIONAL: MEMORY POISONING "
+"en las páginas de manual de pam_panic (\"man pam_panic\")."
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:86
+msgid ""
 "If you got any question, don't hesitate to ask via IRC (chat.freenode.net in "
 "room #pampanic) or via mail + GPG."
 msgstr ""
 "Si tiene alguna pregunta, no dude en preguntar en IRC (chat.freenode.net en "
 "la sala #pampanic) o por correo electrónico + GPG."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:86
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:87
 msgid "Press enter to exit."
 msgstr "Presione la tecla enter para salir."
