@@ -210,6 +210,8 @@ dialog --backtitle "$BACKTITLE" \
   --ok-label "Yip!" \
   --msgbox "$WELCOME1\n\n$WELCOME2\n\n$WELCOME3" 20 80
 
+# Legal notice
+msg "$LEGAL_NOTICE" "$LEGAL_HINT"
 
 # Authentication mode
 auth_mode=2
