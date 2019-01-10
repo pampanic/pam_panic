@@ -82,6 +82,7 @@ NEXT_LOGIN=$(N_ "At your next login you need to")
 TYPEPW=$(N_ "type your pam_panic authentification password or")
 INSRM=$(N_ "insert your removable authentication media")
 PREVTOREG=$(N_ "previous your regular user password.")
+MEMPOISONING=$(N_ "You want more security? Read section ADDITIONAL SECURITY: MEMORY POISONING in the man pages of pam_panic (\"man pam_panic\").")
 QUESTIONS=$(N_ "If you got any question, don't hesitate to ask via IRC (chat.freenode.net in room #pampanic) or via mail + GPG.")
 PRESSENTER=$(N_ "Press enter to exit.")
 
@@ -401,6 +402,7 @@ $NEXT_LOGIN
   - $INSRM
 $PREVTOREG
 
+$MEMPOISONING
 " | more
 
 echo "$QUESTIONS"
