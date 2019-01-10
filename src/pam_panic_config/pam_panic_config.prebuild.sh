@@ -21,6 +21,8 @@ N_(){
 NOT_BUILT=$(N_ "ERROR: Bash script was not built correctly.")
 RUN_AS_ROOT=$(N_ "Please run this script as root or use sudo.")
 BACKTITLE="$(N_ "pam_panic's Configuration Generator.") Version $VERSION"
+LEGAL_NOTICE=$(N_ "LEGAL NOTICE")
+LEGAL_HINT=$(N_ "You should not issue the panic function if you think that your data has been cloned before. This might cause more problems than it can help you.")
 BYE=$(N_ "Bye! :)")
 OK=$(N_ "OK")
 CANCEL=$(N_ "Cancel")
@@ -208,6 +210,8 @@ dialog --backtitle "$BACKTITLE" \
   --ok-label "Yip!" \
   --msgbox "$WELCOME1\n\n$WELCOME2\n\n$WELCOME3" 20 80
 
+# Legal notice
+msg "$LEGAL_NOTICE" "$LEGAL_HINT"
 
 # Authentication mode
 auth_mode=2

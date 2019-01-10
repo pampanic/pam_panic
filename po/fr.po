@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/pampanic/pam_panic\n"
-"POT-Creation-Date: 2018-12-23 16:43+0100\n"
-"PO-Revision-Date: 2018-11-14 17:26+0100\n"
+"POT-Creation-Date: 2019-01-10 12:36+0100\n"
+"PO-Revision-Date: 2019-01-10 12:39+0100\n"
 "Last-Translator: Dashie <dashie@otter.sh>\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -114,30 +114,43 @@ msgid "pam_panic's Configuration Generator."
 msgstr "Le générateur de configuration de pam_panic."
 
 #: src/pam_panic_config/pam_panic_config.prebuild.sh:24
+msgid "LEGAL NOTICE"
+msgstr "MENTION LEGALE"
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:25
+msgid ""
+"You should not issue the panic function if you think that your data has been "
+"cloned before. This might cause more problems than it can help you."
+msgstr ""
+"Vous ne devez pas émettre de fonction de panique si vous pensez que vos "
+"données ont déjà été clonées. Cela pourrait causer plus de problèmes que "
+"cela ne pourrait vous aider."
+
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:26
 msgid "Bye! :)"
 msgstr "Au revoir! :)"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:25
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:27
 msgid "OK"
 msgstr "D'accord"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:26
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:28
 msgid "Cancel"
 msgstr "Annuler"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:27
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:29
 msgid "Authentication"
 msgstr "Authentification"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:28
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:30
 msgid "Panic"
 msgstr "Panique"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:29
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:31
 msgid "Please remove all removable media devices before you continue."
 msgstr "Retirez tous les disques amovibles avant de continuer."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:30
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:32
 msgid ""
 "Note, if your device doesn't show up in the upcoming list it might not be a "
 "GPT formatted device."
@@ -145,7 +158,7 @@ msgstr ""
 "Notez que si votre périphérique ne figure pas dans la liste à venir, il peut "
 "ne pas s'agir d'un disque au format GPT."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:31
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:33
 msgid ""
 "Please insert the device you want to use as Authentication device and press "
 "OK."
@@ -153,37 +166,37 @@ msgstr ""
 "Veuillez insérer le périphérique que vous souhaitez utiliser comme disque "
 "d'authentification et appuyer sur \"D'accord\"."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:32
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:34
 msgid "Please insert the device you want to use as Panic device and press OK."
 msgstr ""
 "Veuillez insérer le périphérique que vous souhaitez utiliser comme disque de "
 "panique et appuyer sur \"D'accord\"."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:33
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:35
 msgid "Removable media: Authentication device"
 msgstr "Disque amovible: Périphérique d'authentification"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:34
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:36
 msgid "Removable media: Panic device"
 msgstr "Disque amovible: Périphérique de panique"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:35
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:37
 msgid "Choose your device:"
 msgstr "Choisissez votre disque amovible:"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:36
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:38
 msgid "Detecting devices..."
 msgstr "Détection des disques amovibles ..."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:37
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:39
 msgid "Welcome!"
 msgstr "Bienvenue!"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:38
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:40
 msgid "Welcome to pam_panic's Configuration Generator."
 msgstr "Bienvenue dans le générateur de configuration de pam_panic."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:39
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:41
 msgid ""
 "It will help you to create a valid pam_panic setup. It will also generate a "
 "PAM configuration file."
@@ -191,7 +204,7 @@ msgstr ""
 "Cela vous aidera à créer une configuration pam_panic valide. Il générera "
 "également un fichier de configuration PAM."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:40
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:42
 msgid ""
 "After you're done with this Configuration Generator, you will see some hints "
 "how to integrate the new PAM configuration file in your system."
@@ -200,19 +213,19 @@ msgstr ""
 "verrez quelques astuces sur la manière d'intégrer le nouveau fichier de "
 "configuration PAM dans votre système."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:41
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:43
 msgid "Authentication mode"
 msgstr "Mode d'authentification"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:42
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:44
 msgid "Passwords"
 msgstr "Mots de passe"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:43
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:45
 msgid "Media"
 msgstr "Disque"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:44
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:46
 msgid ""
 "You can choose between the \"two removable media\" option and the \"two "
 "passwords\" option."
@@ -220,40 +233,40 @@ msgstr ""
 "Vous pouvez choisir entre l'option \"deux disques amovibles\" et l'option "
 "\"deux mots de passe\"."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:45
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:47
 msgid "See \"Help\" to learn what it is."
 msgstr "Voir \"Aide\" pour savoir ce que c'est."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:46
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:48
 msgid "Removable media or passwords?"
 msgstr "Disques amovibles ou mots de passe?"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:47
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:49
 msgid "Authentication device chosen with UUID"
 msgstr "Disque d'authentification choisi avec UUID"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:48
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:50
 msgid "Panic device chosen with UUID"
 msgstr "Disque de panique choisi avec UUID"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:49
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:51
 msgid "Do you want to set the passwords now?"
 msgstr "Voulez-vous définir les mots de passe maintenant?"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:50
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:52
 msgid "Failed to set the passwords. :("
 msgstr "Impossible de définir les mots de passe. :("
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:51
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:53
 msgid "pam_panic's behaviour"
 msgstr "Le comportement de pam_panic"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:52
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:54
 msgid "Do you wish to destroy your LUKS header key slots in case of emergency?"
 msgstr ""
 "Souhaitez-vous détruire votre fentes de clés d'en-tête LUKS en cas d'urgence?"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:53
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:55
 msgid ""
 "This means that your encrypted root partition won't be decryptable anymore. "
 "After this question we will create a LUKS header backup, if you wish."
@@ -262,43 +275,43 @@ msgstr ""
 "Après cette question, nous allons créer une sauvegarde de l'en-tête LUKS, si "
 "vous le souhaitez."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:54
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:56
 msgid "We will destroy"
 msgstr "Nous allons détruire"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:55
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:57
 msgid "when you trigger the panic function."
 msgstr "lorsque vous déclencherez la fonction de panique."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:56
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:58
 msgid "Do you want to make a LUKS-Header backup now?"
 msgstr "Voulez-vous effectuer une sauvegarde de l'en-tête LUKS maintenant?"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:57
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:59
 msgid "Save location:"
 msgstr "Emplacement:"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:58
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:60
 msgid "The LUKSHeader backup has been saved here:"
 msgstr "La sauvegarde de l'en-tête LUKS à été sauvegardée ici:"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:59
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:61
 msgid "ERROR: There is no encrypted root partition on /dev/sda."
 msgstr "ERREUR: Il n'y à pas de partition chiffrée sur /dev/sda."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:60
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:62
 msgid "Reboot"
 msgstr "Redémarrer"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:61
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:63
 msgid "Shutdown"
 msgstr "Arrêter"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:62
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:64
 msgid "Nothing"
 msgstr "Rien"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:63
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:65
 msgid ""
 "Do you wish a reboot or a shutdown after issuing the panic function? Or "
 "shall we do nothing at all?"
@@ -306,11 +319,11 @@ msgstr ""
 "Souhaitez-vous un redémarrage ou un arrêt après avoir activé la fonction "
 "panique? Ou ne ferons-nous rien du tout?"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:64
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:66
 msgid "Strict mode"
 msgstr "Mode strict"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:65
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:67
 msgid ""
 "Do you want to use the strict mode? It means that pam_panic will lock you "
 "out and reject any logins if the configuration is corrupt (like a missing "
@@ -320,49 +333,49 @@ msgstr ""
 "bloquera et rejettera toutes les connexions si la configuration est "
 "corrompue (comme la base de données de mots de passe est manquante)."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:66
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:68
 msgid "Generating configuration..."
 msgstr "Génération de la configuration ..."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:67
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:69
 msgid "Config file exists"
 msgstr "Le fichier de configuration existe"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:68
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:70
 msgid "exists. Overwrite it?"
 msgstr "existe. Le remplacer?"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:70
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:72
 msgid "What now?"
 msgstr "Et maintenant?"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:71
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:73
 msgid "Now we saved our configuration to"
 msgstr "Nous avons maintenant enregistré notre configuration sur"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:72
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:74
 msgid "If you want to let them apply to the other modules, proceed as follows:"
 msgstr ""
 "Si vous souhaitez les laisser s’appliquer à d’autres modules, procédez comme "
 "suit:"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:73
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:75
 msgid "Open a module configuration in"
 msgstr "Ouvrez une configuration de module dans"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:74
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:76
 msgid "You can try out:"
 msgstr "Vous pouvez essayer:"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:75
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:77
 msgid "and"
 msgstr "et"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:76
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:78
 msgid "After the line \"#%PAM-1.0\" append"
 msgstr "Après la ligne \"#%PAM-1.0\", ajoutez"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:77
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:79
 msgid ""
 "On Ubuntu you might want to separate the above mentioned lines on the files "
 "common-auth for the \"auth\" part and common-account for the \"account\" "
@@ -372,29 +385,29 @@ msgstr ""
 "dans les fichiers common-auth pour la partie \"auth\" et common-account pour "
 "la partie \"account\"."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:78
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:80
 msgid "Once you have changed and saved those files, pam_panic will be active."
 msgstr ""
 "Une fois que vous avez modifié et enregistré ces fichiers, pam_panic sera "
 "actif."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:79
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:81
 msgid "At your next login you need to"
 msgstr "À la prochaine connexion, vous devez"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:80
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:82
 msgid "type your pam_panic authentification password or"
 msgstr "taper votre mot de passe d’authentification pam_panic ou"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:81
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:83
 msgid "insert your removable authentication media"
 msgstr "insérer votre disque d'authentification amovible"
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:82
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:84
 msgid "previous your regular user password."
 msgstr "avant votre mot de passe utilisateur habituel."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:83
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:85
 msgid ""
 "If you got any question, don't hesitate to ask via IRC (chat.freenode.net in "
 "room #pampanic) or via mail + GPG."
@@ -402,6 +415,6 @@ msgstr ""
 "Si vous avez des questions, n'hésitez pas à les demander via IRC (chat."
 "freenode.net dans le salon #pampanic) ou via mail + GPG."
 
-#: src/pam_panic_config/pam_panic_config.prebuild.sh:84
+#: src/pam_panic_config/pam_panic_config.prebuild.sh:86
 msgid "Press enter to exit."
 msgstr "Appuyez sur la touche Entrée pour quitter."

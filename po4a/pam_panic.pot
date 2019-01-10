@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pam_panic 0.2.0\n"
 "Report-Msgid-Bugs-To: Bandie <bandie@chaospott.de>\n"
-"POT-Creation-Date: 2018-11-14 17:46+0100\n"
+"POT-Creation-Date: 2019-01-10 12:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -322,104 +322,117 @@ msgid ""
 msgstr ""
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:169 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:41
+#: ../src/pam_panic/man/man8/pam_panic.8:169
+#, no-wrap
+msgid "LEGAL NOTICE"
+msgstr ""
+
+#. type: Plain text
+#: ../src/pam_panic/man/man8/pam_panic.8:172
+msgid ""
+"You should not issue the panic function if you think that your data has been "
+"cloned before. This might cause more problems than it can help you."
+msgstr ""
+
+#. type: SH
+#: ../src/pam_panic/man/man8/pam_panic.8:174 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:41
 #, no-wrap
 msgid "RETURN VALUES"
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:172
+#: ../src/pam_panic/man/man8/pam_panic.8:177
 msgid "PAM_SUCCESS"
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:174
+#: ../src/pam_panic/man/man8/pam_panic.8:179
 msgid "Access was granted."
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:177
+#: ../src/pam_panic/man/man8/pam_panic.8:182
 msgid "PAM_IGNORE"
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:179
+#: ../src/pam_panic/man/man8/pam_panic.8:184
 msgid "An error has occured. The module will be ignored."
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:182
+#: ../src/pam_panic/man/man8/pam_panic.8:187
 msgid "PAM_MAXTRIES"
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:184
+#: ../src/pam_panic/man/man8/pam_panic.8:189
 msgid "The removable media was not detected."
 msgstr ""
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:187 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:59
+#: ../src/pam_panic/man/man8/pam_panic.8:192 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:59
 #, no-wrap
 msgid "FILES"
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:190
+#: ../src/pam_panic/man/man8/pam_panic.8:195
 msgid "__PAMPANICSO__"
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:192
+#: ../src/pam_panic/man/man8/pam_panic.8:197
 msgid "This PAM module, which does everything of this above."
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:195 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:62
+#: ../src/pam_panic/man/man8/pam_panic.8:200 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:62
 msgid "__PAMPANICPW__"
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:197 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:64
+#: ../src/pam_panic/man/man8/pam_panic.8:202 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:64
 msgid "Program to set and change the passwords."
 msgstr ""
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:200 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:72
+#: ../src/pam_panic/man/man8/pam_panic.8:205 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:72
 #, no-wrap
 msgid "BUGS"
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:203 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:75
+#: ../src/pam_panic/man/man8/pam_panic.8:208 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:75
 msgid ""
 "Please report bugs and send pull requests to "
 "E<lt>https://github.com/pampanic/pam_panicE<gt>."
 msgstr ""
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:205 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:77
+#: ../src/pam_panic/man/man8/pam_panic.8:210 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:77
 #, no-wrap
 msgid "SEE ALSO"
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:211
+#: ../src/pam_panic/man/man8/pam_panic.8:216
 msgid "B<pam_panic_pw>(1), B<cryptsetup>(8), B<pam>(8), B<pam.conf>(5)"
 msgstr ""
 
 #. type: SH
-#: ../src/pam_panic/man/man8/pam_panic.8:213 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:85
+#: ../src/pam_panic/man/man8/pam_panic.8:218 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:85
 #, no-wrap
 msgid "AUTHORS"
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:217 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:90
+#: ../src/pam_panic/man/man8/pam_panic.8:222 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:90
 msgid "pam_panic was written by Bandie E<lt>bandie@chaospott.deE<gt>."
 msgstr ""
 
 #. type: Plain text
-#: ../src/pam_panic/man/man8/pam_panic.8:218 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:92
+#: ../src/pam_panic/man/man8/pam_panic.8:223 ../src/pam_panic_pw/man/man1/pam_panic_pw.1:92
 msgid ""
 "This man page has been revised by Jordy Dickinson "
 "E<lt>jordy.dickinson@icloud.comE<gt>."
