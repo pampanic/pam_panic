@@ -101,11 +101,6 @@ To set your passwords run `pam_panic_pw` as root in your preferred shell.
 See `man 8 pam_panic` and `man 1 pam_panic_pw` for more information.
 
 
-## Contact
-- Support channel on IRC at [**#pampanic** on chat.**freenode**.net](https://webchat.freenode.net/?channels=%23pampanic&uio=d4)  - Feel free to idle. :)
-- Developer channel on IRC at [**#pampanic-dev** on chat.**freenode**.net](https://webchat.freenode.net/?channels=%23pampanic-dev&uio=d4) 
-
-
 ## TODO
 - [Translations](https://github.com/pampanic/pam_panic/wiki/How-to-translate)
 
