@@ -110,7 +110,7 @@ void test_passwordCheckFromFile(void) {
 
   int ret;
   char buf[2][256];
-  char* line = NULL;
+  char* line;
 
   FILE *f = fopen(PASSWORDFILE, "r");
   size_t len = 0;
@@ -127,20 +127,21 @@ void test_passwordCheckFromFile(void) {
     fclose(f);
   }
 
+  char* good = strtok(buf[0], "\n");
+  char* bad = strtok(buf[1], "\n");
 
-  ret = strcmp(strtok(buf[0], "\n"), crypt(GOODPASSWORD, buf[0])) == 0;
+  ret = strcmp(good, crypt(GOODPASSWORD, buf[0])) == 0;
   CU_ASSERT_TRUE(ret);
 
-  ret = strcmp(strtok(buf[1], "\n"), crypt(BADPASSWORD, buf[1])) == 0;
+  ret = strcmp(bad, crypt(BADPASSWORD, buf[1])) == 0;
   CU_ASSERT_TRUE(ret);
-
 }
 
 void test_badPasswordCheckFromFile(void) {
 
   int ret;
   char buf[2][256];
-  char* line = NULL;
+  char* line;
 
   FILE *f = fopen(PASSWORDFILE, "r");
   size_t len = 0;
@@ -157,11 +158,13 @@ void test_badPasswordCheckFromFile(void) {
     fclose(f);
   }
 
+  char* bad = strtok(buf[0], "\n");
+  char* good = strtok(buf[1], "\n");
 
-  ret = strcmp(strtok(buf[0], "\n"), crypt(BADPASSWORD, buf[0])) == 0;
+  ret = strcmp(bad, crypt(BADPASSWORD, buf[0])) == 0;
   CU_ASSERT_FALSE(ret);
 
-  ret = strcmp(strtok(buf[1], "\n"), crypt(GOODPASSWORD, buf[1])) == 0;
+  ret = strcmp(good, crypt(GOODPASSWORD, buf[1])) == 0;
   CU_ASSERT_FALSE(ret);
 
 }
