@@ -16,6 +16,7 @@ LICENSE :      GNU-GPLv3
 #include <time.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <locale.h>
 #include <crypt.h>
 #include "../config.h"
 #include "../../lib/gettext.h"

@@ -15,6 +15,7 @@ LICENSE :      GNU-GPLv3
 #include <sys/wait.h>
 #include <regex.h>
 #include <string.h>
+#include <locale.h>
 #include <security/pam_modules.h>
 #include <security/pam_ext.h>
 #include <syslog.h>
